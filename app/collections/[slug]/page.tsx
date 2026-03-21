@@ -58,7 +58,7 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
         </div>
         <div className="stack">
           {entries.map((entry) => (
-            <RecordRow compact entry={entry} key={entry.id} showActions={false} />
+            <RecordRow compact entry={entry} key={entry.id} />
           ))}
         </div>
       </section>

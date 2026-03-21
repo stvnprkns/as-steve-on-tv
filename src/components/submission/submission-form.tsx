@@ -63,7 +63,7 @@ export function SubmissionForm({
   return (
     <section className="document-card">
       <div className="document-card__header">
-        <p className="section-label">Archive intake</p>
+        <p className="section-label">Submission</p>
         <h2>{entry ? `${getActionLabel(initialType)} for ${entry.displayName}` : "Report a Steve"}</h2>
         <p>
           This form captures the archive vocabulary and prefills known records. It is still a prototype intake layer, so
@@ -189,7 +189,7 @@ export function SubmissionForm({
           </label>
         </div>
 
-        <button type="submit">Queue for editorial review</button>
+        <button type="submit">Submit</button>
       </form>
 
       {previewMessage ? <p className="intake-form__note">{previewMessage}</p> : null}

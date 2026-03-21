@@ -97,7 +97,7 @@ export default async function StevePage({ params }: { params: Promise<{ slug: st
               </div>
               <div className="stack">
                 {relatedEntries.map((relatedEntry) => (
-                  <RecordRow compact entry={relatedEntry} key={relatedEntry.id} showActions={false} />
+                  <RecordRow compact entry={relatedEntry} key={relatedEntry.id} />
                 ))}
               </div>
             </section>

@@ -38,8 +38,8 @@ export default async function SubmitPage({
 
       <section className="document-card">
         <div className="document-card__header">
-          <p className="section-label">Current queue</p>
-          <h2>Fixture submissions</h2>
+          <p className="section-label">Recent filings</p>
+          <h2>Sample submissions</h2>
           <p>These sample items prove the moderation language and archive action model.</p>
         </div>
         <div className="queue-list">
