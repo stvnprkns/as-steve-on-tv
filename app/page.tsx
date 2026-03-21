@@ -42,7 +42,7 @@ export default async function HomePage({
       <header className="archive-page__intro">
         <h1 className="archive-page__title">An ongoing editorial index of Steve sightings across screen culture.</h1>
         <p className="archive-page__meta">
-          {archiveCounts.total} records. {archiveCounts.verified} verified. {archiveCounts.unresolved} unresolved.
+          {archiveCounts.total} records / {archiveCounts.verified} verified / {archiveCounts.unresolved} unresolved
         </p>
       </header>
 

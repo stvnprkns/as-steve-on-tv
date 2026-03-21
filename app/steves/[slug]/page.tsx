@@ -46,6 +46,20 @@ export default async function StevePage({ params }: { params: Promise<{ slug: st
 
   const relatedEntries = getRelatedEntries(entry, allEntries);
   const relatedCollections = allCollections.filter((collection) => entry.collectionIds.includes(collection.id));
+  const appearanceNotes = [
+    entry.appearanceContext,
+    entry.appearanceContext && entry.appearanceContext !== entry.synopsis ? entry.synopsis : undefined
+  ].filter(Boolean) as string[];
+  const verificationHeading =
+    entry.verificationStatus === "verified"
+      ? "Verified Steve sighting."
+      : entry.verificationStatus === "community_confirmed"
+        ? "Community-confirmed Steve sighting."
+        : entry.verificationStatus === "needs_verification"
+          ? "Possibly Steve. Evidence remains incomplete."
+          : entry.verificationStatus === "corrected"
+            ? "Correction noted. Record updated."
+            : "Disputed Steve sighting.";
 
   return (
     <div className="entry-page">
@@ -85,8 +99,9 @@ export default async function StevePage({ params }: { params: Promise<{ slug: st
 
           <section className="document-card">
             <p className="section-label">Appearance context</p>
-            <p>{entry.appearanceContext ?? entry.synopsis}</p>
-            <p>{entry.synopsis}</p>
+            {appearanceNotes.map((note) => (
+              <p key={note}>{note}</p>
+            ))}
           </section>
 
           {relatedEntries.length ? (
@@ -137,7 +152,7 @@ export default async function StevePage({ params }: { params: Promise<{ slug: st
 
           <section className="document-card">
             <p className="section-label">Verification</p>
-            <h2>{entry.verificationStatus === "verified" ? "Verified Steve sighting." : entry.summary}</h2>
+            <h2>{verificationHeading}</h2>
             <p>
               {entry.notesOnUncertainty
                 ? entry.notesOnUncertainty
