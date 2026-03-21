@@ -1,0 +1,108 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, ol {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Base font */
+  background-color: #FAFAF8; /* Subtle off-white */
+  color: #222; /* Dark gray */
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  color: #444;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* Links */
+a {
+  color: #0066CC;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #004499;
+}
+
+/* Playlist Rows */
+.playlist-container {
+  margin-top: 30px;
+}
+
+.playlist-item {
+  border-top: 3px solid #333; /* Brutalist line */
+  padding: 20px; /* Increased padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.playlist-item:last-child {
+  border-bottom: 3px solid #333;
+}
+
+.playlist-item:hover {
+  background-color: #F3F3F3; /* Subtle hover effect */
+}
+
+/* Text in Rows */
+.playlist-item .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-item .song {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #222;
+}
+
+.playlist-item .artist, .playlist-item .album {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* TV/MOVIE Badges */
+.badge {
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.badge-tv {
+  background-color: #0066CC; /* Blue for TV */
+}
+
+.badge-movie {
+  background-color: #CC3300; /* Red for Movie */
+}
+
+/* Hover Effects for Badges */
+.badge:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

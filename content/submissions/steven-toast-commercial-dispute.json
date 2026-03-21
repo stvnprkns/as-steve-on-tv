@@ -1,0 +1,18 @@
+{
+  "id": "submission-steven-toast-commercial-dispute",
+  "submissionType": "dispute",
+  "proposedName": "Steven Toast",
+  "proposedVariant": "steven",
+  "proposedMedium": "commercial",
+  "titleOfWork": "Channel 4 Promo Spot",
+  "evidenceUrl": "https://example.com/evidence/steven-toast-promo",
+  "notes": "This looks more like a network promo than a true commercial, so it should probably stay out unless the methodology expands beyond ads and branded spots.",
+  "submitterName": "Eleanor M.",
+  "submitterEmail": "eleanor@example.com",
+  "status": "pending_review",
+  "reviewNotes": null,
+  "linkedEntryId": null,
+  "createdAt": "2026-03-15T12:30:00Z",
+  "updatedAt": "2026-03-15T12:30:00Z"
+}
+

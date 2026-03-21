@@ -1,0 +1,28 @@
+{
+  "nameVariants": ["steve", "stephen", "steven", "stevie"],
+  "mediums": ["tv", "film", "commercial"],
+  "entryTypes": ["character", "person", "persona"],
+  "contentStatuses": ["draft", "review", "published", "withheld", "deprecated"],
+  "moderationStatuses": ["pending_review", "accepted", "rejected", "merged", "needs_more_evidence"],
+  "collectionTypes": ["editorial", "ranked_editorial", "archetype", "seasonal", "starter_pack"],
+  "submissionTypes": ["new_entry", "correction", "dispute"],
+  "confidenceLevels": ["high", "medium", "disputed"],
+  "steveEnergyLevels": ["steady", "chaotic", "magnetic", "weaponized", "mythic"],
+  "archetypeTags": [
+    "chaos-engine",
+    "nostalgia-core",
+    "cool-older-brother",
+    "corporate-spokesman",
+    "auteur-captain",
+    "recurring-chaos",
+    "earnest-anchor",
+    "slick-operator",
+    "sitcom-neighbor",
+    "mall-warrior",
+    "deadpan-observer",
+    "outsider-icon"
+  ],
+  "eraTags": ["1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
+  "toneTags": ["earnest", "chaotic", "wholesome", "slick", "melancholy", "absurd", "iconic", "warm", "deadpan", "intense"]
+}
+

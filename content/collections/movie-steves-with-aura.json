@@ -1,0 +1,19 @@
+{
+  "id": "movie-steves-with-aura",
+  "slug": "movie-steves-with-aura",
+  "title": "Movie Steves With Aura",
+  "dek": "Big-screen Steves who carry enough force, vanity, nuisance, or sadness to reorganize the frame.",
+  "thesis": "Movie Steve behaves differently from television Steve. He has less time and often more charge. This collection favors film Steves who arrive with immediate silhouette and remain weirdly portable outside their original movies.",
+  "entryIds": [
+    "steve-stifler-american-pie",
+    "steve-zissou-the-life-aquatic",
+    "steve-rogers-captain-america-the-first-avenger"
+  ],
+  "collectionType": "editorial",
+  "tags": ["film", "aura", "big-screen", "performance"],
+  "status": "published",
+  "seoTitle": "Movie Steves With Aura | As Steve on TV",
+  "seoDescription": "A collection of movie and movie-adjacent Steves whose presence exceeds their runtime.",
+  "createdAt": "2026-03-15T12:22:00Z",
+  "updatedAt": "2026-03-15T12:22:00Z"
+}
