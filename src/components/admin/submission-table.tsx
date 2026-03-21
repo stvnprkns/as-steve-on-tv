@@ -16,9 +16,9 @@ export function SubmissionTable({ submissions }: { submissions: Submission[] }) 
         <tbody>
           {submissions.map((submission) => (
             <tr key={submission.id}>
-              <td>{submission.proposedName}</td>
+              <td>{submission.subjectName}</td>
               <td>{submission.submissionType}</td>
-              <td>{submission.proposedMedium}</td>
+              <td>{submission.medium}</td>
               <td>{submission.status}</td>
               <td>{submission.updatedAt.slice(0, 10)}</td>
             </tr>
@@ -28,4 +28,3 @@ export function SubmissionTable({ submissions }: { submissions: Submission[] }) 
     </div>
   );
 }
-

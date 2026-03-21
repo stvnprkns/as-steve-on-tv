@@ -1,163 +1,267 @@
 import Link from "next/link";
 
-import { CollectionCard } from "@/src/components/cards/collection-card";
-import { EntryCard } from "@/src/components/cards/entry-card";
-import { SiteShell } from "@/src/components/layout/site-shell";
+import { CollectionInlineCard } from "@/src/components/archive/collection-inline-card";
+import { RecordRow } from "@/src/components/archive/record-row";
 import { SearchBar } from "@/src/components/search/search-bar";
-import { SectionHeader } from "@/src/components/ui/section-header";
-import { buildMetadata } from "@/src/lib/seo/metadata";
-import { getAllCollections, getAllEntries, getTaxonomy } from "@/src/lib/content";
 import {
-  getBrowseCues,
-  getFeaturedEntries,
-  getHomepageCollections,
+  buildArchiveHref,
+  formatMediumLabel,
+  formatVariantLabel,
+  formatVerificationLabel,
+  getArchiveCounts,
+  getArchiveEntries,
+  getInlineCollections,
   getPublishedEntries,
-  getRecentEntries,
-  getSpotlightEntry
-} from "@/src/lib/content/selectors";
+  hasActiveArchiveFilters,
+  parseArchiveQuery
+} from "@/src/lib/archive";
+import { getAllCollections, getAllEntries, getTaxonomy } from "@/src/lib/content";
+import { buildMetadata } from "@/src/lib/seo/metadata";
 
 export const metadata = buildMetadata({
   title: "As Steve on TV",
-  description:
-    "A straight-faced editorial index of Steve, Stephen, Steven, and Stevie across TV, movies, and commercials."
+  description: "An ongoing editorial index of Steve sightings across screen culture."
 });
 
-export default async function HomePage() {
+function formatFiledDate(value: string | null) {
+  if (!value) {
+    return "Unknown";
+  }
+
+  return new Date(value).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+}
+
+export default async function HomePage({
+  searchParams
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const resolvedSearchParams = (await searchParams) ?? {};
   const [entries, collections, taxonomy] = await Promise.all([getAllEntries(), getAllCollections(), getTaxonomy()]);
-  const spotlightEntry = getSpotlightEntry(entries);
-  const featuredEntries = getFeaturedEntries(entries);
-  const recentEntries = getRecentEntries(entries);
-  const browseCueGroups = getBrowseCues(entries, taxonomy);
-  const homepageCollections = getHomepageCollections(collections);
-  const publishedEntries = getPublishedEntries(entries);
+  const query = parseArchiveQuery(resolvedSearchParams, taxonomy);
+  const archiveEntries = getArchiveEntries(entries, collections, query);
+  const inlineCollections = getInlineCollections(archiveEntries, collections);
+  const archiveCounts = getArchiveCounts(entries);
+  const unresolvedEntries = getPublishedEntries(entries)
+    .filter((entry) => ["needs_verification", "disputed"].includes(entry.verificationStatus))
+    .sort((left, right) => right.updatedAt.localeCompare(left.updatedAt))
+    .slice(0, 3);
+  const inlineCollection =
+    collections.find((collection) => collection.id === "commercial-steves-with-unreasonably-strong-aura") ?? collections[0];
+  const secondaryInlineCollection = inlineCollections.find((collection) => collection.id !== inlineCollection?.id) ?? null;
+  const railCollection =
+    collections.find((collection) => collection.id === "patron-saints-of-sitcom-steve") ?? collections[0];
+  const hiddenSearchFields = Object.fromEntries(
+    Object.entries({
+      sort: query.sort !== "canon" ? query.sort : "",
+      medium: query.medium ?? "",
+      variant: query.variant ?? "",
+      decade: query.decade ?? "",
+      status: query.status ?? ""
+    }).filter(([, value]) => value)
+  );
 
   return (
-    <SiteShell
-      eyebrow="The internet's Steve index"
-      title="A serious archive for Steve on screen."
-      description="TV, movies, and commercials. No broader premise. No database sludge. Just a highly specific cultural filing system that takes the assignment seriously."
-    >
-      <section className="home-hero">
-        <div className="home-hero__copy">
-          <p className="home-hero__lede">
-            As Steve on TV catalogs Steve, Stephen, Steven, and Stevie characters and on-screen people across media with the conviction usually reserved for institutions.
-          </p>
-          <div className="home-hero__actions">
-            <SearchBar buttonLabel="Search the file" placeholder="Steve Urkel, Blue's Clues, Steven..." />
-            <div className="home-hero__links">
-              <Link className="text-link" href="/browse">
-                Browse the cabinet
-              </Link>
-              <Link className="text-link" href="/submit">
-                Missing a Steve?
-              </Link>
+    <div className="archive-page">
+      <header className="archive-page__intro">
+        <p className="archive-page__framing">An ongoing editorial index of Steve sightings across screen culture.</p>
+        <dl className="archive-stats">
+          <div>
+            <dt>Records</dt>
+            <dd>{archiveCounts.total}</dd>
+          </div>
+          <div>
+            <dt>Verified</dt>
+            <dd>{archiveCounts.verified}</dd>
+          </div>
+          <div>
+            <dt>Unresolved</dt>
+            <dd>{archiveCounts.unresolved}</dd>
+          </div>
+          <div>
+            <dt>Latest filing</dt>
+            <dd>{formatFiledDate(archiveCounts.latestFiledAt)}</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div className="archive-layout">
+        <section className="archive-main">
+          <div className="archive-controls">
+            <SearchBar
+              action="/"
+              buttonLabel="Search"
+              defaultValue={query.q}
+              hiddenFields={hiddenSearchFields}
+              placeholder="Steve Urkel, commercial, babysitter, Steven..."
+            />
+
+            <div className="archive-controls__group">
+              <p className="section-label">Sort</p>
+              <div className="archive-tabs">
+                {[
+                  { value: "canon", label: "Canon" },
+                  { value: "newest", label: "Newest" },
+                  { value: "needs-verification", label: "Needs verification" }
+                ].map((item) => (
+                  <Link
+                    className={`archive-tab${query.sort === item.value ? " archive-tab--active" : ""}`}
+                    href={buildArchiveHref(query, { sort: item.value as typeof query.sort })}
+                    key={item.value}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="archive-controls__group">
+              <p className="section-label">Medium</p>
+              <div className="archive-chip-row">
+                {taxonomy.mediums.map((medium) => (
+                  <Link
+                    className={`archive-chip${query.medium === medium ? " archive-chip--active" : ""}`}
+                    href={buildArchiveHref(query, { medium: query.medium === medium ? null : medium })}
+                    key={medium}
+                  >
+                    {formatMediumLabel(medium)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="archive-controls__group">
+              <p className="section-label">Variant</p>
+              <div className="archive-chip-row">
+                {taxonomy.nameVariants.map((variant) => (
+                  <Link
+                    className={`archive-chip${query.variant === variant ? " archive-chip--active" : ""}`}
+                    href={buildArchiveHref(query, { variant: query.variant === variant ? null : variant })}
+                    key={variant}
+                  >
+                    {formatVariantLabel(variant)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="archive-controls__group">
+              <p className="section-label">Decade</p>
+              <div className="archive-chip-row">
+                {taxonomy.eraTags.map((era) => (
+                  <Link
+                    className={`archive-chip${query.decade === era ? " archive-chip--active" : ""}`}
+                    href={buildArchiveHref(query, { decade: query.decade === era ? null : era })}
+                    key={era}
+                  >
+                    {era}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="archive-controls__group">
+              <p className="section-label">Status</p>
+              <div className="archive-chip-row">
+                {taxonomy.publicRecordStatuses.map((status) => (
+                  <Link
+                    className={`archive-chip${query.status === status ? " archive-chip--active" : ""}`}
+                    href={buildArchiveHref(query, { status: query.status === status ? null : status })}
+                    key={status}
+                  >
+                    {formatVerificationLabel(status)}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <aside className="home-hero__stats">
-          <p className="kicker">Current filing</p>
-          <ul className="stat-list">
-            <li>
-              <strong>{publishedEntries.length}</strong>
-              <span>published entries</span>
-            </li>
-            <li>
-              <strong>{homepageCollections.length}</strong>
-              <span>editorial shelves featured here</span>
-            </li>
-            <li>
-              <strong>3</strong>
-              <span>media lanes in scope</span>
-            </li>
-          </ul>
-        </aside>
-      </section>
 
-      {spotlightEntry ? (
-        <section className="stack">
-          <SectionHeader
-            eyebrow="Spotlight"
-            title="One Steve to start with"
-            description="The archive should feel navigable fast. This is the cleanest first card in the cabinet."
-          />
-          <EntryCard entry={spotlightEntry} variant="featured" />
+          <div className="archive-list-header">
+            <p className="section-label">Archive</p>
+            <div className="archive-list-header__right">
+              <p>{archiveEntries.length} records on view</p>
+              {hasActiveArchiveFilters(query) ? (
+                <Link className="text-link" href="/">
+                  Clear filing state
+                </Link>
+              ) : null}
+            </div>
+          </div>
+
+          {archiveEntries.length ? (
+            <div className="archive-list">
+              {archiveEntries.map((entry, index) => (
+                <div className="archive-list__item" key={entry.id}>
+                  <RecordRow entry={entry} />
+                  {inlineCollection && index === 4 ? <CollectionInlineCard collection={inlineCollection} /> : null}
+                  {secondaryInlineCollection && index === 8 ? (
+                    <CollectionInlineCard collection={secondaryInlineCollection} />
+                  ) : null}
+                  {index === Math.max(1, archiveEntries.length - 2) ? (
+                    <aside className="archive-maintenance">
+                      <p className="section-label">Archive maintenance</p>
+                      <h2>Missing a Steve?</h2>
+                      <p>
+                        Commercial Steves, one-episode Stevens, and poorly documented sightings are the point of the
+                        submission system.
+                      </p>
+                      <Link className="text-link" href="/submit">
+                        Report a Steve
+                      </Link>
+                    </aside>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <section className="archive-empty">
+              <p className="section-label">No records found</p>
+              <h2>No Steve matched this filing state.</h2>
+              <p>Try removing a filter, or search by title, performer, or a looser variant.</p>
+              <Link className="text-link" href="/">
+                Clear the archive query
+              </Link>
+            </section>
+          )}
         </section>
-      ) : null}
 
-      <section className="stack">
-        <SectionHeader
-          eyebrow="Featured Steves"
-          title="Canonical entries worth opening first"
-          description="A starter shelf of Steves that explain the range, tone, and usefulness of the archive."
-        />
-        <div className="grid grid--two">
-          {featuredEntries.map((entry) => (
-            <EntryCard entry={entry} key={entry.id} />
-          ))}
-        </div>
-      </section>
+        <aside className="archive-rail">
+          <section className="rail-card">
+            <p className="section-label">Method</p>
+            <h2>The archive is public. The judgment is editorial.</h2>
+            <p>Each record keeps its certainty level visible instead of pretending every sighting is equally settled.</p>
+            <Link className="text-link" href="/method">
+              Read the method
+            </Link>
+          </section>
 
-      <section className="stack">
-        <SectionHeader
-          eyebrow="Recent additions"
-          title="Freshly filed"
-          description="Newer cards in the cabinet, sorted by when they entered the archive."
-        />
-        <div className="grid grid--two">
-          {recentEntries.map((entry) => (
-            <EntryCard entry={entry} key={entry.id} variant="compact" />
-          ))}
-        </div>
-      </section>
+          <section className="rail-card">
+            <p className="section-label">Unresolved sightings</p>
+            <ul className="rail-list">
+              {unresolvedEntries.map((entry) => (
+                <li key={entry.id}>
+                  <Link href={`/steves/${entry.slug}`}>{entry.displayName}</Link>
+                  <span>{formatVerificationLabel(entry.verificationStatus)}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-      <section className="stack">
-        <SectionHeader
-          eyebrow="Browse cues"
-          title="Open a drawer"
-          description="Small routes into the archive by medium, name shape, and era."
-        />
-        <div className="browse-cue-grid">
-          {browseCueGroups.map((group) => (
-            <article className="browse-cue-card" key={group.title}>
-              <h3>{group.title}</h3>
-              <ul className="browse-cue-card__list">
-                {group.items.map((item) => (
-                  <li key={`${group.title}-${item.label}`}>
-                    <Link href={item.href}>
-                      <span>{item.label}</span>
-                      <strong>{item.count}</strong>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="stack">
-        <SectionHeader
-          eyebrow="Editorial shelves"
-          title="Collections that make the archive feel deeper than it is"
-          description="Authored groupings, not dressed-up tag pages."
-        />
-        <div className="grid grid--three">
-          {homepageCollections.map((collection) => (
-            <CollectionCard collection={collection} key={collection.id} />
-          ))}
-        </div>
-      </section>
-
-      <section className="submission-cta">
-        <p className="submission-cta__eyebrow">Archive maintenance</p>
-        <h2>Missing a Steve, Stephen, Steven, or Stevie?</h2>
-        <p>
-          The filing system is intentionally narrow, not finished. If something obvious is absent, the archive should hear about it.
-        </p>
-        <Link className="button-link" href="/submit">
-          Submit a missing Steve
-        </Link>
-      </section>
-    </SiteShell>
+          {railCollection ? (
+            <section className="rail-card">
+              <p className="section-label">Collection</p>
+              <h2>
+                <Link href={`/collections/${railCollection.slug}`}>{railCollection.title}</Link>
+              </h2>
+              <p>{railCollection.dek}</p>
+            </section>
+          ) : null}
+        </aside>
+      </div>
+    </div>
   );
 }

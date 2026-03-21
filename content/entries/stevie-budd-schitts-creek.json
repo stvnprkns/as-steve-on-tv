@@ -11,6 +11,7 @@
   "yearStart": 2015,
   "yearEnd": 2020,
   "actorOrPerson": "Emily Hampshire",
+  "summary": "Deadpan Stevie whose low-key steadiness keeps the archive from collapsing into pure chaos.",
   "synopsis": "A deadpan motel operator whose Stevie register is cooler and more observational than chaotic.",
   "editorialBlurb": "Stevie Budd carries a quieter form of name power. She is dry, grounded, and sharply responsive to the ridiculousness around her. The result is a Stevie who feels less like a brand and more like an atmospheric pressure system: low-key, stabilizing, and impossible to mistake for anyone else.",
   "whyItMatters": "She proves the index cannot collapse Steve-derived names into one gendered or tonal lane. Stevie has its own chemistry, and this is one of the clearest modern examples.",
@@ -24,8 +25,20 @@
   "collectionIds": ["stevens-with-gravity"],
   "status": "published",
   "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 4,
+    "disputes": 0,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Character overview",
+      "url": "https://example.com/evidence/stevie-budd-character"
+    }
+  ],
+  "appearanceContext": "Core ensemble Stevie whose observational calm becomes one of the show's most reliable tonal anchors.",
   "sourceNotes": ["Core Stevie example with strong modern recognition."],
   "createdAt": "2026-03-15T12:04:00Z",
   "updatedAt": "2026-03-15T12:04:00Z"
 }
-

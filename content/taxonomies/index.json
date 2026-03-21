@@ -3,10 +3,11 @@
   "mediums": ["tv", "film", "commercial"],
   "entryTypes": ["character", "person", "persona"],
   "contentStatuses": ["draft", "review", "published", "withheld", "deprecated"],
-  "moderationStatuses": ["pending_review", "accepted", "rejected", "merged", "needs_more_evidence"],
+  "moderationStatuses": ["pending_review", "under_review", "accepted", "rejected", "merged", "needs_more_evidence"],
   "collectionTypes": ["editorial", "ranked_editorial", "archetype", "seasonal", "starter_pack"],
-  "submissionTypes": ["new_entry", "correction", "dispute"],
+  "submissionTypes": ["report", "confirm", "dispute", "evidence", "correction"],
   "confidenceLevels": ["high", "medium", "disputed"],
+  "publicRecordStatuses": ["verified", "community_confirmed", "needs_verification", "disputed", "corrected"],
   "steveEnergyLevels": ["steady", "chaotic", "magnetic", "weaponized", "mythic"],
   "archetypeTags": [
     "chaos-engine",
@@ -25,4 +26,3 @@
   "eraTags": ["1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s", "2020s"],
   "toneTags": ["earnest", "chaotic", "wholesome", "slick", "melancholy", "absurd", "iconic", "warm", "deadpan", "intense"]
 }
-

@@ -1,37 +1,59 @@
 import { SubmissionForm } from "@/src/components/submission/submission-form";
-import { getAllSubmissions } from "@/src/lib/content";
+import { isArchiveActionType } from "@/src/lib/archive";
+import { getAllSubmissions, getEntryBySlug, getTaxonomy } from "@/src/lib/content";
 import { buildMetadata } from "@/src/lib/seo/metadata";
 
 export const metadata = buildMetadata({
   title: "Submit a Steve | As Steve on TV",
-  description: "A stubbed submission route backed by typed fixture data and moderation statuses."
+  description: "Report a Steve, confirm a sighting, dispute a record, add evidence, or suggest a correction."
 });
 
-export default async function SubmitPage() {
-  const submissions = await getAllSubmissions();
+export default async function SubmitPage({
+  searchParams
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = (await searchParams) ?? {};
+  const action = Array.isArray(params.action) ? params.action[0] : params.action;
+  const entrySlug = Array.isArray(params.entry) ? params.entry[0] : params.entry;
+  const [submissions, entry, taxonomy] = await Promise.all([
+    getAllSubmissions(),
+    entrySlug ? getEntryBySlug(entrySlug) : Promise.resolve(null),
+    getTaxonomy()
+  ]);
+  const intakeType = isArchiveActionType(action) ? action : "report";
 
   return (
-    <div className="stack">
-      <div className="section-heading">
+    <div className="document-page">
+      <section className="document-card">
+        <p className="section-label">Submission</p>
         <h1>Submit a Steve</h1>
-        <p>This route is intentionally light. The schema and review states exist before persistence wiring begins.</p>
-      </div>
-      <SubmissionForm />
-      <section className="stack">
-        <div className="section-heading">
+        <p>
+          Public submissions expand the archive. Editorial review decides what becomes canonical, how certainty is described,
+          and which records remain unresolved.
+        </p>
+      </section>
+
+      <SubmissionForm entry={entry} initialType={intakeType} mediums={taxonomy.mediums} variants={taxonomy.nameVariants} />
+
+      <section className="document-card">
+        <div className="document-card__header">
+          <p className="section-label">Current queue</p>
           <h2>Fixture submissions</h2>
-          <p>Development examples that prove the moderation model.</p>
+          <p>These sample items prove the moderation language and archive action model.</p>
         </div>
-        <div className="grid grid--two">
+        <div className="queue-list">
           {submissions.map((submission) => (
-            <article className="card" key={submission.id}>
-              <div className="card__meta">
+            <article className="queue-item" key={submission.id}>
+              <div className="queue-item__topline">
                 <span>{submission.submissionType}</span>
                 <span>{submission.status}</span>
               </div>
-              <h3 className="card__title">{submission.proposedName}</h3>
-              <p className="card__subtitle">{submission.titleOfWork}</p>
-              <p className="card__body">{submission.notes}</p>
+              <h3>{submission.subjectName}</h3>
+              <p>
+                {submission.titleOfWork} · {submission.medium} · {submission.approximateYear}
+              </p>
+              <p>{submission.whatWasSeen}</p>
             </article>
           ))}
         </div>
@@ -39,4 +61,3 @@ export default async function SubmitPage() {
     </div>
   );
 }
-

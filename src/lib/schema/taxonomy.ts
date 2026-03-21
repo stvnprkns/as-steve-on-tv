@@ -12,6 +12,7 @@ export const contentStatuses = [
 ] as const;
 export const moderationStatuses = [
   "pending_review",
+  "under_review",
   "accepted",
   "rejected",
   "merged",
@@ -24,8 +25,15 @@ export const collectionTypes = [
   "seasonal",
   "starter_pack"
 ] as const;
-export const submissionTypes = ["new_entry", "correction", "dispute"] as const;
+export const submissionTypes = ["report", "confirm", "dispute", "evidence", "correction"] as const;
 export const confidenceLevels = ["high", "medium", "disputed"] as const;
+export const publicRecordStatuses = [
+  "verified",
+  "community_confirmed",
+  "needs_verification",
+  "disputed",
+  "corrected"
+] as const;
 export const steveEnergyLevels = [
   "steady",
   "chaotic",
@@ -78,6 +86,7 @@ export const moderationStatusSchema = z.enum(moderationStatuses);
 export const collectionTypeSchema = z.enum(collectionTypes);
 export const submissionTypeSchema = z.enum(submissionTypes);
 export const confidenceSchema = z.enum(confidenceLevels);
+export const publicRecordStatusSchema = z.enum(publicRecordStatuses);
 export const steveEnergySchema = z.enum(steveEnergyLevels);
 export const archetypeTagSchema = z.enum(archetypeTags);
 export const eraTagSchema = z.enum(eraTags);
@@ -93,6 +102,7 @@ export const taxonomyDataSchema = z
     collectionTypes: z.array(collectionTypeSchema),
     submissionTypes: z.array(submissionTypeSchema),
     confidenceLevels: z.array(confidenceSchema),
+    publicRecordStatuses: z.array(publicRecordStatusSchema),
     steveEnergyLevels: z.array(steveEnergySchema),
     archetypeTags: z.array(archetypeTagSchema),
     eraTags: z.array(eraTagSchema),
@@ -108,9 +118,9 @@ export type ModerationStatus = z.infer<typeof moderationStatusSchema>;
 export type CollectionType = z.infer<typeof collectionTypeSchema>;
 export type SubmissionType = z.infer<typeof submissionTypeSchema>;
 export type Confidence = z.infer<typeof confidenceSchema>;
+export type PublicRecordStatus = z.infer<typeof publicRecordStatusSchema>;
 export type SteveEnergy = z.infer<typeof steveEnergySchema>;
 export type ArchetypeTag = z.infer<typeof archetypeTagSchema>;
 export type EraTag = z.infer<typeof eraTagSchema>;
 export type ToneTag = z.infer<typeof toneTagSchema>;
 export type TaxonomyData = z.infer<typeof taxonomyDataSchema>;
-

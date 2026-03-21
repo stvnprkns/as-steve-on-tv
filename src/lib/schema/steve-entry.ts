@@ -8,6 +8,7 @@ import {
   eraTagSchema,
   mediumSchema,
   nameVariantSchema,
+  publicRecordStatusSchema,
   steveEnergySchema,
   toneTagSchema
 } from "@/src/lib/schema/taxonomy";
@@ -33,6 +34,7 @@ export const steveEntrySchema = z
     yearStart: z.number().int().gte(1950).lte(2100),
     yearEnd: z.number().int().gte(1950).lte(2100).optional(),
     actorOrPerson: z.string().min(2).max(160),
+    summary: z.string().min(20).max(200),
     synopsis: z.string().min(30).max(320),
     editorialBlurb: z.string().min(80).max(700),
     whyItMatters: z.string().min(40).max(400),
@@ -46,6 +48,26 @@ export const steveEntrySchema = z
     collectionIds: z.array(idSchema).default([]),
     status: contentStatusSchema,
     confidence: confidenceSchema,
+    verificationStatus: publicRecordStatusSchema,
+    communitySignals: z
+      .object({
+        confirmations: z.number().int().gte(0),
+        disputes: z.number().int().gte(0),
+        evidenceLinks: z.number().int().gte(0)
+      })
+      .strict(),
+    evidenceLinks: z
+      .array(
+        z
+          .object({
+            label: z.string().min(2).max(120),
+            url: z.string().url()
+          })
+          .strict()
+      )
+      .default([]),
+    appearanceContext: z.string().min(12).max(280).optional(),
+    notesOnUncertainty: z.string().min(12).max(280).optional(),
     sourceNotes: stringArraySchema.default([]),
     image: optionalImageSchema.optional()
   })

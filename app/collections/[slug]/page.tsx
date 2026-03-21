@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { SteveCard } from "@/src/components/cards/steve-card";
+import { RecordRow } from "@/src/components/archive/record-row";
 import { getAllCollections, getAllEntries, getCollectionBySlug } from "@/src/lib/content";
 import { getPublishedEntries } from "@/src/lib/content/selectors";
 import { buildMetadata } from "@/src/lib/seo/metadata";
@@ -38,9 +38,9 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
   const entries = publishedEntries.filter((entry) => collection.entryIds.includes(entry.id));
 
   return (
-    <div className="stack">
-      <section className="detail-panel">
-        <p className="kicker">{collection.collectionType.replaceAll("_", " ")}</p>
+    <div className="document-page">
+      <section className="document-card">
+        <p className="section-label">{collection.collectionType.replaceAll("_", " ")}</p>
         <h1>{collection.title}</h1>
         <p>{collection.dek}</p>
         <p>{collection.thesis}</p>
@@ -50,14 +50,15 @@ export default async function CollectionPage({ params }: { params: Promise<{ slu
           </p>
         ) : null}
       </section>
-      <section className="stack">
-        <div className="section-heading">
-          <h2>Collection entries</h2>
-          <p>{entries.length} entries in this editorial object.</p>
+
+      <section className="document-card">
+        <div className="document-card__header">
+          <p className="section-label">Collection entries</p>
+          <h2>{entries.length} records in view</h2>
         </div>
-        <div className="grid grid--three">
+        <div className="stack">
           {entries.map((entry) => (
-            <SteveCard entry={entry} key={entry.id} />
+            <RecordRow compact entry={entry} key={entry.id} showActions={false} />
           ))}
         </div>
       </section>

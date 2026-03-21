@@ -11,6 +11,7 @@
   "yearStart": 2011,
   "yearEnd": 2019,
   "actorOrPerson": "Chris Evans",
+  "summary": "Blockbuster Steve whose sincerity survives scale, propaganda, and franchise inflation.",
   "synopsis": "A blockbuster Steve whose earnestness somehow survives scale, myth, and military iconography.",
   "editorialBlurb": "Steve Rogers is a useful corrective for anyone who thinks the archive is only interested in nuisance Steves. This is a blockbuster Steve built on moral clarity, physical transformation, and nearly impossible sincerity. The name remains plain even while the mythology balloons around it, which is part of what makes the character work.",
   "whyItMatters": "He demonstrates that Steve can function as the emotional center of a giant franchise without losing the grounded quality that makes the name readable in the first place.",
@@ -24,8 +25,24 @@
   "collectionIds": ["movie-steves-with-aura"],
   "status": "published",
   "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 9,
+    "disputes": 0,
+    "evidenceLinks": 2
+  },
+  "evidenceLinks": [
+    {
+      "label": "Film credit reference",
+      "url": "https://example.com/evidence/steve-rogers-first-avenger"
+    },
+    {
+      "label": "Franchise timeline note",
+      "url": "https://example.com/evidence/mcu-steve-rogers"
+    }
+  ],
+  "appearanceContext": "Anchored to the film debut, then extended through the broader franchise arc without losing the plainness of Steve.",
   "sourceNotes": ["Primary MCU Steve entry anchored to the film lane and carried across the franchise arc."],
   "createdAt": "2026-03-15T12:10:00Z",
   "updatedAt": "2026-03-15T12:10:00Z"
 }
-

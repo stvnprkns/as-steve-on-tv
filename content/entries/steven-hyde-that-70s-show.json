@@ -11,6 +11,7 @@
   "yearStart": 1998,
   "yearEnd": 2006,
   "actorOrPerson": "Danny Masterson",
+  "summary": "Hard-edged Steven who gives the archive one of its clearest gravity-over-chaos cases.",
   "synopsis": "A basement philosopher who brought cooler, harder edges to late-network Stevenhood.",
   "editorialBlurb": "Steven Hyde belongs to a particularly durable Steven lane: the too-knowing, too-young authority skeptic who makes the room feel rougher and more adult. He is less cuddly than many television Steves and more controlled than a classic chaos engine, which gives the name a sharper silhouette.",
   "whyItMatters": "He expands the index beyond soft or comic Steve energy and helps define the steely older-brother branch of televised Steven.",
@@ -24,8 +25,20 @@
   "collectionIds": ["stevens-with-gravity", "nostalgia-core-steves"],
   "status": "published",
   "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 5,
+    "disputes": 0,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Character and series reference",
+      "url": "https://example.com/evidence/steven-hyde-series"
+    }
+  ],
+  "appearanceContext": "Main ensemble Steven whose cynical, low-register presence sharpens the room instead of exploding it.",
   "sourceNotes": ["Main cast Steven archetype with durable cultural recognition."],
   "createdAt": "2026-03-15T12:03:00Z",
   "updatedAt": "2026-03-15T12:03:00Z"
 }
-

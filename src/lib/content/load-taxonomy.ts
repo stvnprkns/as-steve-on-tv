@@ -11,6 +11,7 @@ import {
   mediums,
   moderationStatuses,
   nameVariants,
+  publicRecordStatuses,
   steveEnergyLevels,
   submissionTypes,
   taxonomyDataSchema,
@@ -41,6 +42,7 @@ export async function loadTaxonomy(): Promise<TaxonomyData> {
   assertExactMatch("collectionTypes", parsed.collectionTypes, collectionTypes);
   assertExactMatch("submissionTypes", parsed.submissionTypes, submissionTypes);
   assertExactMatch("confidenceLevels", parsed.confidenceLevels, confidenceLevels);
+  assertExactMatch("publicRecordStatuses", parsed.publicRecordStatuses, publicRecordStatuses);
   assertExactMatch("steveEnergyLevels", parsed.steveEnergyLevels, steveEnergyLevels);
   assertExactMatch("archetypeTags", parsed.archetypeTags, archetypeTags);
   assertExactMatch("eraTags", parsed.eraTags, eraTags);
@@ -48,4 +50,3 @@ export async function loadTaxonomy(): Promise<TaxonomyData> {
 
   return parsed;
 }
-
