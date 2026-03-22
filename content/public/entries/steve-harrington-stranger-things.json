@@ -1,0 +1,69 @@
+{
+  "id": "steve-harrington-stranger-things",
+  "slug": "steve-harrington-stranger-things",
+  "displayName": "Steve Harrington",
+  "canonicalName": "Steve Harrington",
+  "nameVariant": "steve",
+  "entryType": "character",
+  "medium": "tv",
+  "titleOfWork": "Stranger Things",
+  "franchise": "Stranger Things",
+  "yearStart": 2016,
+  "actorOrPerson": "Joe Keery",
+  "summary": "Hair-first Steve who matured into the archive's cleanest babysitter-warrior redemption arc.",
+  "synopsis": "An excellent hairline turned unexpected babysitter and mall-war hero.",
+  "editorialBlurb": "Steve Harrington starts as a suspiciously polished teen-bully silhouette and evolves into one of the cleanest redemptive Steve arcs of recent television. The hair gets the headlines, but the real mechanism is usefulness: he keeps showing up, taking hits, and stabilizing chaos with surprising sincerity.",
+  "whyItMatters": "He is a modern proof-of-concept for the Steve redemption arc and one of the strongest mainstream examples of a Steve becoming more beloved over time.",
+  "steveEnergy": "magnetic",
+  "archetypes": [
+    "mall-warrior",
+    "cool-older-brother"
+  ],
+  "era": "2010s",
+  "tones": [
+    "earnest",
+    "iconic",
+    "warm"
+  ],
+  "tags": [
+    "streaming-era",
+    "redemption-arc",
+    "hair",
+    "babysitter"
+  ],
+  "searchAliases": [
+    "stranger things steve",
+    "babysitter steve"
+  ],
+  "relatedEntryIds": [
+    "steven-hyde-that-70s-show",
+    "steve-urkel-family-matters"
+  ],
+  "collectionIds": [
+    "nostalgia-core-steves"
+  ],
+  "status": "published",
+  "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 7,
+    "disputes": 0,
+    "evidenceLinks": 2
+  },
+  "evidenceLinks": [
+    {
+      "label": "Series cast and character guide",
+      "url": "https://example.com/evidence/stranger-things-steve"
+    },
+    {
+      "label": "Episode run reference",
+      "url": "https://example.com/evidence/stranger-things-episodes"
+    }
+  ],
+  "appearanceContext": "Recurring across the core series, with the later seasons sharpening his babysitter-war-horse role.",
+  "sourceNotes": [
+    "Appears across the full core run of Stranger Things."
+  ],
+  "createdAt": "2026-03-15T12:02:00Z",
+  "updatedAt": "2026-03-15T12:02:00Z"
+}

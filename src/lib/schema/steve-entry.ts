@@ -14,6 +14,7 @@ import {
 } from "@/src/lib/schema/taxonomy";
 import {
   idSchema,
+  isoDateTimeSchema,
   optionalImageSchema,
   slugSchema,
   stringArraySchema,
@@ -69,6 +70,16 @@ export const steveEntrySchema = z
     appearanceContext: z.string().min(12).max(280).optional(),
     notesOnUncertainty: z.string().min(12).max(280).optional(),
     sourceNotes: stringArraySchema.default([]),
+    externalRefs: z
+      .object({
+        imdbTitleId: z.string().min(2).max(32).optional(),
+        imdbNameId: z.string().min(2).max(32).optional(),
+        secondaryId: z.string().min(2).max(64).optional()
+      })
+      .strict()
+      .optional(),
+    derivedFromCandidateId: idSchema.optional(),
+    lastVerifiedAt: isoDateTimeSchema.optional(),
     image: optionalImageSchema.optional()
   })
   .merge(timestampFieldsSchema)

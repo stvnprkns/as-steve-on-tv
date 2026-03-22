@@ -1,0 +1,66 @@
+{
+  "id": "steve-zissou-the-life-aquatic",
+  "slug": "steve-zissou-the-life-aquatic",
+  "displayName": "Steve Zissou",
+  "canonicalName": "Steve Zissou",
+  "nameVariant": "steve",
+  "entryType": "character",
+  "medium": "film",
+  "titleOfWork": "The Life Aquatic with Steve Zissou",
+  "franchise": "The Life Aquatic",
+  "yearStart": 2004,
+  "actorOrPerson": "Bill Murray",
+  "summary": "Melancholy auteur-captain Steve, filed under self-mythology, grief, and expensive knitwear.",
+  "synopsis": "A melancholy auteur-captain whose Steve energy arrives wrapped in vanity, grief, and excellent knitwear.",
+  "editorialBlurb": "Steve Zissou is what happens when Steve becomes an aging artistic institution unto himself. He is managerial, theatrical, insecure, and still somehow grand enough to pull the viewer into his weather. It is a rarer movie Steve lane: less brute-force nuisance, more collapsing self-mythology.",
+  "whyItMatters": "He broadens the archive toward high-design, auteur-coded Steve energy and proves the name can carry loneliness as well as comedy.",
+  "steveEnergy": "magnetic",
+  "archetypes": [
+    "auteur-captain",
+    "outsider-icon"
+  ],
+  "era": "2000s",
+  "tones": [
+    "melancholy",
+    "absurd",
+    "iconic"
+  ],
+  "tags": [
+    "wes-anderson",
+    "ocean",
+    "captain",
+    "self-mythology"
+  ],
+  "searchAliases": [
+    "life aquatic steve",
+    "zissou"
+  ],
+  "relatedEntryIds": [
+    "steven-hyde-that-70s-show",
+    "steve-stifler-american-pie"
+  ],
+  "collectionIds": [
+    "movie-steves-with-aura",
+    "stevens-with-gravity"
+  ],
+  "status": "published",
+  "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 4,
+    "disputes": 0,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Film and character reference",
+      "url": "https://example.com/evidence/steve-zissou-film"
+    }
+  ],
+  "appearanceContext": "Title character in a single film, but with enough cultural silhouette to act like an entire Steve subgenre.",
+  "sourceNotes": [
+    "Title character in The Life Aquatic with Steve Zissou."
+  ],
+  "createdAt": "2026-03-15T12:06:00Z",
+  "updatedAt": "2026-03-15T12:06:00Z"
+}

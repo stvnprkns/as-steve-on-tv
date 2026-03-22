@@ -1,5 +1,6 @@
 import { buildSearchIndex } from "@/src/lib/search/build-search-index";
 import { searchEntries } from "@/src/lib/search/search-entries";
+import type { SearchDocument } from "@/src/lib/search/search-types";
 import type {
   Collection,
   EraTag,
@@ -169,12 +170,17 @@ function getNeedsVerificationWeight(status: PublicRecordStatus) {
   }
 }
 
-export function getArchiveEntries(entries: SteveEntry[], collections: Collection[], query: ArchiveQuery) {
+export function getArchiveEntries(
+  entries: SteveEntry[],
+  collections: Collection[],
+  query: ArchiveQuery,
+  searchDocuments?: SearchDocument[]
+) {
   const publishedEntries = getPublishedEntries(entries);
   const matchedRank = new Map<string, number>();
 
   if (query.q) {
-    const results = searchEntries(query.q, buildSearchIndex(publishedEntries, collections));
+    const results = searchEntries(query.q, searchDocuments ?? buildSearchIndex(publishedEntries, collections));
     results.entries.forEach((result, index) => matchedRank.set(result.id, index));
   }
 

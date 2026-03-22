@@ -1,0 +1,1389 @@
+{
+  "generatedAt": "2026-03-21T20:17:59.862Z",
+  "counts": {
+    "total": 11,
+    "verified": 9,
+    "unresolved": 2,
+    "latestFiledAt": "2026-03-15T12:10:00Z"
+  },
+  "entries": [
+    {
+      "id": "steve-burns-blues-clues",
+      "slug": "steve-burns-blues-clues",
+      "displayName": "Steve",
+      "canonicalName": "Steve Burns",
+      "nameVariant": "steve",
+      "entryType": "person",
+      "medium": "tv",
+      "titleOfWork": "Blue's Clues",
+      "franchise": "Blue's Clues",
+      "yearStart": 1996,
+      "yearEnd": 2002,
+      "actorOrPerson": "Steve Burns",
+      "summary": "Patient host Steve, filed under children's television and unusual cultural trust.",
+      "synopsis": "A striped-shirt host whose calm curiosity made Steve feel unusually trustworthy.",
+      "editorialBlurb": "Steve from Blue's Clues is one of the gentlest Steve formulations in television history. He does not dominate a room; he invites it to slow down. The performance is warm, open, and so specific to late-1990s childhood that the name Steve still carries a mild educational glow for an entire generation.",
+      "whyItMatters": "He proves that Steve energy is not only disruptive or comic. It can also be patient, reassuring, and deeply formative.",
+      "steveEnergy": "steady",
+      "archetypes": [
+        "earnest-anchor",
+        "nostalgia-core"
+      ],
+      "era": "1990s",
+      "tones": [
+        "wholesome",
+        "warm",
+        "earnest"
+      ],
+      "tags": [
+        "kids-tv",
+        "host",
+        "nick-jr",
+        "nostalgia"
+      ],
+      "searchAliases": [
+        "blues clues steve",
+        "steve burns",
+        "striped shirt host"
+      ],
+      "relatedEntryIds": [
+        "steve-urkel-family-matters",
+        "stevie-budd-schitts-creek"
+      ],
+      "collectionIds": [
+        "nostalgia-core-steves"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 8,
+        "disputes": 0,
+        "evidenceLinks": 2
+      },
+      "evidenceLinks": [
+        {
+          "label": "Series overview and host history",
+          "url": "https://example.com/evidence/blues-clues-host-history"
+        },
+        {
+          "label": "Archive note on original run",
+          "url": "https://example.com/evidence/blues-clues-original-run"
+        }
+      ],
+      "appearanceContext": "Original on-screen host across the first six seasons, appearing as a lightly fictionalized version of himself.",
+      "sourceNotes": [
+        "Original host of Blue's Clues, appearing as a lightly fictionalized version of himself."
+      ],
+      "createdAt": "2026-03-15T12:01:00Z",
+      "updatedAt": "2026-03-15T12:01:00Z"
+    },
+    {
+      "id": "steve-harrington-stranger-things",
+      "slug": "steve-harrington-stranger-things",
+      "displayName": "Steve Harrington",
+      "canonicalName": "Steve Harrington",
+      "nameVariant": "steve",
+      "entryType": "character",
+      "medium": "tv",
+      "titleOfWork": "Stranger Things",
+      "franchise": "Stranger Things",
+      "yearStart": 2016,
+      "actorOrPerson": "Joe Keery",
+      "summary": "Hair-first Steve who matured into the archive's cleanest babysitter-warrior redemption arc.",
+      "synopsis": "An excellent hairline turned unexpected babysitter and mall-war hero.",
+      "editorialBlurb": "Steve Harrington starts as a suspiciously polished teen-bully silhouette and evolves into one of the cleanest redemptive Steve arcs of recent television. The hair gets the headlines, but the real mechanism is usefulness: he keeps showing up, taking hits, and stabilizing chaos with surprising sincerity.",
+      "whyItMatters": "He is a modern proof-of-concept for the Steve redemption arc and one of the strongest mainstream examples of a Steve becoming more beloved over time.",
+      "steveEnergy": "magnetic",
+      "archetypes": [
+        "mall-warrior",
+        "cool-older-brother"
+      ],
+      "era": "2010s",
+      "tones": [
+        "earnest",
+        "iconic",
+        "warm"
+      ],
+      "tags": [
+        "streaming-era",
+        "redemption-arc",
+        "hair",
+        "babysitter"
+      ],
+      "searchAliases": [
+        "stranger things steve",
+        "babysitter steve"
+      ],
+      "relatedEntryIds": [
+        "steven-hyde-that-70s-show",
+        "steve-urkel-family-matters"
+      ],
+      "collectionIds": [
+        "nostalgia-core-steves"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 7,
+        "disputes": 0,
+        "evidenceLinks": 2
+      },
+      "evidenceLinks": [
+        {
+          "label": "Series cast and character guide",
+          "url": "https://example.com/evidence/stranger-things-steve"
+        },
+        {
+          "label": "Episode run reference",
+          "url": "https://example.com/evidence/stranger-things-episodes"
+        }
+      ],
+      "appearanceContext": "Recurring across the core series, with the later seasons sharpening his babysitter-war-horse role.",
+      "sourceNotes": [
+        "Appears across the full core run of Stranger Things."
+      ],
+      "createdAt": "2026-03-15T12:02:00Z",
+      "updatedAt": "2026-03-15T12:02:00Z"
+    },
+    {
+      "id": "steve-holt-arrested-development",
+      "slug": "steve-holt-arrested-development",
+      "displayName": "Steve Holt",
+      "canonicalName": "Steve Holt",
+      "nameVariant": "steve",
+      "entryType": "character",
+      "medium": "tv",
+      "titleOfWork": "Arrested Development",
+      "franchise": "Arrested Development",
+      "yearStart": 2003,
+      "yearEnd": 2019,
+      "actorOrPerson": "Justin Grant Wade",
+      "summary": "Recurring all-caps Steve whose main asset is immediate, low-latency recognition.",
+      "synopsis": "An all-caps recurring Steve whose main instrument is immediate legibility.",
+      "editorialBlurb": "Steve Holt is a recurring-character masterclass in compression. He shows up already branded, already ridiculous, and already useful. The name is half the mechanism: it lands with a bluntness that lets the performance skip setup and go directly to force.",
+      "whyItMatters": "He is one of television's cleanest examples of a secondary Steve leaving an outsized footprint through exactness rather than screen time.",
+      "steveEnergy": "chaotic",
+      "archetypes": [
+        "recurring-chaos",
+        "chaos-engine"
+      ],
+      "era": "2000s",
+      "tones": [
+        "absurd",
+        "chaotic",
+        "iconic"
+      ],
+      "tags": [
+        "recurring-character",
+        "catchphrase",
+        "sitcom",
+        "jock-energy"
+      ],
+      "searchAliases": [
+        "steve holt!",
+        "arrested development steve"
+      ],
+      "relatedEntryIds": [
+        "steve-urkel-family-matters",
+        "steve-stifler-american-pie"
+      ],
+      "collectionIds": [
+        "patron-saints-of-sitcom-steve"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 6,
+        "disputes": 0,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Character reference and recurring appearances",
+          "url": "https://example.com/evidence/steve-holt-recurring"
+        }
+      ],
+      "appearanceContext": "Recurring side-character whose entrance beat and catchphrase do most of the structural work immediately.",
+      "sourceNotes": [
+        "Recurring joke-character with enduring fan recognition."
+      ],
+      "createdAt": "2026-03-15T12:08:00Z",
+      "updatedAt": "2026-03-15T12:08:00Z"
+    },
+    {
+      "id": "steve-rogers-captain-america-the-first-avenger",
+      "slug": "steve-rogers-captain-america-the-first-avenger",
+      "displayName": "Steve Rogers",
+      "canonicalName": "Steve Rogers",
+      "nameVariant": "steve",
+      "entryType": "character",
+      "medium": "film",
+      "titleOfWork": "Captain America: The First Avenger",
+      "franchise": "Marvel Cinematic Universe",
+      "yearStart": 2011,
+      "yearEnd": 2019,
+      "actorOrPerson": "Chris Evans",
+      "summary": "Blockbuster Steve whose sincerity survives scale, propaganda, and franchise inflation.",
+      "synopsis": "A blockbuster Steve whose earnestness somehow survives scale, myth, and military iconography.",
+      "editorialBlurb": "Steve Rogers is a useful corrective for anyone who thinks the archive is only interested in nuisance Steves. This is a blockbuster Steve built on moral clarity, physical transformation, and nearly impossible sincerity. The name remains plain even while the mythology balloons around it, which is part of what makes the character work.",
+      "whyItMatters": "He demonstrates that Steve can function as the emotional center of a giant franchise without losing the grounded quality that makes the name readable in the first place.",
+      "steveEnergy": "mythic",
+      "archetypes": [
+        "earnest-anchor",
+        "outsider-icon"
+      ],
+      "era": "2010s",
+      "tones": [
+        "earnest",
+        "iconic",
+        "intense"
+      ],
+      "tags": [
+        "superhero",
+        "franchise",
+        "blockbuster",
+        "captain-america"
+      ],
+      "searchAliases": [
+        "captain america steve",
+        "steve rogers marvel"
+      ],
+      "relatedEntryIds": [
+        "steve-zissou-the-life-aquatic",
+        "steve-harrington-stranger-things"
+      ],
+      "collectionIds": [
+        "movie-steves-with-aura"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 9,
+        "disputes": 0,
+        "evidenceLinks": 2
+      },
+      "evidenceLinks": [
+        {
+          "label": "Film credit reference",
+          "url": "https://example.com/evidence/steve-rogers-first-avenger"
+        },
+        {
+          "label": "Franchise timeline note",
+          "url": "https://example.com/evidence/mcu-steve-rogers"
+        }
+      ],
+      "appearanceContext": "Anchored to the film debut, then extended through the broader franchise arc without losing the plainness of Steve.",
+      "sourceNotes": [
+        "Primary MCU Steve entry anchored to the film lane and carried across the franchise arc."
+      ],
+      "createdAt": "2026-03-15T12:10:00Z",
+      "updatedAt": "2026-03-15T12:10:00Z"
+    },
+    {
+      "id": "steve-stifler-american-pie",
+      "slug": "steve-stifler-american-pie",
+      "displayName": "Steve Stifler",
+      "canonicalName": "Steve Stifler",
+      "nameVariant": "steve",
+      "entryType": "character",
+      "medium": "film",
+      "titleOfWork": "American Pie",
+      "franchise": "American Pie",
+      "yearStart": 1999,
+      "yearEnd": 2012,
+      "actorOrPerson": "Seann William Scott",
+      "summary": "Franchise nuisance Steve, notable for converting volume directly into screen gravity.",
+      "synopsis": "A loud, reckless franchise Steve who weaponized pure nuisance charisma.",
+      "editorialBlurb": "Steve Stifler is a movie Steve built for maximum force transmission. He is less interested in subtlety than in occupancy: once he enters the frame, the scene has to reorganize around him. The name works here as a delivery system for unembarrassed chaos and chemically amplified confidence.",
+      "whyItMatters": "He is one of the clearest big-screen examples of Steve as high-volume destabilizer and a major bridge between sitcom Steve energy and movie-franchise Steve energy.",
+      "steveEnergy": "weaponized",
+      "archetypes": [
+        "chaos-engine",
+        "slick-operator"
+      ],
+      "era": "1990s",
+      "tones": [
+        "chaotic",
+        "absurd",
+        "iconic"
+      ],
+      "tags": [
+        "teen-movie",
+        "franchise",
+        "loud",
+        "party-energy"
+      ],
+      "searchAliases": [
+        "stifler",
+        "american pie steve"
+      ],
+      "relatedEntryIds": [
+        "steve-urkel-family-matters",
+        "steve-zissou-the-life-aquatic"
+      ],
+      "collectionIds": [
+        "movie-steves-with-aura"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 5,
+        "disputes": 0,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Franchise character reference",
+          "url": "https://example.com/evidence/stifler-franchise"
+        }
+      ],
+      "appearanceContext": "Introduced in the 1999 film and then carried as the franchise's loudest Steve instrument across sequels.",
+      "sourceNotes": [
+        "Appears across multiple American Pie films."
+      ],
+      "createdAt": "2026-03-15T12:05:00Z",
+      "updatedAt": "2026-03-15T12:05:00Z"
+    },
+    {
+      "id": "steve-urkel-family-matters",
+      "slug": "steve-urkel-family-matters",
+      "displayName": "Steve Urkel",
+      "canonicalName": "Steve Urkel",
+      "nameVariant": "steve",
+      "entryType": "character",
+      "medium": "tv",
+      "titleOfWork": "Family Matters",
+      "franchise": "TGIF",
+      "yearStart": 1989,
+      "yearEnd": 1998,
+      "actorOrPerson": "Jaleel White",
+      "summary": "Benchmark sitcom Steve and a near-perfect case of a character overwhelming the host format.",
+      "synopsis": "The suspenders-first chaos engine who turned a family sitcom into a Steve event.",
+      "editorialBlurb": "Steve Urkel is not merely a sitcom Steve. He is the benchmark case for what happens when a specific kind of television nuisance becomes a cultural weather system. The voice, the gait, the gadgets, the destructive certainty: every part of the performance made Steve feel like a national category.",
+      "whyItMatters": "He changed the meaning of Steve on television and remains one of the clearest examples of a character overwhelming the format built around him.",
+      "steveEnergy": "mythic",
+      "archetypes": [
+        "chaos-engine",
+        "sitcom-neighbor",
+        "nostalgia-core"
+      ],
+      "era": "1990s",
+      "tones": [
+        "chaotic",
+        "iconic",
+        "absurd"
+      ],
+      "tags": [
+        "sitcom",
+        "glasses",
+        "catchphrase",
+        "tgif"
+      ],
+      "searchAliases": [
+        "did i do that",
+        "family matters nerd next door"
+      ],
+      "relatedEntryIds": [
+        "steve-burns-blues-clues",
+        "steve-holt-arrested-development"
+      ],
+      "collectionIds": [
+        "patron-saints-of-sitcom-steve",
+        "nostalgia-core-steves"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 12,
+        "disputes": 0,
+        "evidenceLinks": 2
+      },
+      "evidenceLinks": [
+        {
+          "label": "Series and character history",
+          "url": "https://example.com/evidence/steve-urkel-history"
+        },
+        {
+          "label": "Archive note on full-run prominence",
+          "url": "https://example.com/evidence/urkel-full-run"
+        }
+      ],
+      "appearanceContext": "Recurring neighbor who rapidly became the central force of the series and a durable TV reference point.",
+      "sourceNotes": [
+        "Recurring and later central character across the full run of Family Matters."
+      ],
+      "createdAt": "2026-03-15T12:00:00Z",
+      "updatedAt": "2026-03-15T12:00:00Z"
+    },
+    {
+      "id": "steve-zissou-the-life-aquatic",
+      "slug": "steve-zissou-the-life-aquatic",
+      "displayName": "Steve Zissou",
+      "canonicalName": "Steve Zissou",
+      "nameVariant": "steve",
+      "entryType": "character",
+      "medium": "film",
+      "titleOfWork": "The Life Aquatic with Steve Zissou",
+      "franchise": "The Life Aquatic",
+      "yearStart": 2004,
+      "actorOrPerson": "Bill Murray",
+      "summary": "Melancholy auteur-captain Steve, filed under self-mythology, grief, and expensive knitwear.",
+      "synopsis": "A melancholy auteur-captain whose Steve energy arrives wrapped in vanity, grief, and excellent knitwear.",
+      "editorialBlurb": "Steve Zissou is what happens when Steve becomes an aging artistic institution unto himself. He is managerial, theatrical, insecure, and still somehow grand enough to pull the viewer into his weather. It is a rarer movie Steve lane: less brute-force nuisance, more collapsing self-mythology.",
+      "whyItMatters": "He broadens the archive toward high-design, auteur-coded Steve energy and proves the name can carry loneliness as well as comedy.",
+      "steveEnergy": "magnetic",
+      "archetypes": [
+        "auteur-captain",
+        "outsider-icon"
+      ],
+      "era": "2000s",
+      "tones": [
+        "melancholy",
+        "absurd",
+        "iconic"
+      ],
+      "tags": [
+        "wes-anderson",
+        "ocean",
+        "captain",
+        "self-mythology"
+      ],
+      "searchAliases": [
+        "life aquatic steve",
+        "zissou"
+      ],
+      "relatedEntryIds": [
+        "steven-hyde-that-70s-show",
+        "steve-stifler-american-pie"
+      ],
+      "collectionIds": [
+        "movie-steves-with-aura",
+        "stevens-with-gravity"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 4,
+        "disputes": 0,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Film and character reference",
+          "url": "https://example.com/evidence/steve-zissou-film"
+        }
+      ],
+      "appearanceContext": "Title character in a single film, but with enough cultural silhouette to act like an entire Steve subgenre.",
+      "sourceNotes": [
+        "Title character in The Life Aquatic with Steve Zissou."
+      ],
+      "createdAt": "2026-03-15T12:06:00Z",
+      "updatedAt": "2026-03-15T12:06:00Z"
+    },
+    {
+      "id": "steven-hyde-that-70s-show",
+      "slug": "steven-hyde-that-70s-show",
+      "displayName": "Steven Hyde",
+      "canonicalName": "Steven Hyde",
+      "nameVariant": "steven",
+      "entryType": "character",
+      "medium": "tv",
+      "titleOfWork": "That '70s Show",
+      "franchise": "That '70s Show",
+      "yearStart": 1998,
+      "yearEnd": 2006,
+      "actorOrPerson": "Danny Masterson",
+      "summary": "Hard-edged Steven who gives the archive one of its clearest gravity-over-chaos cases.",
+      "synopsis": "A basement philosopher who brought cooler, harder edges to late-network Stevenhood.",
+      "editorialBlurb": "Steven Hyde belongs to a particularly durable Steven lane: the too-knowing, too-young authority skeptic who makes the room feel rougher and more adult. He is less cuddly than many television Steves and more controlled than a classic chaos engine, which gives the name a sharper silhouette.",
+      "whyItMatters": "He expands the index beyond soft or comic Steve energy and helps define the steely older-brother branch of televised Steven.",
+      "steveEnergy": "weaponized",
+      "archetypes": [
+        "cool-older-brother",
+        "outsider-icon"
+      ],
+      "era": "2000s",
+      "tones": [
+        "deadpan",
+        "slick",
+        "intense"
+      ],
+      "tags": [
+        "sitcom",
+        "basement",
+        "older-brother-energy",
+        "1970s-nostalgia"
+      ],
+      "searchAliases": [
+        "hyde that 70s show",
+        "that 70s show steven"
+      ],
+      "relatedEntryIds": [
+        "steve-harrington-stranger-things",
+        "steve-zissou-the-life-aquatic"
+      ],
+      "collectionIds": [
+        "stevens-with-gravity",
+        "nostalgia-core-steves"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 5,
+        "disputes": 0,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Character and series reference",
+          "url": "https://example.com/evidence/steven-hyde-series"
+        }
+      ],
+      "appearanceContext": "Main ensemble Steven whose cynical, low-register presence sharpens the room instead of exploding it.",
+      "sourceNotes": [
+        "Main cast Steven archetype with durable cultural recognition."
+      ],
+      "createdAt": "2026-03-15T12:03:00Z",
+      "updatedAt": "2026-03-15T12:03:00Z"
+    },
+    {
+      "id": "steven-seagal-lightning-bolt-commercial",
+      "slug": "steven-seagal-lightning-bolt-commercial",
+      "displayName": "Steven Seagal",
+      "canonicalName": "Steven Seagal",
+      "nameVariant": "steven",
+      "entryType": "person",
+      "medium": "commercial",
+      "titleOfWork": "Lightning Bolt Energy Drink Commercial",
+      "franchise": "Lightning Bolt",
+      "yearStart": 2011,
+      "actorOrPerson": "Steven Seagal",
+      "summary": "Commercial-era Steven with concentrated aura, tracked with more confidence than proof.",
+      "synopsis": "A celebrity-commercial Steven built on unpersuadable seriousness and extremely concentrated aura.",
+      "editorialBlurb": "Commercial Steven does not need much runtime if the presence is already overclocked. In this lane, Steven Seagal functions less like a spokesperson and more like a sealed object lowered into advertising. The effect is less persuasive than atmospheric, which is exactly why it belongs in the archive.",
+      "whyItMatters": "He shows how the commercial lane can preserve bizarre pockets of Steve-derived star energy without pretending they behave like conventional performances.",
+      "steveEnergy": "weaponized",
+      "archetypes": [
+        "corporate-spokesman",
+        "outsider-icon"
+      ],
+      "era": "2010s",
+      "tones": [
+        "intense",
+        "absurd",
+        "slick"
+      ],
+      "tags": [
+        "commercial",
+        "celebrity-spot",
+        "energy-drink",
+        "odd-celebrity-endorsement"
+      ],
+      "searchAliases": [
+        "steven seagal ad",
+        "lightning bolt commercial"
+      ],
+      "relatedEntryIds": [
+        "steve-zissou-the-life-aquatic",
+        "steven-hyde-that-70s-show"
+      ],
+      "collectionIds": [
+        "commercial-steves-with-unreasonably-strong-aura",
+        "stevens-with-gravity"
+      ],
+      "status": "published",
+      "confidence": "medium",
+      "verificationStatus": "needs_verification",
+      "communitySignals": {
+        "confirmations": 2,
+        "disputes": 0,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Commercial clip reference",
+          "url": "https://example.com/evidence/steven-seagal-lightning-bolt"
+        }
+      ],
+      "appearanceContext": "Short-form ad appearance remembered clearly enough to file, but not yet supported by multiple stable sources.",
+      "notesOnUncertainty": "The appearance is credible and specific, but the surviving source trail is thinner than the archive prefers for a fully settled commercial record.",
+      "sourceNotes": [
+        "Commercial lane example chosen for its unusually concentrated Steven presence."
+      ],
+      "createdAt": "2026-03-15T12:07:00Z",
+      "updatedAt": "2026-03-15T12:07:00Z"
+    },
+    {
+      "id": "stevie-budd-schitts-creek",
+      "slug": "stevie-budd-schitts-creek",
+      "displayName": "Stevie Budd",
+      "canonicalName": "Stevie Budd",
+      "nameVariant": "stevie",
+      "entryType": "character",
+      "medium": "tv",
+      "titleOfWork": "Schitt's Creek",
+      "franchise": "Schitt's Creek",
+      "yearStart": 2015,
+      "yearEnd": 2020,
+      "actorOrPerson": "Emily Hampshire",
+      "summary": "Deadpan Stevie whose low-key steadiness keeps the archive from collapsing into pure chaos.",
+      "synopsis": "A deadpan motel operator whose Stevie register is cooler and more observational than chaotic.",
+      "editorialBlurb": "Stevie Budd carries a quieter form of name power. She is dry, grounded, and sharply responsive to the ridiculousness around her. The result is a Stevie who feels less like a brand and more like an atmospheric pressure system: low-key, stabilizing, and impossible to mistake for anyone else.",
+      "whyItMatters": "She proves the index cannot collapse Steve-derived names into one gendered or tonal lane. Stevie has its own chemistry, and this is one of the clearest modern examples.",
+      "steveEnergy": "steady",
+      "archetypes": [
+        "deadpan-observer",
+        "earnest-anchor"
+      ],
+      "era": "2010s",
+      "tones": [
+        "deadpan",
+        "warm",
+        "melancholy"
+      ],
+      "tags": [
+        "comedy",
+        "motel",
+        "character-growth",
+        "quiet-aura"
+      ],
+      "searchAliases": [
+        "schitts creek stevie",
+        "stevie motel manager"
+      ],
+      "relatedEntryIds": [
+        "steve-burns-blues-clues",
+        "steven-hyde-that-70s-show"
+      ],
+      "collectionIds": [
+        "stevens-with-gravity"
+      ],
+      "status": "published",
+      "confidence": "high",
+      "verificationStatus": "verified",
+      "communitySignals": {
+        "confirmations": 4,
+        "disputes": 0,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Character overview",
+          "url": "https://example.com/evidence/stevie-budd-character"
+        }
+      ],
+      "appearanceContext": "Core ensemble Stevie whose observational calm becomes one of the show's most reliable tonal anchors.",
+      "sourceNotes": [
+        "Core Stevie example with strong modern recognition."
+      ],
+      "createdAt": "2026-03-15T12:04:00Z",
+      "updatedAt": "2026-03-15T12:04:00Z"
+    },
+    {
+      "id": "stevie-nicks-fajita-roundup-commercial",
+      "slug": "stevie-nicks-fajita-roundup-commercial",
+      "displayName": "Stevie Nicks",
+      "canonicalName": "Stevie Nicks",
+      "nameVariant": "stevie",
+      "entryType": "person",
+      "medium": "commercial",
+      "titleOfWork": "Fajita Roundup Restaurant Commercial",
+      "franchise": "Fajita Roundup",
+      "yearStart": 2004,
+      "actorOrPerson": "Stevie Nicks",
+      "summary": "Disputed commercial Stevie kept public so the archive can show its work around uncertainty.",
+      "synopsis": "A disputed commercial-lane Stevie whose evidence footprint is memorable but thinner than ideal.",
+      "editorialBlurb": "Some entries belong in the archive because they force the methodology to stay honest. This Stevie Nicks commercial appearance has enough circulation and specificity to merit tracking, but not enough clean sourcing to behave like a fully settled canonical record. It is compelling precisely because it asks how much aura plus evidence equals inclusion.",
+      "whyItMatters": "The archive needs room for carefully signposted uncertainty, especially in the commercial lane where ephemeral media and remembered celebrity spots can blur together.",
+      "steveEnergy": "magnetic",
+      "archetypes": [
+        "corporate-spokesman",
+        "outsider-icon"
+      ],
+      "era": "2000s",
+      "tones": [
+        "melancholy",
+        "intense",
+        "absurd"
+      ],
+      "tags": [
+        "commercial",
+        "disputed",
+        "celebrity-spot",
+        "archival-gap"
+      ],
+      "searchAliases": [
+        "stevie nicks ad",
+        "fajita roundup stevie"
+      ],
+      "relatedEntryIds": [
+        "steven-seagal-lightning-bolt-commercial",
+        "stevie-budd-schitts-creek"
+      ],
+      "collectionIds": [
+        "commercial-steves-with-unreasonably-strong-aura"
+      ],
+      "status": "published",
+      "confidence": "disputed",
+      "verificationStatus": "disputed",
+      "communitySignals": {
+        "confirmations": 1,
+        "disputes": 2,
+        "evidenceLinks": 1
+      },
+      "evidenceLinks": [
+        {
+          "label": "Circulating clip fragment",
+          "url": "https://example.com/evidence/stevie-nicks-fajita-roundup"
+        }
+      ],
+      "appearanceContext": "Remembered as a celebrity ad spot, but the surviving evidence is fragmentary and the exact campaign provenance remains unsettled.",
+      "notesOnUncertainty": "Enough evidence exists to keep the record public, but the archive is not treating the attribution as closed.",
+      "sourceNotes": [
+        "Tracked as a disputed case pending stronger source confirmation."
+      ],
+      "createdAt": "2026-03-15T12:09:00Z",
+      "updatedAt": "2026-03-15T12:09:00Z"
+    }
+  ],
+  "collections": [
+    {
+      "id": "commercial-steves-with-unreasonably-strong-aura",
+      "slug": "commercial-steves-with-unreasonably-strong-aura",
+      "title": "Commercial Steves With Unreasonably Strong Aura",
+      "dek": "A short-format lane for Steves and Stevens who somehow carry far more pressure than the ad slot requires.",
+      "thesis": "Commercials are a serious lane of Steve history because concentrated runtime can make the impression sharper, not thinner. This collection tracks the ad-world Steves whose presence remains legible long after the pitch itself has faded.",
+      "entryIds": [
+        "steven-seagal-lightning-bolt-commercial",
+        "stevie-nicks-fajita-roundup-commercial"
+      ],
+      "collectionType": "editorial",
+      "tags": [
+        "commercial",
+        "advertising",
+        "aura",
+        "archival-edge-case"
+      ],
+      "status": "published",
+      "seoTitle": "Commercial Steves With Unreasonably Strong Aura | As Steve on TV",
+      "seoDescription": "An editorial collection for the commercial lane, including strong and disputed Steve-derived ad appearances.",
+      "createdAt": "2026-03-15T12:23:00Z",
+      "updatedAt": "2026-03-15T12:23:00Z"
+    },
+    {
+      "id": "movie-steves-with-aura",
+      "slug": "movie-steves-with-aura",
+      "title": "Movie Steves With Aura",
+      "dek": "Big-screen Steves who carry enough force, vanity, nuisance, or sadness to reorganize the frame.",
+      "thesis": "Movie Steve behaves differently from television Steve. He has less time and often more charge. This collection favors film Steves who arrive with immediate silhouette and remain weirdly portable outside their original movies.",
+      "entryIds": [
+        "steve-stifler-american-pie",
+        "steve-zissou-the-life-aquatic",
+        "steve-rogers-captain-america-the-first-avenger"
+      ],
+      "collectionType": "editorial",
+      "tags": [
+        "film",
+        "aura",
+        "big-screen",
+        "performance"
+      ],
+      "status": "published",
+      "seoTitle": "Movie Steves With Aura | As Steve on TV",
+      "seoDescription": "A collection of movie and movie-adjacent Steves whose presence exceeds their runtime.",
+      "createdAt": "2026-03-15T12:22:00Z",
+      "updatedAt": "2026-03-15T12:22:00Z"
+    },
+    {
+      "id": "nostalgia-core-steves",
+      "slug": "nostalgia-core-steves",
+      "title": "Nostalgia-Core Steves",
+      "dek": "The Steves whose rerun, cable, and childhood afterlife makes them feel permanently retrievable.",
+      "thesis": "Some Steves never really leave circulation. They linger in after-school memory, cable repetition, streaming rediscovery, and quote-level recognition. This collection is less about prestige than recurrence: the Steves that keep getting found again.",
+      "entryIds": [
+        "steve-urkel-family-matters",
+        "steve-burns-blues-clues",
+        "steven-hyde-that-70s-show",
+        "steve-harrington-stranger-things"
+      ],
+      "collectionType": "editorial",
+      "tags": [
+        "nostalgia",
+        "reruns",
+        "childhood",
+        "television"
+      ],
+      "status": "published",
+      "seoTitle": "Nostalgia-Core Steves | As Steve on TV",
+      "seoDescription": "An editorial collection of Steves whose afterlife in memory and reruns keeps the archive humming.",
+      "createdAt": "2026-03-15T12:21:00Z",
+      "updatedAt": "2026-03-15T12:21:00Z"
+    },
+    {
+      "id": "stevens-with-gravity",
+      "slug": "stevens-with-gravity",
+      "title": "Stevens With Gravity",
+      "dek": "The Stevens and Stevies who slow the room down and add weight rather than pure chaos.",
+      "thesis": "Not every Steve-derived presence barrels into the frame. Some of them deepen it. This collection follows the branch of the archive where Steven or Stevie implies composure, edge, or emotional ballast instead of immediate slapstick.",
+      "entryIds": [
+        "steven-hyde-that-70s-show",
+        "stevie-budd-schitts-creek",
+        "steve-zissou-the-life-aquatic",
+        "steven-seagal-lightning-bolt-commercial"
+      ],
+      "collectionType": "archetype",
+      "tags": [
+        "steven",
+        "stevie",
+        "gravity",
+        "character-type"
+      ],
+      "status": "published",
+      "seoTitle": "Stevens With Gravity | As Steve on TV",
+      "seoDescription": "A collection of Steven and Stevie entries that bring weight, restraint, or severe aura to the archive.",
+      "createdAt": "2026-03-15T12:24:00Z",
+      "updatedAt": "2026-03-15T12:24:00Z"
+    },
+    {
+      "id": "patron-saints-of-sitcom-steve",
+      "slug": "patron-saints-of-sitcom-steve",
+      "title": "The Patron Saints of Sitcom Steve",
+      "dek": "The Steves who defined television's broadest, loudest, and most durable comic Steve signals.",
+      "thesis": "Sitcom Steve is not one thing, but it usually arrives with unusually clear pressure. The best examples either destabilize the room on contact or sharpen it through recurring force. This collection gathers the Steves whose comic utility became inseparable from their names.",
+      "entryIds": [
+        "steve-urkel-family-matters",
+        "steve-holt-arrested-development",
+        "steve-harrington-stranger-things"
+      ],
+      "collectionType": "ranked_editorial",
+      "tags": [
+        "sitcom",
+        "television",
+        "canon"
+      ],
+      "status": "published",
+      "seoTitle": "The Patron Saints of Sitcom Steve | As Steve on TV",
+      "seoDescription": "A ranked editorial collection of the Steves who most clearly defined the sitcom branch of the archive.",
+      "createdAt": "2026-03-15T12:20:00Z",
+      "updatedAt": "2026-03-15T12:20:00Z"
+    }
+  ],
+  "searchDocuments": [
+    {
+      "id": "steve-burns-blues-clues",
+      "kind": "entry",
+      "slug": "steve-burns-blues-clues",
+      "title": "Steve",
+      "subtitle": "Blue's Clues (1996)",
+      "description": "Patient host Steve, filed under children's television and unusual cultural trust.",
+      "medium": "tv",
+      "nameVariant": "steve",
+      "tags": [
+        "kids-tv",
+        "host",
+        "nick-jr",
+        "nostalgia"
+      ],
+      "searchText": "steve steve burns tv person steve 1990s steve burns blue s clues patient host steve filed under children s television and unusual cultural trust a striped shirt host whose calm curiosity made steve feel unusually trustworthy steve from blue s clues is one of the gentlest steve formulations in television history he does not dominate a room he invites it to slow down the performance is warm open and so specific to late 1990s childhood that the name steve still carries a mild educational glow for an entire generation he proves that steve energy is not only disruptive or comic it can also be patient reassuring and deeply formative original on screen host across the first six seasons appearing as a lightly fictionalized version of himself steve steve burns blue s clues patient host steve filed under children s television and unusual cultural trust blues clues steve steve burns striped shirt host kids tv host nick jr nostalgia earnest anchor nostalgia core wholesome warm earnest",
+      "keywords": [
+        "Steve",
+        "Steve Burns",
+        "Blue's Clues",
+        "Patient host Steve, filed under children's television and unusual cultural trust.",
+        "blues clues steve",
+        "steve burns",
+        "striped shirt host",
+        "kids-tv",
+        "host",
+        "nick-jr",
+        "nostalgia",
+        "earnest-anchor",
+        "nostalgia-core",
+        "wholesome",
+        "warm",
+        "earnest"
+      ],
+      "href": "/steves/steve-burns-blues-clues"
+    },
+    {
+      "id": "steve-harrington-stranger-things",
+      "kind": "entry",
+      "slug": "steve-harrington-stranger-things",
+      "title": "Steve Harrington",
+      "subtitle": "Stranger Things (2016)",
+      "description": "Hair-first Steve who matured into the archive's cleanest babysitter-warrior redemption arc.",
+      "medium": "tv",
+      "nameVariant": "steve",
+      "tags": [
+        "streaming-era",
+        "redemption-arc",
+        "hair",
+        "babysitter"
+      ],
+      "searchText": "steve harrington steve harrington tv character steve 2010s joe keery stranger things hair first steve who matured into the archive s cleanest babysitter warrior redemption arc an excellent hairline turned unexpected babysitter and mall war hero steve harrington starts as a suspiciously polished teen bully silhouette and evolves into one of the cleanest redemptive steve arcs of recent television the hair gets the headlines but the real mechanism is usefulness he keeps showing up taking hits and stabilizing chaos with surprising sincerity he is a modern proof of concept for the steve redemption arc and one of the strongest mainstream examples of a steve becoming more beloved over time recurring across the core series with the later seasons sharpening his babysitter war horse role steve harrington joe keery stranger things hair first steve who matured into the archive s cleanest babysitter warrior redemption arc stranger things steve babysitter steve streaming era redemption arc hair babysitter mall warrior cool older brother earnest iconic warm",
+      "keywords": [
+        "Steve Harrington",
+        "Joe Keery",
+        "Stranger Things",
+        "Hair-first Steve who matured into the archive's cleanest babysitter-warrior redemption arc.",
+        "stranger things steve",
+        "babysitter steve",
+        "streaming-era",
+        "redemption-arc",
+        "hair",
+        "babysitter",
+        "mall-warrior",
+        "cool-older-brother",
+        "earnest",
+        "iconic",
+        "warm"
+      ],
+      "href": "/steves/steve-harrington-stranger-things"
+    },
+    {
+      "id": "steve-holt-arrested-development",
+      "kind": "entry",
+      "slug": "steve-holt-arrested-development",
+      "title": "Steve Holt",
+      "subtitle": "Arrested Development (2003)",
+      "description": "Recurring all-caps Steve whose main asset is immediate, low-latency recognition.",
+      "medium": "tv",
+      "nameVariant": "steve",
+      "tags": [
+        "recurring-character",
+        "catchphrase",
+        "sitcom",
+        "jock-energy"
+      ],
+      "searchText": "steve holt steve holt tv character steve 2000s justin grant wade arrested development recurring all caps steve whose main asset is immediate low latency recognition an all caps recurring steve whose main instrument is immediate legibility steve holt is a recurring character masterclass in compression he shows up already branded already ridiculous and already useful the name is half the mechanism it lands with a bluntness that lets the performance skip setup and go directly to force he is one of television s cleanest examples of a secondary steve leaving an outsized footprint through exactness rather than screen time recurring side character whose entrance beat and catchphrase do most of the structural work immediately steve holt justin grant wade arrested development recurring all caps steve whose main asset is immediate low latency recognition steve holt arrested development steve recurring character catchphrase sitcom jock energy recurring chaos chaos engine absurd chaotic iconic",
+      "keywords": [
+        "Steve Holt",
+        "Justin Grant Wade",
+        "Arrested Development",
+        "Recurring all-caps Steve whose main asset is immediate, low-latency recognition.",
+        "steve holt!",
+        "arrested development steve",
+        "recurring-character",
+        "catchphrase",
+        "sitcom",
+        "jock-energy",
+        "recurring-chaos",
+        "chaos-engine",
+        "absurd",
+        "chaotic",
+        "iconic"
+      ],
+      "href": "/steves/steve-holt-arrested-development"
+    },
+    {
+      "id": "steve-rogers-captain-america-the-first-avenger",
+      "kind": "entry",
+      "slug": "steve-rogers-captain-america-the-first-avenger",
+      "title": "Steve Rogers",
+      "subtitle": "Captain America: The First Avenger (2011)",
+      "description": "Blockbuster Steve whose sincerity survives scale, propaganda, and franchise inflation.",
+      "medium": "film",
+      "nameVariant": "steve",
+      "tags": [
+        "superhero",
+        "franchise",
+        "blockbuster",
+        "captain-america"
+      ],
+      "searchText": "steve rogers steve rogers film character steve 2010s chris evans captain america the first avenger blockbuster steve whose sincerity survives scale propaganda and franchise inflation a blockbuster steve whose earnestness somehow survives scale myth and military iconography steve rogers is a useful corrective for anyone who thinks the archive is only interested in nuisance steves this is a blockbuster steve built on moral clarity physical transformation and nearly impossible sincerity the name remains plain even while the mythology balloons around it which is part of what makes the character work he demonstrates that steve can function as the emotional center of a giant franchise without losing the grounded quality that makes the name readable in the first place anchored to the film debut then extended through the broader franchise arc without losing the plainness of steve steve rogers chris evans captain america the first avenger blockbuster steve whose sincerity survives scale propaganda and franchise inflation captain america steve steve rogers marvel superhero franchise blockbuster captain america earnest anchor outsider icon earnest iconic intense",
+      "keywords": [
+        "Steve Rogers",
+        "Chris Evans",
+        "Captain America: The First Avenger",
+        "Blockbuster Steve whose sincerity survives scale, propaganda, and franchise inflation.",
+        "captain america steve",
+        "steve rogers marvel",
+        "superhero",
+        "franchise",
+        "blockbuster",
+        "captain-america",
+        "earnest-anchor",
+        "outsider-icon",
+        "earnest",
+        "iconic",
+        "intense"
+      ],
+      "href": "/steves/steve-rogers-captain-america-the-first-avenger"
+    },
+    {
+      "id": "steve-stifler-american-pie",
+      "kind": "entry",
+      "slug": "steve-stifler-american-pie",
+      "title": "Steve Stifler",
+      "subtitle": "American Pie (1999)",
+      "description": "Franchise nuisance Steve, notable for converting volume directly into screen gravity.",
+      "medium": "film",
+      "nameVariant": "steve",
+      "tags": [
+        "teen-movie",
+        "franchise",
+        "loud",
+        "party-energy"
+      ],
+      "searchText": "steve stifler steve stifler film character steve 1990s seann william scott american pie franchise nuisance steve notable for converting volume directly into screen gravity a loud reckless franchise steve who weaponized pure nuisance charisma steve stifler is a movie steve built for maximum force transmission he is less interested in subtlety than in occupancy once he enters the frame the scene has to reorganize around him the name works here as a delivery system for unembarrassed chaos and chemically amplified confidence he is one of the clearest big screen examples of steve as high volume destabilizer and a major bridge between sitcom steve energy and movie franchise steve energy introduced in the 1999 film and then carried as the franchise s loudest steve instrument across sequels steve stifler seann william scott american pie franchise nuisance steve notable for converting volume directly into screen gravity stifler american pie steve teen movie franchise loud party energy chaos engine slick operator chaotic absurd iconic",
+      "keywords": [
+        "Steve Stifler",
+        "Seann William Scott",
+        "American Pie",
+        "Franchise nuisance Steve, notable for converting volume directly into screen gravity.",
+        "stifler",
+        "american pie steve",
+        "teen-movie",
+        "franchise",
+        "loud",
+        "party-energy",
+        "chaos-engine",
+        "slick-operator",
+        "chaotic",
+        "absurd",
+        "iconic"
+      ],
+      "href": "/steves/steve-stifler-american-pie"
+    },
+    {
+      "id": "steve-urkel-family-matters",
+      "kind": "entry",
+      "slug": "steve-urkel-family-matters",
+      "title": "Steve Urkel",
+      "subtitle": "Family Matters (1989)",
+      "description": "Benchmark sitcom Steve and a near-perfect case of a character overwhelming the host format.",
+      "medium": "tv",
+      "nameVariant": "steve",
+      "tags": [
+        "sitcom",
+        "glasses",
+        "catchphrase",
+        "tgif"
+      ],
+      "searchText": "steve urkel steve urkel tv character steve 1990s jaleel white family matters benchmark sitcom steve and a near perfect case of a character overwhelming the host format the suspenders first chaos engine who turned a family sitcom into a steve event steve urkel is not merely a sitcom steve he is the benchmark case for what happens when a specific kind of television nuisance becomes a cultural weather system the voice the gait the gadgets the destructive certainty every part of the performance made steve feel like a national category he changed the meaning of steve on television and remains one of the clearest examples of a character overwhelming the format built around him recurring neighbor who rapidly became the central force of the series and a durable tv reference point steve urkel jaleel white family matters benchmark sitcom steve and a near perfect case of a character overwhelming the host format did i do that family matters nerd next door sitcom glasses catchphrase tgif chaos engine sitcom neighbor nostalgia core chaotic iconic absurd",
+      "keywords": [
+        "Steve Urkel",
+        "Jaleel White",
+        "Family Matters",
+        "Benchmark sitcom Steve and a near-perfect case of a character overwhelming the host format.",
+        "did i do that",
+        "family matters nerd next door",
+        "sitcom",
+        "glasses",
+        "catchphrase",
+        "tgif",
+        "chaos-engine",
+        "sitcom-neighbor",
+        "nostalgia-core",
+        "chaotic",
+        "iconic",
+        "absurd"
+      ],
+      "href": "/steves/steve-urkel-family-matters"
+    },
+    {
+      "id": "steve-zissou-the-life-aquatic",
+      "kind": "entry",
+      "slug": "steve-zissou-the-life-aquatic",
+      "title": "Steve Zissou",
+      "subtitle": "The Life Aquatic with Steve Zissou (2004)",
+      "description": "Melancholy auteur-captain Steve, filed under self-mythology, grief, and expensive knitwear.",
+      "medium": "film",
+      "nameVariant": "steve",
+      "tags": [
+        "wes-anderson",
+        "ocean",
+        "captain",
+        "self-mythology"
+      ],
+      "searchText": "steve zissou steve zissou film character steve 2000s bill murray the life aquatic with steve zissou melancholy auteur captain steve filed under self mythology grief and expensive knitwear a melancholy auteur captain whose steve energy arrives wrapped in vanity grief and excellent knitwear steve zissou is what happens when steve becomes an aging artistic institution unto himself he is managerial theatrical insecure and still somehow grand enough to pull the viewer into his weather it is a rarer movie steve lane less brute force nuisance more collapsing self mythology he broadens the archive toward high design auteur coded steve energy and proves the name can carry loneliness as well as comedy title character in a single film but with enough cultural silhouette to act like an entire steve subgenre steve zissou bill murray the life aquatic with steve zissou melancholy auteur captain steve filed under self mythology grief and expensive knitwear life aquatic steve zissou wes anderson ocean captain self mythology auteur captain outsider icon melancholy absurd iconic",
+      "keywords": [
+        "Steve Zissou",
+        "Bill Murray",
+        "The Life Aquatic with Steve Zissou",
+        "Melancholy auteur-captain Steve, filed under self-mythology, grief, and expensive knitwear.",
+        "life aquatic steve",
+        "zissou",
+        "wes-anderson",
+        "ocean",
+        "captain",
+        "self-mythology",
+        "auteur-captain",
+        "outsider-icon",
+        "melancholy",
+        "absurd",
+        "iconic"
+      ],
+      "href": "/steves/steve-zissou-the-life-aquatic"
+    },
+    {
+      "id": "steven-hyde-that-70s-show",
+      "kind": "entry",
+      "slug": "steven-hyde-that-70s-show",
+      "title": "Steven Hyde",
+      "subtitle": "That '70s Show (1998)",
+      "description": "Hard-edged Steven who gives the archive one of its clearest gravity-over-chaos cases.",
+      "medium": "tv",
+      "nameVariant": "steven",
+      "tags": [
+        "sitcom",
+        "basement",
+        "older-brother-energy",
+        "1970s-nostalgia"
+      ],
+      "searchText": "steven hyde steven hyde tv character steven 2000s danny masterson that 70s show hard edged steven who gives the archive one of its clearest gravity over chaos cases a basement philosopher who brought cooler harder edges to late network stevenhood steven hyde belongs to a particularly durable steven lane the too knowing too young authority skeptic who makes the room feel rougher and more adult he is less cuddly than many television steves and more controlled than a classic chaos engine which gives the name a sharper silhouette he expands the index beyond soft or comic steve energy and helps define the steely older brother branch of televised steven main ensemble steven whose cynical low register presence sharpens the room instead of exploding it steven hyde danny masterson that 70s show hard edged steven who gives the archive one of its clearest gravity over chaos cases hyde that 70s show that 70s show steven sitcom basement older brother energy 1970s nostalgia cool older brother outsider icon deadpan slick intense",
+      "keywords": [
+        "Steven Hyde",
+        "Danny Masterson",
+        "That '70s Show",
+        "Hard-edged Steven who gives the archive one of its clearest gravity-over-chaos cases.",
+        "hyde that 70s show",
+        "that 70s show steven",
+        "sitcom",
+        "basement",
+        "older-brother-energy",
+        "1970s-nostalgia",
+        "cool-older-brother",
+        "outsider-icon",
+        "deadpan",
+        "slick",
+        "intense"
+      ],
+      "href": "/steves/steven-hyde-that-70s-show"
+    },
+    {
+      "id": "steven-seagal-lightning-bolt-commercial",
+      "kind": "entry",
+      "slug": "steven-seagal-lightning-bolt-commercial",
+      "title": "Steven Seagal",
+      "subtitle": "Lightning Bolt Energy Drink Commercial (2011)",
+      "description": "Commercial-era Steven with concentrated aura, tracked with more confidence than proof.",
+      "medium": "commercial",
+      "nameVariant": "steven",
+      "tags": [
+        "commercial",
+        "celebrity-spot",
+        "energy-drink",
+        "odd-celebrity-endorsement"
+      ],
+      "searchText": "steven seagal steven seagal commercial person steven 2010s steven seagal lightning bolt energy drink commercial commercial era steven with concentrated aura tracked with more confidence than proof a celebrity commercial steven built on unpersuadable seriousness and extremely concentrated aura commercial steven does not need much runtime if the presence is already overclocked in this lane steven seagal functions less like a spokesperson and more like a sealed object lowered into advertising the effect is less persuasive than atmospheric which is exactly why it belongs in the archive he shows how the commercial lane can preserve bizarre pockets of steve derived star energy without pretending they behave like conventional performances short form ad appearance remembered clearly enough to file but not yet supported by multiple stable sources the appearance is credible and specific but the surviving source trail is thinner than the archive prefers for a fully settled commercial record steven seagal lightning bolt energy drink commercial commercial era steven with concentrated aura tracked with more confidence than proof steven seagal ad lightning bolt commercial commercial celebrity spot energy drink odd celebrity endorsement corporate spokesman outsider icon intense absurd slick",
+      "keywords": [
+        "Steven Seagal",
+        "Lightning Bolt Energy Drink Commercial",
+        "Commercial-era Steven with concentrated aura, tracked with more confidence than proof.",
+        "steven seagal ad",
+        "lightning bolt commercial",
+        "commercial",
+        "celebrity-spot",
+        "energy-drink",
+        "odd-celebrity-endorsement",
+        "corporate-spokesman",
+        "outsider-icon",
+        "intense",
+        "absurd",
+        "slick"
+      ],
+      "href": "/steves/steven-seagal-lightning-bolt-commercial"
+    },
+    {
+      "id": "stevie-budd-schitts-creek",
+      "kind": "entry",
+      "slug": "stevie-budd-schitts-creek",
+      "title": "Stevie Budd",
+      "subtitle": "Schitt's Creek (2015)",
+      "description": "Deadpan Stevie whose low-key steadiness keeps the archive from collapsing into pure chaos.",
+      "medium": "tv",
+      "nameVariant": "stevie",
+      "tags": [
+        "comedy",
+        "motel",
+        "character-growth",
+        "quiet-aura"
+      ],
+      "searchText": "stevie budd stevie budd tv character stevie 2010s emily hampshire schitt s creek deadpan stevie whose low key steadiness keeps the archive from collapsing into pure chaos a deadpan motel operator whose stevie register is cooler and more observational than chaotic stevie budd carries a quieter form of name power she is dry grounded and sharply responsive to the ridiculousness around her the result is a stevie who feels less like a brand and more like an atmospheric pressure system low key stabilizing and impossible to mistake for anyone else she proves the index cannot collapse steve derived names into one gendered or tonal lane stevie has its own chemistry and this is one of the clearest modern examples core ensemble stevie whose observational calm becomes one of the show s most reliable tonal anchors stevie budd emily hampshire schitt s creek deadpan stevie whose low key steadiness keeps the archive from collapsing into pure chaos schitts creek stevie stevie motel manager comedy motel character growth quiet aura deadpan observer earnest anchor deadpan warm melancholy",
+      "keywords": [
+        "Stevie Budd",
+        "Emily Hampshire",
+        "Schitt's Creek",
+        "Deadpan Stevie whose low-key steadiness keeps the archive from collapsing into pure chaos.",
+        "schitts creek stevie",
+        "stevie motel manager",
+        "comedy",
+        "motel",
+        "character-growth",
+        "quiet-aura",
+        "deadpan-observer",
+        "earnest-anchor",
+        "deadpan",
+        "warm",
+        "melancholy"
+      ],
+      "href": "/steves/stevie-budd-schitts-creek"
+    },
+    {
+      "id": "stevie-nicks-fajita-roundup-commercial",
+      "kind": "entry",
+      "slug": "stevie-nicks-fajita-roundup-commercial",
+      "title": "Stevie Nicks",
+      "subtitle": "Fajita Roundup Restaurant Commercial (2004)",
+      "description": "Disputed commercial Stevie kept public so the archive can show its work around uncertainty.",
+      "medium": "commercial",
+      "nameVariant": "stevie",
+      "tags": [
+        "commercial",
+        "disputed",
+        "celebrity-spot",
+        "archival-gap"
+      ],
+      "searchText": "stevie nicks stevie nicks commercial person stevie 2000s stevie nicks fajita roundup restaurant commercial disputed commercial stevie kept public so the archive can show its work around uncertainty a disputed commercial lane stevie whose evidence footprint is memorable but thinner than ideal some entries belong in the archive because they force the methodology to stay honest this stevie nicks commercial appearance has enough circulation and specificity to merit tracking but not enough clean sourcing to behave like a fully settled canonical record it is compelling precisely because it asks how much aura plus evidence equals inclusion the archive needs room for carefully signposted uncertainty especially in the commercial lane where ephemeral media and remembered celebrity spots can blur together remembered as a celebrity ad spot but the surviving evidence is fragmentary and the exact campaign provenance remains unsettled enough evidence exists to keep the record public but the archive is not treating the attribution as closed stevie nicks fajita roundup restaurant commercial disputed commercial stevie kept public so the archive can show its work around uncertainty stevie nicks ad fajita roundup stevie commercial disputed celebrity spot archival gap corporate spokesman outsider icon melancholy intense absurd",
+      "keywords": [
+        "Stevie Nicks",
+        "Fajita Roundup Restaurant Commercial",
+        "Disputed commercial Stevie kept public so the archive can show its work around uncertainty.",
+        "stevie nicks ad",
+        "fajita roundup stevie",
+        "commercial",
+        "disputed",
+        "celebrity-spot",
+        "archival-gap",
+        "corporate-spokesman",
+        "outsider-icon",
+        "melancholy",
+        "intense",
+        "absurd"
+      ],
+      "href": "/steves/stevie-nicks-fajita-roundup-commercial"
+    },
+    {
+      "id": "commercial-steves-with-unreasonably-strong-aura",
+      "kind": "collection",
+      "slug": "commercial-steves-with-unreasonably-strong-aura",
+      "title": "Commercial Steves With Unreasonably Strong Aura",
+      "subtitle": "A short-format lane for Steves and Stevens who somehow carry far more pressure than the ad slot requires.",
+      "description": "Commercials are a serious lane of Steve history because concentrated runtime can make the impression sharper, not thinner. This collection tracks the ad-world Steves whose presence remains legible long after the pitch itself has faded.",
+      "tags": [
+        "commercial",
+        "advertising",
+        "aura",
+        "archival-edge-case"
+      ],
+      "searchText": "commercial steves with unreasonably strong aura a short format lane for steves and stevens who somehow carry far more pressure than the ad slot requires commercials are a serious lane of steve history because concentrated runtime can make the impression sharper not thinner this collection tracks the ad world steves whose presence remains legible long after the pitch itself has faded commercial steves with unreasonably strong aura a short format lane for steves and stevens who somehow carry far more pressure than the ad slot requires commercials are a serious lane of steve history because concentrated runtime can make the impression sharper not thinner this collection tracks the ad world steves whose presence remains legible long after the pitch itself has faded commercial advertising aura archival edge case",
+      "keywords": [
+        "Commercial Steves With Unreasonably Strong Aura",
+        "A short-format lane for Steves and Stevens who somehow carry far more pressure than the ad slot requires.",
+        "Commercials are a serious lane of Steve history because concentrated runtime can make the impression sharper, not thinner. This collection tracks the ad-world Steves whose presence remains legible long after the pitch itself has faded.",
+        "commercial",
+        "advertising",
+        "aura",
+        "archival-edge-case"
+      ],
+      "href": "/collections/commercial-steves-with-unreasonably-strong-aura"
+    },
+    {
+      "id": "movie-steves-with-aura",
+      "kind": "collection",
+      "slug": "movie-steves-with-aura",
+      "title": "Movie Steves With Aura",
+      "subtitle": "Big-screen Steves who carry enough force, vanity, nuisance, or sadness to reorganize the frame.",
+      "description": "Movie Steve behaves differently from television Steve. He has less time and often more charge. This collection favors film Steves who arrive with immediate silhouette and remain weirdly portable outside their original movies.",
+      "tags": [
+        "film",
+        "aura",
+        "big-screen",
+        "performance"
+      ],
+      "searchText": "movie steves with aura big screen steves who carry enough force vanity nuisance or sadness to reorganize the frame movie steve behaves differently from television steve he has less time and often more charge this collection favors film steves who arrive with immediate silhouette and remain weirdly portable outside their original movies movie steves with aura big screen steves who carry enough force vanity nuisance or sadness to reorganize the frame movie steve behaves differently from television steve he has less time and often more charge this collection favors film steves who arrive with immediate silhouette and remain weirdly portable outside their original movies film aura big screen performance",
+      "keywords": [
+        "Movie Steves With Aura",
+        "Big-screen Steves who carry enough force, vanity, nuisance, or sadness to reorganize the frame.",
+        "Movie Steve behaves differently from television Steve. He has less time and often more charge. This collection favors film Steves who arrive with immediate silhouette and remain weirdly portable outside their original movies.",
+        "film",
+        "aura",
+        "big-screen",
+        "performance"
+      ],
+      "href": "/collections/movie-steves-with-aura"
+    },
+    {
+      "id": "nostalgia-core-steves",
+      "kind": "collection",
+      "slug": "nostalgia-core-steves",
+      "title": "Nostalgia-Core Steves",
+      "subtitle": "The Steves whose rerun, cable, and childhood afterlife makes them feel permanently retrievable.",
+      "description": "Some Steves never really leave circulation. They linger in after-school memory, cable repetition, streaming rediscovery, and quote-level recognition. This collection is less about prestige than recurrence: the Steves that keep getting found again.",
+      "tags": [
+        "nostalgia",
+        "reruns",
+        "childhood",
+        "television"
+      ],
+      "searchText": "nostalgia core steves the steves whose rerun cable and childhood afterlife makes them feel permanently retrievable some steves never really leave circulation they linger in after school memory cable repetition streaming rediscovery and quote level recognition this collection is less about prestige than recurrence the steves that keep getting found again nostalgia core steves the steves whose rerun cable and childhood afterlife makes them feel permanently retrievable some steves never really leave circulation they linger in after school memory cable repetition streaming rediscovery and quote level recognition this collection is less about prestige than recurrence the steves that keep getting found again nostalgia reruns childhood television",
+      "keywords": [
+        "Nostalgia-Core Steves",
+        "The Steves whose rerun, cable, and childhood afterlife makes them feel permanently retrievable.",
+        "Some Steves never really leave circulation. They linger in after-school memory, cable repetition, streaming rediscovery, and quote-level recognition. This collection is less about prestige than recurrence: the Steves that keep getting found again.",
+        "nostalgia",
+        "reruns",
+        "childhood",
+        "television"
+      ],
+      "href": "/collections/nostalgia-core-steves"
+    },
+    {
+      "id": "stevens-with-gravity",
+      "kind": "collection",
+      "slug": "stevens-with-gravity",
+      "title": "Stevens With Gravity",
+      "subtitle": "The Stevens and Stevies who slow the room down and add weight rather than pure chaos.",
+      "description": "Not every Steve-derived presence barrels into the frame. Some of them deepen it. This collection follows the branch of the archive where Steven or Stevie implies composure, edge, or emotional ballast instead of immediate slapstick.",
+      "tags": [
+        "steven",
+        "stevie",
+        "gravity",
+        "character-type"
+      ],
+      "searchText": "stevens with gravity the stevens and stevies who slow the room down and add weight rather than pure chaos not every steve derived presence barrels into the frame some of them deepen it this collection follows the branch of the archive where steven or stevie implies composure edge or emotional ballast instead of immediate slapstick stevens with gravity the stevens and stevies who slow the room down and add weight rather than pure chaos not every steve derived presence barrels into the frame some of them deepen it this collection follows the branch of the archive where steven or stevie implies composure edge or emotional ballast instead of immediate slapstick steven stevie gravity character type",
+      "keywords": [
+        "Stevens With Gravity",
+        "The Stevens and Stevies who slow the room down and add weight rather than pure chaos.",
+        "Not every Steve-derived presence barrels into the frame. Some of them deepen it. This collection follows the branch of the archive where Steven or Stevie implies composure, edge, or emotional ballast instead of immediate slapstick.",
+        "steven",
+        "stevie",
+        "gravity",
+        "character-type"
+      ],
+      "href": "/collections/stevens-with-gravity"
+    },
+    {
+      "id": "patron-saints-of-sitcom-steve",
+      "kind": "collection",
+      "slug": "patron-saints-of-sitcom-steve",
+      "title": "The Patron Saints of Sitcom Steve",
+      "subtitle": "The Steves who defined television's broadest, loudest, and most durable comic Steve signals.",
+      "description": "Sitcom Steve is not one thing, but it usually arrives with unusually clear pressure. The best examples either destabilize the room on contact or sharpen it through recurring force. This collection gathers the Steves whose comic utility became inseparable from their names.",
+      "tags": [
+        "sitcom",
+        "television",
+        "canon"
+      ],
+      "searchText": "the patron saints of sitcom steve the steves who defined television s broadest loudest and most durable comic steve signals sitcom steve is not one thing but it usually arrives with unusually clear pressure the best examples either destabilize the room on contact or sharpen it through recurring force this collection gathers the steves whose comic utility became inseparable from their names the patron saints of sitcom steve the steves who defined television s broadest loudest and most durable comic steve signals sitcom steve is not one thing but it usually arrives with unusually clear pressure the best examples either destabilize the room on contact or sharpen it through recurring force this collection gathers the steves whose comic utility became inseparable from their names sitcom television canon",
+      "keywords": [
+        "The Patron Saints of Sitcom Steve",
+        "The Steves who defined television's broadest, loudest, and most durable comic Steve signals.",
+        "Sitcom Steve is not one thing, but it usually arrives with unusually clear pressure. The best examples either destabilize the room on contact or sharpen it through recurring force. This collection gathers the Steves whose comic utility became inseparable from their names.",
+        "sitcom",
+        "television",
+        "canon"
+      ],
+      "href": "/collections/patron-saints-of-sitcom-steve"
+    }
+  ]
+}

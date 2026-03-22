@@ -1,20 +1,31 @@
-import { getAllCollections, getAllEntries, getAllSubmissions, getTaxonomy } from "../src/lib/content";
-import { buildSearchIndex } from "../src/lib/search/build-search-index";
+import {
+  getAllCollections,
+  getAllEntries,
+  getAllSubmissions,
+  getIngestRuns,
+  getReviewQueue,
+  getSearchDocuments,
+  getTaxonomy
+} from "../src/lib/content";
 
 async function main() {
-  const [taxonomy, entries, collections, submissions] = await Promise.all([
+  const [taxonomy, entries, collections, submissions, candidates, ingestRuns, searchDocuments] = await Promise.all([
     getTaxonomy(),
     getAllEntries(),
     getAllCollections(),
-    getAllSubmissions()
+    getAllSubmissions(),
+    getReviewQueue(),
+    getIngestRuns(),
+    getSearchDocuments()
   ]);
-  const searchDocuments = buildSearchIndex(entries, collections);
 
   console.log("Content validation passed.");
   console.log(`- taxonomies: ${taxonomy.nameVariants.length} name variants, ${taxonomy.archetypeTags.length} archetypes`);
   console.log(`- entries: ${entries.length}`);
   console.log(`- collections: ${collections.length}`);
   console.log(`- submissions: ${submissions.length}`);
+  console.log(`- candidates: ${candidates.length}`);
+  console.log(`- ingest runs: ${ingestRuns.length}`);
   console.log(`- search documents: ${searchDocuments.length}`);
 }
 

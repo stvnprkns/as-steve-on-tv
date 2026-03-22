@@ -1,0 +1,66 @@
+{
+  "id": "steve-stifler-american-pie",
+  "slug": "steve-stifler-american-pie",
+  "displayName": "Steve Stifler",
+  "canonicalName": "Steve Stifler",
+  "nameVariant": "steve",
+  "entryType": "character",
+  "medium": "film",
+  "titleOfWork": "American Pie",
+  "franchise": "American Pie",
+  "yearStart": 1999,
+  "yearEnd": 2012,
+  "actorOrPerson": "Seann William Scott",
+  "summary": "Franchise nuisance Steve, notable for converting volume directly into screen gravity.",
+  "synopsis": "A loud, reckless franchise Steve who weaponized pure nuisance charisma.",
+  "editorialBlurb": "Steve Stifler is a movie Steve built for maximum force transmission. He is less interested in subtlety than in occupancy: once he enters the frame, the scene has to reorganize around him. The name works here as a delivery system for unembarrassed chaos and chemically amplified confidence.",
+  "whyItMatters": "He is one of the clearest big-screen examples of Steve as high-volume destabilizer and a major bridge between sitcom Steve energy and movie-franchise Steve energy.",
+  "steveEnergy": "weaponized",
+  "archetypes": [
+    "chaos-engine",
+    "slick-operator"
+  ],
+  "era": "1990s",
+  "tones": [
+    "chaotic",
+    "absurd",
+    "iconic"
+  ],
+  "tags": [
+    "teen-movie",
+    "franchise",
+    "loud",
+    "party-energy"
+  ],
+  "searchAliases": [
+    "stifler",
+    "american pie steve"
+  ],
+  "relatedEntryIds": [
+    "steve-urkel-family-matters",
+    "steve-zissou-the-life-aquatic"
+  ],
+  "collectionIds": [
+    "movie-steves-with-aura"
+  ],
+  "status": "published",
+  "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 5,
+    "disputes": 0,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Franchise character reference",
+      "url": "https://example.com/evidence/stifler-franchise"
+    }
+  ],
+  "appearanceContext": "Introduced in the 1999 film and then carried as the franchise's loudest Steve instrument across sequels.",
+  "sourceNotes": [
+    "Appears across multiple American Pie films."
+  ],
+  "createdAt": "2026-03-15T12:05:00Z",
+  "updatedAt": "2026-03-15T12:05:00Z"
+}

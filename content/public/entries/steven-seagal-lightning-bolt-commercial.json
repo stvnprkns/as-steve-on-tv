@@ -1,0 +1,67 @@
+{
+  "id": "steven-seagal-lightning-bolt-commercial",
+  "slug": "steven-seagal-lightning-bolt-commercial",
+  "displayName": "Steven Seagal",
+  "canonicalName": "Steven Seagal",
+  "nameVariant": "steven",
+  "entryType": "person",
+  "medium": "commercial",
+  "titleOfWork": "Lightning Bolt Energy Drink Commercial",
+  "franchise": "Lightning Bolt",
+  "yearStart": 2011,
+  "actorOrPerson": "Steven Seagal",
+  "summary": "Commercial-era Steven with concentrated aura, tracked with more confidence than proof.",
+  "synopsis": "A celebrity-commercial Steven built on unpersuadable seriousness and extremely concentrated aura.",
+  "editorialBlurb": "Commercial Steven does not need much runtime if the presence is already overclocked. In this lane, Steven Seagal functions less like a spokesperson and more like a sealed object lowered into advertising. The effect is less persuasive than atmospheric, which is exactly why it belongs in the archive.",
+  "whyItMatters": "He shows how the commercial lane can preserve bizarre pockets of Steve-derived star energy without pretending they behave like conventional performances.",
+  "steveEnergy": "weaponized",
+  "archetypes": [
+    "corporate-spokesman",
+    "outsider-icon"
+  ],
+  "era": "2010s",
+  "tones": [
+    "intense",
+    "absurd",
+    "slick"
+  ],
+  "tags": [
+    "commercial",
+    "celebrity-spot",
+    "energy-drink",
+    "odd-celebrity-endorsement"
+  ],
+  "searchAliases": [
+    "steven seagal ad",
+    "lightning bolt commercial"
+  ],
+  "relatedEntryIds": [
+    "steve-zissou-the-life-aquatic",
+    "steven-hyde-that-70s-show"
+  ],
+  "collectionIds": [
+    "commercial-steves-with-unreasonably-strong-aura",
+    "stevens-with-gravity"
+  ],
+  "status": "published",
+  "confidence": "medium",
+  "verificationStatus": "needs_verification",
+  "communitySignals": {
+    "confirmations": 2,
+    "disputes": 0,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Commercial clip reference",
+      "url": "https://example.com/evidence/steven-seagal-lightning-bolt"
+    }
+  ],
+  "appearanceContext": "Short-form ad appearance remembered clearly enough to file, but not yet supported by multiple stable sources.",
+  "notesOnUncertainty": "The appearance is credible and specific, but the surviving source trail is thinner than the archive prefers for a fully settled commercial record.",
+  "sourceNotes": [
+    "Commercial lane example chosen for its unusually concentrated Steven presence."
+  ],
+  "createdAt": "2026-03-15T12:07:00Z",
+  "updatedAt": "2026-03-15T12:07:00Z"
+}

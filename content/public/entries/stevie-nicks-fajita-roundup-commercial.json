@@ -1,0 +1,66 @@
+{
+  "id": "stevie-nicks-fajita-roundup-commercial",
+  "slug": "stevie-nicks-fajita-roundup-commercial",
+  "displayName": "Stevie Nicks",
+  "canonicalName": "Stevie Nicks",
+  "nameVariant": "stevie",
+  "entryType": "person",
+  "medium": "commercial",
+  "titleOfWork": "Fajita Roundup Restaurant Commercial",
+  "franchise": "Fajita Roundup",
+  "yearStart": 2004,
+  "actorOrPerson": "Stevie Nicks",
+  "summary": "Disputed commercial Stevie kept public so the archive can show its work around uncertainty.",
+  "synopsis": "A disputed commercial-lane Stevie whose evidence footprint is memorable but thinner than ideal.",
+  "editorialBlurb": "Some entries belong in the archive because they force the methodology to stay honest. This Stevie Nicks commercial appearance has enough circulation and specificity to merit tracking, but not enough clean sourcing to behave like a fully settled canonical record. It is compelling precisely because it asks how much aura plus evidence equals inclusion.",
+  "whyItMatters": "The archive needs room for carefully signposted uncertainty, especially in the commercial lane where ephemeral media and remembered celebrity spots can blur together.",
+  "steveEnergy": "magnetic",
+  "archetypes": [
+    "corporate-spokesman",
+    "outsider-icon"
+  ],
+  "era": "2000s",
+  "tones": [
+    "melancholy",
+    "intense",
+    "absurd"
+  ],
+  "tags": [
+    "commercial",
+    "disputed",
+    "celebrity-spot",
+    "archival-gap"
+  ],
+  "searchAliases": [
+    "stevie nicks ad",
+    "fajita roundup stevie"
+  ],
+  "relatedEntryIds": [
+    "steven-seagal-lightning-bolt-commercial",
+    "stevie-budd-schitts-creek"
+  ],
+  "collectionIds": [
+    "commercial-steves-with-unreasonably-strong-aura"
+  ],
+  "status": "published",
+  "confidence": "disputed",
+  "verificationStatus": "disputed",
+  "communitySignals": {
+    "confirmations": 1,
+    "disputes": 2,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Circulating clip fragment",
+      "url": "https://example.com/evidence/stevie-nicks-fajita-roundup"
+    }
+  ],
+  "appearanceContext": "Remembered as a celebrity ad spot, but the surviving evidence is fragmentary and the exact campaign provenance remains unsettled.",
+  "notesOnUncertainty": "Enough evidence exists to keep the record public, but the archive is not treating the attribution as closed.",
+  "sourceNotes": [
+    "Tracked as a disputed case pending stronger source confirmation."
+  ],
+  "createdAt": "2026-03-15T12:09:00Z",
+  "updatedAt": "2026-03-15T12:09:00Z"
+}

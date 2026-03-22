@@ -1,0 +1,12 @@
+{
+  "id": "ingest-run-imdb-bulk-2026-03-21",
+  "provider": "imdb_bulk",
+  "status": "completed",
+  "recordsScanned": 18422,
+  "candidatesCreated": 2,
+  "notes": "Fixture ingest run proving the review queue and public-read-model separation.",
+  "startedAt": "2026-03-21T14:20:00Z",
+  "completedAt": "2026-03-21T14:45:00Z",
+  "createdAt": "2026-03-21T14:20:00Z",
+  "updatedAt": "2026-03-21T14:45:00Z"
+}

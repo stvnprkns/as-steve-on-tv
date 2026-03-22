@@ -1,19 +1,28 @@
-import type { Collection, SteveEntry, Submission, TaxonomyData } from "@/src/lib/schema";
-import { loadCollections } from "@/src/lib/content/load-collections";
-import { loadEntries } from "@/src/lib/content/load-entries";
-import { loadSubmissions } from "@/src/lib/content/load-submissions";
-import { loadTaxonomy } from "@/src/lib/content/load-taxonomy";
+import type {
+  CandidateEntry,
+  Collection,
+  IngestRun,
+  PublicArchiveManifest,
+  SteveEntry,
+  Submission,
+  TaxonomyData
+} from "@/src/lib/schema";
+import { buildPublicArchiveManifest, loadPublicArchiveManifest, loadPublicCollectionArtifact, loadPublicEntryArtifact } from "@/src/lib/content/public-artifacts";
+import { getContentRepository } from "@/src/lib/content/repository";
 
-type ContentBundle = {
+type OperationalBundle = {
   entries: SteveEntry[];
   collections: Collection[];
   submissions: Submission[];
   taxonomy: TaxonomyData;
+  candidates: CandidateEntry[];
+  ingestRuns: IngestRun[];
 };
 
-let cache: Promise<ContentBundle> | null = null;
+let operationalCache: Promise<OperationalBundle> | null = null;
+let publicManifestCache: Promise<PublicArchiveManifest> | null = null;
 
-function validateRelationships(entries: SteveEntry[], collections: Collection[], submissions: Submission[]) {
+function validateRelationships(entries: SteveEntry[], collections: Collection[], submissions: Submission[], candidates: CandidateEntry[]) {
   const entryIds = new Set(entries.map((entry) => entry.id));
   const collectionIds = new Set(collections.map((collection) => collection.id));
 
@@ -44,54 +53,92 @@ function validateRelationships(entries: SteveEntry[], collections: Collection[],
       throw new Error(`Submission ${submission.id} references unknown linked entry ${submission.linkedEntryId}`);
     }
   }
+
+  for (const candidate of candidates) {
+    if (candidate.linkedPublishedEntryId && !entryIds.has(candidate.linkedPublishedEntryId)) {
+      throw new Error(`Candidate ${candidate.id} references unknown published entry ${candidate.linkedPublishedEntryId}`);
+    }
+  }
 }
 
-async function buildBundle(): Promise<ContentBundle> {
-  const [taxonomy, entries, collections, submissions] = await Promise.all([
-    loadTaxonomy(),
-    loadEntries(),
-    loadCollections(),
-    loadSubmissions()
+async function buildOperationalBundle(): Promise<OperationalBundle> {
+  const repository = getContentRepository();
+  const [taxonomy, entries, collections, submissions, candidates, ingestRuns] = await Promise.all([
+    repository.getTaxonomy(),
+    repository.listEntries(),
+    repository.listCollections(),
+    repository.listSubmissions(),
+    repository.listReviewQueue(),
+    repository.listIngestRuns()
   ]);
 
-  validateRelationships(entries, collections, submissions);
+  validateRelationships(entries, collections, submissions, candidates);
 
   return {
     taxonomy,
     entries,
     collections,
-    submissions
+    submissions,
+    candidates,
+    ingestRuns
   };
 }
 
-async function getBundle() {
-  if (!cache) {
-    cache = buildBundle();
+async function getOperationalBundle() {
+  if (!operationalCache) {
+    operationalCache = buildOperationalBundle();
   }
 
-  return cache;
+  return operationalCache;
+}
+
+async function getPublicManifest() {
+  if (!publicManifestCache) {
+    publicManifestCache = loadPublicArchiveManifest().catch(async () => {
+      const bundle = await getOperationalBundle();
+      return buildPublicArchiveManifest(bundle.entries, bundle.collections);
+    });
+  }
+
+  return publicManifestCache;
+}
+
+export async function getArchiveManifest() {
+  return getPublicManifest();
+}
+
+export async function getSearchDocuments() {
+  return (await getPublicManifest()).searchDocuments;
 }
 
 export async function getAllEntries(): Promise<SteveEntry[]> {
-  return (await getBundle()).entries;
+  return (await getPublicManifest()).entries;
 }
 
 export async function getEntryBySlug(slug: string): Promise<SteveEntry | null> {
-  return (await getBundle()).entries.find((entry) => entry.slug === slug) ?? null;
+  return loadPublicEntryArtifact(slug);
 }
 
 export async function getAllCollections(): Promise<Collection[]> {
-  return (await getBundle()).collections;
+  return (await getPublicManifest()).collections;
 }
 
 export async function getCollectionBySlug(slug: string): Promise<Collection | null> {
-  return (await getBundle()).collections.find((collection) => collection.slug === slug) ?? null;
+  return loadPublicCollectionArtifact(slug);
 }
 
 export async function getAllSubmissions(): Promise<Submission[]> {
-  return (await getBundle()).submissions;
+  return (await getOperationalBundle()).submissions;
 }
 
 export async function getTaxonomy(): Promise<TaxonomyData> {
-  return (await getBundle()).taxonomy;
+  return (await getOperationalBundle()).taxonomy;
+}
+
+export async function getReviewQueue(): Promise<CandidateEntry[]> {
+  return (await getOperationalBundle()).candidates;
+}
+
+export async function getIngestRuns(): Promise<IngestRun[]> {
+  return (await getOperationalBundle()).ingestRuns;
 }

@@ -1,0 +1,66 @@
+{
+  "id": "steve-holt-arrested-development",
+  "slug": "steve-holt-arrested-development",
+  "displayName": "Steve Holt",
+  "canonicalName": "Steve Holt",
+  "nameVariant": "steve",
+  "entryType": "character",
+  "medium": "tv",
+  "titleOfWork": "Arrested Development",
+  "franchise": "Arrested Development",
+  "yearStart": 2003,
+  "yearEnd": 2019,
+  "actorOrPerson": "Justin Grant Wade",
+  "summary": "Recurring all-caps Steve whose main asset is immediate, low-latency recognition.",
+  "synopsis": "An all-caps recurring Steve whose main instrument is immediate legibility.",
+  "editorialBlurb": "Steve Holt is a recurring-character masterclass in compression. He shows up already branded, already ridiculous, and already useful. The name is half the mechanism: it lands with a bluntness that lets the performance skip setup and go directly to force.",
+  "whyItMatters": "He is one of television's cleanest examples of a secondary Steve leaving an outsized footprint through exactness rather than screen time.",
+  "steveEnergy": "chaotic",
+  "archetypes": [
+    "recurring-chaos",
+    "chaos-engine"
+  ],
+  "era": "2000s",
+  "tones": [
+    "absurd",
+    "chaotic",
+    "iconic"
+  ],
+  "tags": [
+    "recurring-character",
+    "catchphrase",
+    "sitcom",
+    "jock-energy"
+  ],
+  "searchAliases": [
+    "steve holt!",
+    "arrested development steve"
+  ],
+  "relatedEntryIds": [
+    "steve-urkel-family-matters",
+    "steve-stifler-american-pie"
+  ],
+  "collectionIds": [
+    "patron-saints-of-sitcom-steve"
+  ],
+  "status": "published",
+  "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 6,
+    "disputes": 0,
+    "evidenceLinks": 1
+  },
+  "evidenceLinks": [
+    {
+      "label": "Character reference and recurring appearances",
+      "url": "https://example.com/evidence/steve-holt-recurring"
+    }
+  ],
+  "appearanceContext": "Recurring side-character whose entrance beat and catchphrase do most of the structural work immediately.",
+  "sourceNotes": [
+    "Recurring joke-character with enduring fan recognition."
+  ],
+  "createdAt": "2026-03-15T12:08:00Z",
+  "updatedAt": "2026-03-15T12:08:00Z"
+}

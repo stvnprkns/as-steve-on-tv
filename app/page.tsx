@@ -9,7 +9,7 @@ import {
   hasActiveArchiveFilters,
   parseArchiveQuery
 } from "@/src/lib/archive";
-import { getAllCollections, getAllEntries, getTaxonomy } from "@/src/lib/content";
+import { getAllCollections, getAllEntries, getSearchDocuments, getTaxonomy } from "@/src/lib/content";
 import { buildMetadata } from "@/src/lib/seo/metadata";
 
 export const metadata = buildMetadata({
@@ -23,9 +23,14 @@ export default async function HomePage({
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const resolvedSearchParams = (await searchParams) ?? {};
-  const [entries, collections, taxonomy] = await Promise.all([getAllEntries(), getAllCollections(), getTaxonomy()]);
+  const [entries, collections, taxonomy, searchDocuments] = await Promise.all([
+    getAllEntries(),
+    getAllCollections(),
+    getTaxonomy(),
+    getSearchDocuments()
+  ]);
   const query = parseArchiveQuery(resolvedSearchParams, taxonomy);
-  const archiveEntries = getArchiveEntries(entries, collections, query);
+  const archiveEntries = getArchiveEntries(entries, collections, query, searchDocuments);
   const archiveCounts = getArchiveCounts(entries);
   const hiddenSearchFields = Object.fromEntries(
     Object.entries({

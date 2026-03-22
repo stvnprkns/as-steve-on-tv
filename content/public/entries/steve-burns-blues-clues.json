@@ -1,0 +1,71 @@
+{
+  "id": "steve-burns-blues-clues",
+  "slug": "steve-burns-blues-clues",
+  "displayName": "Steve",
+  "canonicalName": "Steve Burns",
+  "nameVariant": "steve",
+  "entryType": "person",
+  "medium": "tv",
+  "titleOfWork": "Blue's Clues",
+  "franchise": "Blue's Clues",
+  "yearStart": 1996,
+  "yearEnd": 2002,
+  "actorOrPerson": "Steve Burns",
+  "summary": "Patient host Steve, filed under children's television and unusual cultural trust.",
+  "synopsis": "A striped-shirt host whose calm curiosity made Steve feel unusually trustworthy.",
+  "editorialBlurb": "Steve from Blue's Clues is one of the gentlest Steve formulations in television history. He does not dominate a room; he invites it to slow down. The performance is warm, open, and so specific to late-1990s childhood that the name Steve still carries a mild educational glow for an entire generation.",
+  "whyItMatters": "He proves that Steve energy is not only disruptive or comic. It can also be patient, reassuring, and deeply formative.",
+  "steveEnergy": "steady",
+  "archetypes": [
+    "earnest-anchor",
+    "nostalgia-core"
+  ],
+  "era": "1990s",
+  "tones": [
+    "wholesome",
+    "warm",
+    "earnest"
+  ],
+  "tags": [
+    "kids-tv",
+    "host",
+    "nick-jr",
+    "nostalgia"
+  ],
+  "searchAliases": [
+    "blues clues steve",
+    "steve burns",
+    "striped shirt host"
+  ],
+  "relatedEntryIds": [
+    "steve-urkel-family-matters",
+    "stevie-budd-schitts-creek"
+  ],
+  "collectionIds": [
+    "nostalgia-core-steves"
+  ],
+  "status": "published",
+  "confidence": "high",
+  "verificationStatus": "verified",
+  "communitySignals": {
+    "confirmations": 8,
+    "disputes": 0,
+    "evidenceLinks": 2
+  },
+  "evidenceLinks": [
+    {
+      "label": "Series overview and host history",
+      "url": "https://example.com/evidence/blues-clues-host-history"
+    },
+    {
+      "label": "Archive note on original run",
+      "url": "https://example.com/evidence/blues-clues-original-run"
+    }
+  ],
+  "appearanceContext": "Original on-screen host across the first six seasons, appearing as a lightly fictionalized version of himself.",
+  "sourceNotes": [
+    "Original host of Blue's Clues, appearing as a lightly fictionalized version of himself."
+  ],
+  "createdAt": "2026-03-15T12:01:00Z",
+  "updatedAt": "2026-03-15T12:01:00Z"
+}
