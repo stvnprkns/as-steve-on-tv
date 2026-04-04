@@ -3,6 +3,7 @@ import { createReadStream } from "node:fs";
 import { stat } from "node:fs/promises";
 import path from "node:path";
 import readline from "node:readline";
+import { createGunzip } from "node:zlib";
 
 import { hasDatabaseUrl } from "@/src/lib/db/pg";
 import { getContentRepository } from "@/src/lib/content/repository";
@@ -104,9 +105,30 @@ async function getDatasetFingerprint(filePaths: string[]) {
   return createHash("sha1").update(parts.sort().join("|")).digest("hex");
 }
 
+async function resolveDatasetFile(datasetDir: string, basename: string) {
+  const plainPath = path.join(datasetDir, `${basename}.tsv`);
+
+  if (await fileExists(plainPath)) {
+    return plainPath;
+  }
+
+  const gzPath = path.join(datasetDir, `${basename}.tsv.gz`);
+
+  if (await fileExists(gzPath)) {
+    return gzPath;
+  }
+
+  throw new Error(`Missing required IMDb bulk file: ${plainPath} or ${gzPath}`);
+}
+
+function createDatasetStream(filePath: string) {
+  const stream = createReadStream(filePath);
+  return filePath.endsWith(".gz") ? stream.pipe(createGunzip()) : stream;
+}
+
 async function loadTitleBasics(filePath: string) {
   const titles = new Map<string, TitleBasics>();
-  const stream = createReadStream(filePath, "utf8");
+  const stream = createDatasetStream(filePath);
   const rl = readline.createInterface({ input: stream, crlfDelay: Infinity });
   let isHeader = true;
 
@@ -137,7 +159,7 @@ async function loadTitleBasics(filePath: string) {
 
 async function loadNameBasics(filePath: string) {
   const names = new Map<string, NameBasics>();
-  const stream = createReadStream(filePath, "utf8");
+  const stream = createDatasetStream(filePath);
   const rl = readline.createInterface({ input: stream, crlfDelay: Infinity });
   let isHeader = true;
 
@@ -201,19 +223,13 @@ export async function runImdbBulkIngest({ skipIfUnchanged = true }: { skipIfUnch
   const datasetDir = process.env.IMDB_BULK_DIR;
 
   if (!datasetDir) {
-    throw new Error("Set IMDB_BULK_DIR to a directory containing title.basics.tsv, title.principals.tsv, and name.basics.tsv.");
+    throw new Error("Set IMDB_BULK_DIR to a directory containing official IMDb bulk files such as title.basics.tsv(.gz), title.principals.tsv(.gz), and name.basics.tsv(.gz).");
   }
 
-  const titleBasicsPath = path.join(datasetDir, "title.basics.tsv");
-  const titlePrincipalsPath = path.join(datasetDir, "title.principals.tsv");
-  const nameBasicsPath = path.join(datasetDir, "name.basics.tsv");
+  const titleBasicsPath = await resolveDatasetFile(datasetDir, "title.basics");
+  const titlePrincipalsPath = await resolveDatasetFile(datasetDir, "title.principals");
+  const nameBasicsPath = await resolveDatasetFile(datasetDir, "name.basics");
   const filePaths = [titleBasicsPath, titlePrincipalsPath, nameBasicsPath];
-
-  for (const requiredPath of filePaths) {
-    if (!(await fileExists(requiredPath))) {
-      throw new Error(`Missing required IMDb bulk file: ${requiredPath}`);
-    }
-  }
 
   const repository = getContentRepository();
   const [titles, names, existingCandidates, existingEntries, previousRuns] = await Promise.all([
@@ -251,7 +267,7 @@ export async function runImdbBulkIngest({ skipIfUnchanged = true }: { skipIfUnch
   const startedAt = nowIso();
   const existingCandidateMap = new Map(existingCandidates.map((candidate) => [candidate.id, candidate]));
 
-  const principalsStream = createReadStream(titlePrincipalsPath, "utf8");
+  const principalsStream = createDatasetStream(titlePrincipalsPath);
   const rl = readline.createInterface({ input: principalsStream, crlfDelay: Infinity });
   let isHeader = true;
 

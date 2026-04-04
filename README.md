@@ -64,15 +64,20 @@ The production architecture is now split deliberately:
 
 - Vercel serves the public site.
 - Postgres stores canonical published entries, candidates, and ingest runs.
-- Blob/object storage serves public archive artifacts.
-- A daily external worker runs `npm run sync:imdb`.
+- Cloudflare R2 serves public archive artifacts.
+- A GitHub Actions worker runs `npm run sync:imdb` a few times per week.
 
 ### Required environment
 
-- `DATABASE_URL`: canonical Postgres store
-- `IMDB_BULK_DIR`: local directory containing prepared IMDb bulk files
+- `DATABASE_URL`: Neon pooled connection string for app/runtime reads and writes
+- `DATABASE_URL_DIRECT`: Neon direct connection string for migrations and repair tooling
+- `IMDB_BULK_DIR`: local directory containing official IMDb bulk files
+- `ARTIFACT_PROVIDER`: `local` for dev or `r2` for production
 - `ARTIFACT_BASE_URL`: public base URL for artifact reads
-- `ARTIFACT_WRITE_TOKEN`: write token for artifact uploads
+- `R2_ACCOUNT_ID`: Cloudflare account ID for R2 uploads
+- `R2_BUCKET`: bucket name used for public artifacts
+- `R2_ACCESS_KEY_ID`: R2 access key for writes
+- `R2_SECRET_ACCESS_KEY`: R2 secret for writes
 - `REVALIDATE_SECRET`: shared secret for internal cache invalidation routes
 - `REVALIDATE_URL`: full URL to `/api/internal/revalidate-artifacts`
 - `SITE_URL`: public site origin used as a fallback for internal callbacks
@@ -89,7 +94,9 @@ Use [.env.example](/Users/stephenperkins/Documents/steve-index/.env.example) as 
 
 ### GitHub Actions worker
 
-The repo includes [.github/workflows/imdb-sync.yml](/Users/stephenperkins/Documents/steve-index/.github/workflows/imdb-sync.yml) as the default external worker. It expects a prepared IMDb dataset archive URL in `IMDB_BULK_ARCHIVE_URL`, downloads it on the runner, and then executes the sync pipeline on a daily cron or manual dispatch.
+The repo includes [.github/workflows/imdb-sync.yml](/Users/stephenperkins/Documents/steve-index/.github/workflows/imdb-sync.yml) as the default external worker. It downloads the official IMDb bulk files directly from `datasets.imdbws.com`, runs three times per week on GitHub Actions, and can also be triggered manually for urgent refreshes.
+
+If you are running the worker on a private GitHub repo, set the repository or account Actions spending limit to `$0` so the free-tier worker cannot silently spill into paid usage.
 
 If you are implementing the app:
 

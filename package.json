@@ -12,8 +12,8 @@
     "db:sync:fixtures": "tsx scripts/sync-fixtures-to-postgres.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1024.0",
     "@types/pg": "^8.20.0",
-    "@vercel/blob": "^2.3.1",
     "next": "^15.0.0",
     "pg": "^8.20.0",
     "react": "^19.0.0",
