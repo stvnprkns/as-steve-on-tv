@@ -8,10 +8,12 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "generate:artifacts": "tsx scripts/generate-public-artifacts.ts",
     "ingest:imdb": "tsx scripts/ingest-imdb-bulk.ts",
+    "sync:imdb": "tsx scripts/run-imdb-sync.ts",
     "db:sync:fixtures": "tsx scripts/sync-fixtures-to-postgres.ts"
   },
   "dependencies": {
     "@types/pg": "^8.20.0",
+    "@vercel/blob": "^2.3.1",
     "next": "^15.0.0",
     "pg": "^8.20.0",
     "react": "^19.0.0",

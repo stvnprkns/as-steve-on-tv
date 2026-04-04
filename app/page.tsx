@@ -23,13 +23,13 @@ export default async function HomePage({
   searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const resolvedSearchParams = (await searchParams) ?? {};
-  const [entries, collections, taxonomy, searchDocuments] = await Promise.all([
+  const [entries, collections, taxonomy] = await Promise.all([
     getAllEntries(),
     getAllCollections(),
-    getTaxonomy(),
-    getSearchDocuments()
+    getTaxonomy()
   ]);
   const query = parseArchiveQuery(resolvedSearchParams, taxonomy);
+  const searchDocuments = query.q ? await getSearchDocuments() : undefined;
   const archiveEntries = getArchiveEntries(entries, collections, query, searchDocuments);
   const archiveCounts = getArchiveCounts(entries);
   const hiddenSearchFields = Object.fromEntries(

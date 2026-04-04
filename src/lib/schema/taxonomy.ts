@@ -18,6 +18,7 @@ export const moderationStatuses = [
   "merged",
   "needs_more_evidence"
 ] as const;
+export const fieldSourceValues = ["editorial", "imdb_bulk", "secondary_metadata", "manual", "generated"] as const;
 export const collectionTypes = [
   "editorial",
   "ranked_editorial",
@@ -83,6 +84,7 @@ export const mediumSchema = z.enum(mediums);
 export const entryTypeSchema = z.enum(entryTypes);
 export const contentStatusSchema = z.enum(contentStatuses);
 export const moderationStatusSchema = z.enum(moderationStatuses);
+export const fieldSourceSchema = z.enum(fieldSourceValues);
 export const collectionTypeSchema = z.enum(collectionTypes);
 export const submissionTypeSchema = z.enum(submissionTypes);
 export const confidenceSchema = z.enum(confidenceLevels);
@@ -115,6 +117,7 @@ export type Medium = z.infer<typeof mediumSchema>;
 export type EntryType = z.infer<typeof entryTypeSchema>;
 export type ContentStatus = z.infer<typeof contentStatusSchema>;
 export type ModerationStatus = z.infer<typeof moderationStatusSchema>;
+export type FieldSource = z.infer<typeof fieldSourceSchema>;
 export type CollectionType = z.infer<typeof collectionTypeSchema>;
 export type SubmissionType = z.infer<typeof submissionTypeSchema>;
 export type Confidence = z.infer<typeof confidenceSchema>;

@@ -88,8 +88,12 @@ export const ingestRunSchema = z
     id: idSchema,
     provider: ingestProviderSchema,
     status: ingestRunStatusSchema,
+    datasetFingerprint: z.string().min(8).max(128).optional(),
     recordsScanned: z.number().int().gte(0),
     candidatesCreated: z.number().int().gte(0),
+    candidatesUpdated: z.number().int().gte(0).default(0),
+    candidatesMerged: z.number().int().gte(0).default(0),
+    candidatesSkipped: z.number().int().gte(0).default(0),
     notes: z.string().min(4).max(500).optional(),
     startedAt: isoDateTimeSchema,
     completedAt: isoDateTimeSchema.optional()
@@ -100,6 +104,9 @@ export const ingestRunSchema = z
 export const publicArchiveManifestSchema = z
   .object({
     generatedAt: isoDateTimeSchema,
+    datasetFingerprint: z.string().min(8).max(128).optional(),
+    etag: z.string().min(8).max(128),
+    entryCount: z.number().int().gte(0),
     counts: z
       .object({
         total: z.number().int().gte(0),
@@ -109,8 +116,24 @@ export const publicArchiveManifestSchema = z
       })
       .strict(),
     entries: z.array(steveEntrySchema),
-    collections: z.array(collectionSchema),
-    searchDocuments: z.array(searchDocumentSchema)
+    collections: z.array(collectionSchema)
+  })
+  .strict();
+
+export const publicSearchArtifactSchema = z
+  .object({
+    generatedAt: isoDateTimeSchema,
+    etag: z.string().min(8).max(128),
+    documents: z.array(searchDocumentSchema)
+  })
+  .strict();
+
+export const publicListArtifactSchema = z
+  .object({
+    generatedAt: isoDateTimeSchema,
+    etag: z.string().min(8).max(128),
+    sort: z.enum(["canon", "newest", "needs-verification"]),
+    entries: z.array(steveEntrySchema)
   })
   .strict();
 
@@ -121,3 +144,5 @@ export type SourcePersonRecord = z.infer<typeof sourcePersonRecordSchema>;
 export type CandidateEntry = z.infer<typeof candidateEntrySchema>;
 export type IngestRun = z.infer<typeof ingestRunSchema>;
 export type PublicArchiveManifest = z.infer<typeof publicArchiveManifestSchema>;
+export type PublicSearchArtifact = z.infer<typeof publicSearchArtifactSchema>;
+export type PublicListArtifact = z.infer<typeof publicListArtifactSchema>;

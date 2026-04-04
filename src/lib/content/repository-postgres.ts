@@ -18,6 +18,64 @@ function parsePayload<T>(schema: { parse(value: unknown): T }, payload: unknown)
   return schema.parse(payload);
 }
 
+async function findPublishedEntryMatch(entry: Pick<SteveEntry, "id" | "slug" | "externalRefs">) {
+  const result = await pgQuery<{ payload: unknown }>(
+    `
+      select payload
+      from published_entry
+      where id = $1
+         or slug = $2
+         or ($3::text is not null and imdb_title_id = $3 and coalesce(imdb_name_id, '') = coalesce($4::text, ''))
+      limit 1
+    `,
+    [entry.id, entry.slug, entry.externalRefs?.imdbTitleId ?? null, entry.externalRefs?.imdbNameId ?? null]
+  );
+
+  return result.rows[0] ? parsePayload(steveEntrySchema, result.rows[0].payload) : null;
+}
+
+function mergePublishedEntry(existing: SteveEntry, incoming: SteveEntry): SteveEntry {
+  return steveEntrySchema.parse({
+    ...incoming,
+    id: existing.id,
+    slug: existing.slug,
+    displayName: existing.displayName,
+    canonicalName: existing.canonicalName,
+    titleOfWork: existing.titleOfWork,
+    actorOrPerson: existing.actorOrPerson,
+    summary: existing.summary,
+    synopsis: existing.synopsis,
+    editorialBlurb: existing.editorialBlurb,
+    whyItMatters: existing.whyItMatters,
+    image: existing.image ?? incoming.image,
+    relatedEntryIds: existing.relatedEntryIds,
+    collectionIds: existing.collectionIds,
+    searchAliases: existing.searchAliases,
+    tags: existing.tags,
+    archetypes: existing.archetypes,
+    tones: existing.tones,
+    steveEnergy: existing.steveEnergy,
+    era: existing.era,
+    createdAt: existing.createdAt,
+    updatedAt: incoming.updatedAt,
+    externalRefs: {
+      ...incoming.externalRefs,
+      ...existing.externalRefs
+    },
+    fieldSources: {
+      ...incoming.fieldSources,
+      ...existing.fieldSources,
+      displayName: existing.fieldSources?.displayName ?? "editorial",
+      titleOfWork: existing.fieldSources?.titleOfWork ?? "editorial",
+      actorOrPerson: existing.fieldSources?.actorOrPerson ?? "editorial",
+      summary: existing.fieldSources?.summary ?? "editorial",
+      synopsis: existing.fieldSources?.synopsis ?? "editorial",
+      editorialBlurb: existing.fieldSources?.editorialBlurb ?? "editorial",
+      whyItMatters: existing.fieldSources?.whyItMatters ?? "editorial"
+    }
+  });
+}
+
 export async function listEntriesFromPostgres(): Promise<SteveEntry[]> {
   const result = await pgQuery<{ payload: unknown }>(
     "select payload from published_entry order by lower(display_name) asc"
@@ -243,8 +301,12 @@ export async function syncIngestRunToPostgres(run: IngestRun) {
         id,
         provider,
         status,
+        dataset_fingerprint,
         records_scanned,
         candidates_created,
+        candidates_updated,
+        candidates_merged,
+        candidates_skipped,
         notes,
         started_at,
         completed_at,
@@ -252,12 +314,16 @@ export async function syncIngestRunToPostgres(run: IngestRun) {
         created_at,
         updated_at
       )
-      values ($1, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10, $11)
+      values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb, $13, $14)
       on conflict (id) do update set
         provider = excluded.provider,
         status = excluded.status,
+        dataset_fingerprint = excluded.dataset_fingerprint,
         records_scanned = excluded.records_scanned,
         candidates_created = excluded.candidates_created,
+        candidates_updated = excluded.candidates_updated,
+        candidates_merged = excluded.candidates_merged,
+        candidates_skipped = excluded.candidates_skipped,
         notes = excluded.notes,
         started_at = excluded.started_at,
         completed_at = excluded.completed_at,
@@ -268,8 +334,12 @@ export async function syncIngestRunToPostgres(run: IngestRun) {
       payload.id,
       payload.provider,
       payload.status,
+      payload.datasetFingerprint ?? null,
       payload.recordsScanned,
       payload.candidatesCreated,
+      payload.candidatesUpdated,
+      payload.candidatesMerged,
+      payload.candidatesSkipped,
       payload.notes ?? null,
       payload.startedAt,
       payload.completedAt ?? null,
@@ -373,11 +443,13 @@ export async function syncCollectionsToPostgres(collections: Collection[]) {
 }
 
 export async function acceptCandidate(id: string, publishedEntry: SteveEntry) {
-  const payload = steveEntrySchema.parse({
+  const parsedEntry = steveEntrySchema.parse({
     ...publishedEntry,
     derivedFromCandidateId: id,
     lastVerifiedAt: publishedEntry.lastVerifiedAt ?? new Date().toISOString()
   });
+  const existing = await findPublishedEntryMatch(parsedEntry);
+  const payload = existing ? mergePublishedEntry(existing, parsedEntry) : parsedEntry;
 
   await syncEntriesToPostgres([payload]);
   await pgQuery(

@@ -58,6 +58,39 @@ This repo now includes a runnable implementation baseline alongside the strategy
 6. Validate the content layer with `npm run validate:content`.
 7. Start the app with `npm run dev`.
 
+## Production Sync and Artifact Delivery
+
+The production architecture is now split deliberately:
+
+- Vercel serves the public site.
+- Postgres stores canonical published entries, candidates, and ingest runs.
+- Blob/object storage serves public archive artifacts.
+- A daily external worker runs `npm run sync:imdb`.
+
+### Required environment
+
+- `DATABASE_URL`: canonical Postgres store
+- `IMDB_BULK_DIR`: local directory containing prepared IMDb bulk files
+- `ARTIFACT_BASE_URL`: public base URL for artifact reads
+- `ARTIFACT_WRITE_TOKEN`: write token for artifact uploads
+- `REVALIDATE_SECRET`: shared secret for internal cache invalidation routes
+- `REVALIDATE_URL`: full URL to `/api/internal/revalidate-artifacts`
+- `SITE_URL`: public site origin used as a fallback for internal callbacks
+- `AUTO_PUBLISH_ACCEPTED=false`: leave accepted candidates editorial-first by default
+
+Use [.env.example](/Users/stephenperkins/Documents/steve-index/.env.example) as the baseline.
+
+### Operational commands
+
+- `npm run ingest:imdb`: run the ingest stage only
+- `npm run sync:imdb`: run ingest, publish accepted candidates if enabled, refresh artifacts, and trigger revalidation
+- `npm run generate:artifacts`: regenerate public archive artifacts from the current published read model
+- `npm run db:sync:fixtures`: seed fixture entries, collections, candidates, and ingest runs into Postgres
+
+### GitHub Actions worker
+
+The repo includes [.github/workflows/imdb-sync.yml](/Users/stephenperkins/Documents/steve-index/.github/workflows/imdb-sync.yml) as the default external worker. It expects a prepared IMDb dataset archive URL in `IMDB_BULK_ARCHIVE_URL`, downloads it on the runner, and then executes the sync pipeline on a daily cron or manual dispatch.
+
 If you are implementing the app:
 
 1. Treat the docs and schema layer as the current source of truth.

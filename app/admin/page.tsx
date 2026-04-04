@@ -29,9 +29,15 @@ export default async function AdminPage() {
         <p className="section-label">Ingest</p>
         <h2>Latest run</h2>
         {latestRun ? (
-          <p>
-            {latestRun.provider} scanned {latestRun.recordsScanned} records and created {latestRun.candidatesCreated} candidates.
-          </p>
+          <>
+            <p>
+              {latestRun.provider} scanned {latestRun.recordsScanned} records and created {latestRun.candidatesCreated} candidates.
+            </p>
+            <p>
+              {latestRun.candidatesUpdated} updated / {latestRun.candidatesMerged} linked to published records /{" "}
+              {latestRun.candidatesSkipped} unchanged
+            </p>
+          </>
         ) : (
           <p>No ingest runs have been recorded yet.</p>
         )}

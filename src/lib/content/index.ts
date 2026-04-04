@@ -2,13 +2,19 @@ import type {
   CandidateEntry,
   Collection,
   IngestRun,
-  PublicArchiveManifest,
   SteveEntry,
   Submission,
   TaxonomyData
 } from "@/src/lib/schema";
-import { buildPublicArchiveManifest, loadPublicArchiveManifest, loadPublicCollectionArtifact, loadPublicEntryArtifact } from "@/src/lib/content/public-artifacts";
+import {
+  buildPublicArchiveManifest,
+  loadPublicArchiveManifest,
+  loadPublicCollectionArtifact,
+  loadPublicEntryArtifact,
+  loadPublicSearchArtifact
+} from "@/src/lib/content/public-artifacts";
 import { getContentRepository } from "@/src/lib/content/repository";
+import { buildSearchIndex } from "@/src/lib/search/build-search-index";
 
 type OperationalBundle = {
   entries: SteveEntry[];
@@ -20,7 +26,6 @@ type OperationalBundle = {
 };
 
 let operationalCache: Promise<OperationalBundle> | null = null;
-let publicManifestCache: Promise<PublicArchiveManifest> | null = null;
 
 function validateRelationships(entries: SteveEntry[], collections: Collection[], submissions: Submission[], candidates: CandidateEntry[]) {
   const entryIds = new Set(entries.map((entry) => entry.id));
@@ -93,14 +98,10 @@ async function getOperationalBundle() {
 }
 
 async function getPublicManifest() {
-  if (!publicManifestCache) {
-    publicManifestCache = loadPublicArchiveManifest().catch(async () => {
-      const bundle = await getOperationalBundle();
-      return buildPublicArchiveManifest(bundle.entries, bundle.collections);
-    });
-  }
-
-  return publicManifestCache;
+  return loadPublicArchiveManifest().catch(async () => {
+    const bundle = await getOperationalBundle();
+    return buildPublicArchiveManifest(bundle.entries, bundle.collections);
+  });
 }
 
 export async function getArchiveManifest() {
@@ -108,7 +109,12 @@ export async function getArchiveManifest() {
 }
 
 export async function getSearchDocuments() {
-  return (await getPublicManifest()).searchDocuments;
+  try {
+    return (await loadPublicSearchArtifact()).documents;
+  } catch {
+    const bundle = await getOperationalBundle();
+    return buildSearchIndex(bundle.entries, bundle.collections);
+  }
 }
 
 export async function getAllEntries(): Promise<SteveEntry[]> {

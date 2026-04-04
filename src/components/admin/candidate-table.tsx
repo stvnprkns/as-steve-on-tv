@@ -10,7 +10,8 @@ export function CandidateTable({ candidates }: { candidates: CandidateEntry[] })
             <th>Work</th>
             <th>Confidence</th>
             <th>Status</th>
-            <th>Source</th>
+            <th>Linked entry</th>
+            <th>Match reason</th>
           </tr>
         </thead>
         <tbody>
@@ -20,7 +21,8 @@ export function CandidateTable({ candidates }: { candidates: CandidateEntry[] })
               <td>{candidate.titleOfWork}</td>
               <td>{candidate.matchConfidence}</td>
               <td>{candidate.status}</td>
-              <td>{candidate.imdbTitleId ?? candidate.sourceTitleId}</td>
+              <td>{candidate.linkedPublishedEntryId ?? "None"}</td>
+              <td>{candidate.matchReason}</td>
             </tr>
           ))}
         </tbody>

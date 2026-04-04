@@ -5,6 +5,7 @@ import {
   confidenceSchema,
   contentStatusSchema,
   entryTypeSchema,
+  fieldSourceSchema,
   eraTagSchema,
   mediumSchema,
   nameVariantSchema,
@@ -70,6 +71,23 @@ export const steveEntrySchema = z
     appearanceContext: z.string().min(12).max(280).optional(),
     notesOnUncertainty: z.string().min(12).max(280).optional(),
     sourceNotes: stringArraySchema.default([]),
+    fieldSources: z
+      .object({
+        displayName: fieldSourceSchema.optional(),
+        titleOfWork: fieldSourceSchema.optional(),
+        actorOrPerson: fieldSourceSchema.optional(),
+        medium: fieldSourceSchema.optional(),
+        yearStart: fieldSourceSchema.optional(),
+        yearEnd: fieldSourceSchema.optional(),
+        image: fieldSourceSchema.optional(),
+        summary: fieldSourceSchema.optional(),
+        synopsis: fieldSourceSchema.optional(),
+        editorialBlurb: fieldSourceSchema.optional(),
+        whyItMatters: fieldSourceSchema.optional(),
+        verificationStatus: fieldSourceSchema.optional()
+      })
+      .strict()
+      .optional(),
     externalRefs: z
       .object({
         imdbTitleId: z.string().min(2).max(32).optional(),
