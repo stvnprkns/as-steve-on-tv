@@ -419,6 +419,43 @@ export const analysisProtocolSchema = z
   })
   .strict();
 
+export const storySummarySchema = z
+  .object({
+    studyId: idSchema,
+    calculationVersion: z.string().min(1).max(80),
+    sourceSnapshotId: idSchema,
+    window: z
+      .object({
+        startYear: z.literal(STUDY_WINDOW_START),
+        endYear: z.literal(STUDY_WINDOW_END)
+      })
+      .strict(),
+    conclusion: z.null(),
+    commercialPrevalenceCalculated: z.literal(false),
+    publicIndexIncluded: z.literal(false),
+    controlsArePublicEntries: z.literal(false),
+    populationsDiffer: z.string().min(20).max(500),
+    primaryOutcome: z.literal("new_introductions_per_1000"),
+    primaryVariant: z.literal("steve_family"),
+    panels: z.array(
+      z
+        .object({
+          medium: z.enum(studyPanels),
+          decade: z.number().int().gte(STUDY_WINDOW_START).lte(STUDY_WINDOW_END),
+          numerator: z.number().int().nonnegative().nullable(),
+          denominator: z.number().int().positive().nullable(),
+          rate: z.number().nonnegative().nullable(),
+          uncertaintyLow: z.number().nonnegative().nullable(),
+          uncertaintyHigh: z.number().nonnegative().nullable(),
+          flags: z.array(z.string().min(1).max(80))
+        })
+        .strict()
+    ),
+    footnotes: z.array(z.string().min(8).max(400)).min(1)
+  })
+  .strict();
+
+export type StorySummary = z.infer<typeof storySummarySchema>;
 export type StudyVariantLabel = (typeof studyVariantLabels)[number];
 export type MetricVariantLabel = (typeof metricVariantLabels)[number];
 export type ScreenMetricKind = (typeof screenMetricKinds)[number];

@@ -1,6 +1,6 @@
 # Data implementation plan
 
-Policy lives in [data-strategy.md](data-strategy.md). This file is the repo gap list and the five-stage build sequence. Phases 1, 2, 3, and 4 are implemented. Phase 5 is specified here and is not built.
+Policy lives in [data-strategy.md](data-strategy.md). This file is the repo gap list and the five-stage build sequence. Phases 1 through 5 are implemented.
 
 ## What this phase changes
 
@@ -112,11 +112,12 @@ Implemented. This phase calculates rates from a supplied catalog and an SSA file
 
 ### Phase 5 — Data-linked story shell
 
-Specified, not implemented. Do not start it in this change.
+Implemented. The page asks the question and draws charts only from a QA-passed aggregate export. The committed site has no such export, so the route stays an investigation in progress.
 
-- Route such as `/studies/where-have-all-the-steves-gone`, fed only by validated exports.
-- Charts come from those exports. No placeholder statistics and no pre-written extinction conclusion.
-- Public-safe files only: study metadata, birth-name shares, screen rates, controls, story summary, and a QA report. Raw IMDb rows stay out of the build.
+- `/studies/where-have-all-the-steves-gone` reads `content/public/studies/where-have-all-the-steves-gone/`. A missing directory, a failed QA check, a raw credit file, or a story summary that disagrees with the tables leaves the charts off the page.
+- Charts and tables use the export's numerators, denominators, blank bins, birth-share states, and the full lag scan. No lag is marked selected. Commercials stay off the film and television charts.
+- `npm run data:publish -- --dir <analysis export>` checks QA, then writes the aggregate files and `story-summary.json` only with `--write`, and only under `content/public/studies/`. The summary's conclusion is null.
+- The archive index is linked from the page and is not the study denominator.
 
 ## Discovery limit that is still open
 
@@ -133,6 +134,7 @@ Full IMDb files are too large for the current in-memory title and name maps. Pha
 | `npm run data:feasibility` | Feasibility completeness and matching counts. Dry-run unless `--write` is set. |
 | `npm run data:study` | Screen rates, birth shares, and the lag scan. Dry-run unless `--write` is set. Writes only when QA passes. |
 | `npm run data:qa` | Re-read a study export and exit 1 when QA fails. |
+| `npm run data:publish` | Copy a QA-passed aggregate export into `content/public/studies/`. Dry-run unless `--write` is set. |
 | `npm run test:ingest` | `node:test` via `tsx` for the synthetic ingest and study fixtures. |
 | `npm run ingest:imdb -- --dry-run` | Corrected discovery. Prints candidates and unresolved titles. Writes nothing. |
 | `npm run validate:content` | Existing content validation. |
@@ -147,9 +149,8 @@ Full IMDb files are too large for the current in-memory title and name maps. Pha
 - No Postgres instance was used here, so `0002`, `0003`, and `0004` have not been applied to a live database. The suppression, review, and rate rules are covered in `node:test`.
 - Every current evidence URL is still `example.com`. Replacing them is editorial work, not an ingest rewrite.
 - Commercials need their own lane. Nothing in this sequence classifies an IMDb row as an ad, and the analysis does not invent an ad denominator.
-- The rate commands have been tested on the synthetic catalog and SSA fixture. Those numbers are a parser check. They are not a national finding. A full IMDb bulk run is still blocked on a disk-backed loader and a private snapshot.
-- `/studies/where-have-all-the-steves-gone` is not built.
+- The rate commands have been tested on the synthetic catalog and SSA fixture. Those numbers are a parser check. They are not a national finding, and they are not published on the study page. A full IMDb bulk run is still blocked on a disk-backed loader and a private snapshot.
 
 ## What happens next
 
-Phase 5 is the story page. It should read only a QA-passed aggregate export: study metadata, birth-name shares, screen rates, the lag scan, and the QA report. No placeholder statistics and no pre-written extinction conclusion. A disk-backed IMDb pass still has to replace the in-memory loader before a full bulk run.
+Publish the study page's charts only after `npm run data:study` and `npm run data:qa` pass on a frozen IMDb snapshot and an official SSA file. `npm run data:publish -- --write` is the step that copies those aggregates into the public study directory. A disk-backed IMDb pass still has to replace the in-memory loader before that snapshot can be built.

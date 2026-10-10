@@ -627,6 +627,63 @@ li {
   font-weight: 500;
 }
 
+.study-page {
+  width: min(calc(100% - 2rem), 920px);
+  margin: 0 auto;
+  display: grid;
+  gap: 0.88rem;
+  padding-top: 1rem;
+}
+
+.study-page .document-card > p:not(.section-label),
+.study-page .document-card li {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+.study-chart {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.4rem 0 0;
+}
+
+.study-chart figcaption,
+.study-chart caption,
+.data-table caption {
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  text-align: left;
+}
+
+.study-chart svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.study-chart__axis {
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+
+.study-chart__line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.study-chart__point {
+  fill: var(--accent);
+}
+
+.study-chart__empty {
+  fill: var(--ink-soft);
+  font-size: 13px;
+  font-family: var(--font-sans);
+}
+
 @media (max-width: 900px) {
   .entry-page__layout,
   .intake-form__row {
@@ -638,6 +695,7 @@ li {
   .shell,
   .archive-page,
   .document-page,
+  .study-page,
   .entry-page {
     width: min(calc(100% - 1rem), var(--max-width-wide));
   }

@@ -175,16 +175,24 @@ export function runStudyAnalysis(input: {
 }
 
 /** Re-read an aggregate export. Debut exclusions are not recomputed without the source credits. */
-export function auditStudyExport(files: Record<string, string>): QaReport {
+export function readStudyExport(files: Record<string, string>): {
+  metadata: StudyMetadata;
+  screenMetrics: StudyMetric[];
+  birthShares: BirthNameShare[];
+  lagScan: StudyLagScan[];
+  qa: QaReport;
+} {
   const metadata = parseMetadata(files["study-metadata.json"]);
+  const screenMetrics = parseScreenMetrics(files["screen-metrics.csv"] ?? "", metadata);
+  const birthShares = parseBirthShares(files["birth-shares.csv"] ?? "", metadata);
+  const lagScan = parseLagScan(files["lag-scan.csv"] ?? "", metadata);
+  const qa = auditStudyAnalysis({ metadata, screenMetrics, birthShares, lagScan, files });
 
-  return auditStudyAnalysis({
-    metadata,
-    screenMetrics: parseScreenMetrics(files["screen-metrics.csv"] ?? "", metadata),
-    birthShares: parseBirthShares(files["birth-shares.csv"] ?? "", metadata),
-    lagScan: parseLagScan(files["lag-scan.csv"] ?? "", metadata),
-    files
-  });
+  return { metadata, screenMetrics, birthShares, lagScan, qa };
+}
+
+export function auditStudyExport(files: Record<string, string>): QaReport {
+  return readStudyExport(files).qa;
 }
 
 export function auditStudyAnalysis(input: {
