@@ -11,6 +11,8 @@
     "data:audit": "tsx scripts/audit-existing-evidence.ts",
     "data:ssa": "tsx scripts/ingest-ssa.ts",
     "data:feasibility": "tsx scripts/build-feasibility-pilot.ts",
+    "data:study": "tsx scripts/build-study.ts",
+    "data:qa": "tsx scripts/audit-study.ts",
     "test:ingest": "tsx --test tests/ingest/*.test.ts",
     "db:sync:fixtures": "tsx scripts/sync-fixtures-to-postgres.ts"
   },

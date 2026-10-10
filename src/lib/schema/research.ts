@@ -20,6 +20,17 @@ export const studyVariantLabels = [
   "other"
 ] as const;
 
+/** Screen and birth metrics can name the combined Steve-family group. Credits stay on one spelling. */
+export const metricVariantLabels = [...studyVariantLabels, "steve_family"] as const;
+
+export const screenMetricKinds = [
+  "new_introductions_per_1000",
+  "named_credit_share_per_1000",
+  "work_share_per_100"
+] as const;
+
+export const birthShareStates = ["reported", "suppressed_or_absent", "partial_suppression"] as const;
+
 export const studyProtocolSchema = z
   .object({
     id: idSchema,
@@ -162,14 +173,20 @@ export const studyMetricSchema = z
   .object({
     id: idSchema,
     studyId: idSchema,
+    metricKind: z.enum(screenMetricKinds).optional(),
     decade: z.number().int().gte(STUDY_WINDOW_START).lte(STUDY_WINDOW_END),
     medium: z.enum(studyPanels),
-    variantLabel: z.enum(studyVariantLabels),
+    variantLabel: z.enum(metricVariantLabels),
     numerator: z.number().int().nonnegative().nullable(),
     denominator: z.number().int().positive().nullable(),
     rate: z.number().nonnegative().nullable(),
     uncertaintyLow: z.number().nonnegative().nullable(),
     uncertaintyHigh: z.number().nonnegative().nullable(),
+    denominatorLabel: z.string().min(2).max(80).optional(),
+    clusterUnit: z.enum(["work", "series"]).optional(),
+    clusterCount: z.number().int().nonnegative().optional(),
+    bootstrapReplicates: z.number().int().positive().optional(),
+    seed: z.string().min(8).max(80).optional(),
     completenessFlags: z.array(z.string().min(1).max(80)).default([]),
     calculationVersion: z.string().min(1).max(80),
     createdAt: isoDateTimeSchema
@@ -313,6 +330,100 @@ export type StudyCatalogTitle = z.infer<typeof studyCatalogTitleSchema>;
 export type StudyCatalog = z.infer<typeof studyCatalogSchema>;
 export type FeasibilityCoverageRow = z.infer<typeof feasibilityCoverageRowSchema>;
 export type FeasibilityReport = z.infer<typeof feasibilityReportSchema>;
+export const birthNameShareSchema = z
+  .object({
+    id: idSchema,
+    sourceSnapshotId: idSchema,
+    birthYear: z.number().int().gte(1880).lte(STUDY_WINDOW_END),
+    sex: z.enum(["F", "M", "combined"]),
+    variantLabel: z.enum(metricVariantLabels),
+    numerator: z.number().int().nonnegative().nullable(),
+    denominator: z.number().int().positive().nullable(),
+    rate: z.number().nonnegative().nullable(),
+    denominatorLabel: z.enum(["ssa_reported_same_sex_births", "ssa_reported_births"]),
+    observationState: z.enum(birthShareStates),
+    calculationVersion: z.string().min(1).max(80),
+    createdAt: isoDateTimeSchema
+  })
+  .strict()
+  .superRefine((share, context) => {
+    if (share.observationState === "reported") {
+      if (share.numerator === null || share.denominator === null || share.rate === null) {
+        context.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "A reported birth share needs a numerator, a denominator, and a rate.",
+          path: ["rate"]
+        });
+      }
+      return;
+    }
+
+    if (share.numerator !== null || share.rate !== null) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "A suppressed or partial birth share has a null numerator and a null rate.",
+        path: ["numerator"]
+      });
+    }
+  });
+
+export const studyLagScanSchema = z
+  .object({
+    id: idSchema,
+    studyId: idSchema,
+    lagYears: z.number().int().gte(0).lte(50),
+    medium: z.enum(studyPanels),
+    pairedDecades: z.number().int().nonnegative(),
+    correlation: z.number().gte(-1).lte(1).nullable(),
+    status: z.enum(["reported", "insufficient_bins", "undefined_correlation"]),
+    selectedLag: z.null(),
+    calculationVersion: z.string().min(1).max(80),
+    createdAt: isoDateTimeSchema
+  })
+  .strict();
+
+export const analysisProtocolSchema = z
+  .object({
+    id: idSchema,
+    calculationVersion: z.string().min(1).max(80),
+    seed: z.string().min(8).max(80),
+    bootstrapReplicates: z.number().int().gte(20).lte(10_000),
+    confidenceLevel: z.literal(0.95),
+    primaryOutcome: z.literal("new_introductions_per_1000"),
+    primaryVariant: z.literal("steve_family"),
+    panels: z.tuple([z.literal("film"), z.literal("tv")]),
+    window: z
+      .object({
+        startYear: z.literal(STUDY_WINDOW_START),
+        endYear: z.literal(STUDY_WINDOW_END)
+      })
+      .strict(),
+    lagYears: z.tuple([
+      z.literal(0),
+      z.literal(5),
+      z.literal(10),
+      z.literal(15),
+      z.literal(20),
+      z.literal(25),
+      z.literal(30),
+      z.literal(35),
+      z.literal(40),
+      z.literal(45),
+      z.literal(50)
+    ]),
+    controls: z.tuple([z.literal("john"), z.literal("david"), z.literal("michael"), z.literal("robert")]),
+    steveFamily: z.tuple([z.literal("steve"), z.literal("stephen"), z.literal("steven"), z.literal("stevie")]),
+    commercialPrevalenceCalculated: z.literal(false),
+    publicIndexIncluded: z.literal(false),
+    controlsArePublicEntries: z.literal(false)
+  })
+  .strict();
+
 export type StudyVariantLabel = (typeof studyVariantLabels)[number];
+export type MetricVariantLabel = (typeof metricVariantLabels)[number];
+export type ScreenMetricKind = (typeof screenMetricKinds)[number];
 export type StudyPanel = (typeof studyPanels)[number];
 export type StudySex = (typeof studySexes)[number];
+export type BirthNameShare = z.infer<typeof birthNameShareSchema>;
+export type StudyLagScan = z.infer<typeof studyLagScanSchema>;
+export type AnalysisProtocol = z.infer<typeof analysisProtocolSchema>;

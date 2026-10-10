@@ -1,0 +1,20 @@
+{
+  "id": "study-steve-extinction-v1",
+  "calculationVersion": "study-metrics-v1",
+  "seed": "steve-studies-analysis-v1",
+  "bootstrapReplicates": 1000,
+  "confidenceLevel": 0.95,
+  "primaryOutcome": "new_introductions_per_1000",
+  "primaryVariant": "steve_family",
+  "panels": ["film", "tv"],
+  "window": {
+    "startYear": 1960,
+    "endYear": 2025
+  },
+  "lagYears": [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+  "controls": ["john", "david", "michael", "robert"],
+  "steveFamily": ["steve", "stephen", "steven", "stevie"],
+  "commercialPrevalenceCalculated": false,
+  "publicIndexIncluded": false,
+  "controlsArePublicEntries": false
+}

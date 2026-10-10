@@ -1,6 +1,6 @@
 # Data implementation plan
 
-Policy lives in [data-strategy.md](data-strategy.md). This file is the repo gap list and the five-stage build sequence. Phases 1, 2, and 3 are implemented. Phases 4 and 5 are specified here and are not built.
+Policy lives in [data-strategy.md](data-strategy.md). This file is the repo gap list and the five-stage build sequence. Phases 1, 2, 3, and 4 are implemented. Phase 5 is specified here and is not built.
 
 ## What this phase changes
 
@@ -99,13 +99,16 @@ Implemented. This phase does not calculate the Steve introduction rate and does 
 
 ### Phase 4 — Reproducible analyses
 
-Specified, not implemented.
+Implemented. This phase calculates rates from a supplied catalog and an SSA file. It does not add the study page, and it does not treat the synthetic fixture as a national finding. The feasibility pilot still reports `primaryOutcomeCalculated: false`.
 
-- `npm run data:study` and `npm run data:qa`.
-- Primary outcome, defined before looking at a result: new fictional Steve-family introductions per 1,000 eligible new named character identities. Film and TV are separate panels.
+- `npm run data:study -- --catalog <private.json> --ssa <names.zip|yob dir|snapshot dir>` calculates the frozen outcomes. Pass `--release-date YYYY-MM-DD` unless `--ssa` already contains `birth-name-count.jsonl`. The command prints aggregate rates and writes only with `--write`, and only after QA passes. The default directory is `research/private/studies/<population-id>/analysis/`.
+- `npm run data:qa -- --dir <analysis export>` re-reads that export and exits 1 when a check fails.
+- The primary outcome, defined before a result is drawn, is `new_introductions_per_1000`: new fictional Steve-family introductions per 1,000 eligible new named character identities. Film and TV stay separate panels. A missing debut stays out of that denominator. A present denominator with no matches is a real zero.
+- Secondary outcomes stay distinct: named-credit share per 1,000, work share per 100, and SSA birth-name share per 100,000 tabulated births. Birth shares and screen rates are not compared as percentage points. The public index is not a numerator or a denominator.
 - Control names John, David, Michael, and Robert stay in the study. They do not become public Steve entries.
-- Bootstrap at work or series level. Report coverage, excluded debut years, and suppression. Do not draw a commercial prevalence line without a real ad denominator.
-- The same snapshot and seed must rebuild the same ids, rates, and exclusions.
+- Bootstrap resamples works or series, not credits. The lag scan reports every predeclared window from 0 to 50 years at 5-year steps and does not select one. A suppressed SSA cell stays null. If any Steve-family spelling is suppressed, the combined birth share is `partial_suppression` with a null rate.
+- The same snapshot and seed rebuild the same ids, rates, and exclusions. Exports are the five aggregate files only. No commercial prevalence line is written.
+- `db/migrations/0004_study_analysis.sql` adds metric columns, `birth_name_share`, and `study_lag_scan`. `0001` through `0003` are unchanged. A selected lag cannot be stored. The protocol file is `research/studies/steve-extinction.json`.
 
 ### Phase 5 — Data-linked story shell
 
@@ -128,22 +131,25 @@ Full IMDb files are too large for the current in-memory title and name maps. Pha
 | `npm run data:audit` | Rewrite `docs/evidence-audit.md` from `content/` JSON. Does not edit those JSON files. |
 | `npm run data:ssa` | Read a local SSA `names.zip`. Dry-run unless `--write` is set. |
 | `npm run data:feasibility` | Feasibility completeness and matching counts. Dry-run unless `--write` is set. |
+| `npm run data:study` | Screen rates, birth shares, and the lag scan. Dry-run unless `--write` is set. Writes only when QA passes. |
+| `npm run data:qa` | Re-read a study export and exit 1 when QA fails. |
 | `npm run test:ingest` | `node:test` via `tsx` for the synthetic ingest and study fixtures. |
 | `npm run ingest:imdb -- --dry-run` | Corrected discovery. Prints candidates and unresolved titles. Writes nothing. |
 | `npm run validate:content` | Existing content validation. |
 | `npm run build` | Existing production build. |
 
-`npm run data:commercials`, `npm run data:study`, and `npm run data:qa` belong to later phases and are not scripts yet.
+`npm run data:commercials` belongs to a later lane and is not a script yet.
 
 ## Still blocked
 
 - No IMDb bulk snapshot is in this environment, so discovery and the feasibility pilot have been tested on synthetic fixtures only.
 - No official SSA `names.zip` is in this environment. The importer has been tested on synthetic `yob` files and zip archives.
-- No Postgres instance was used here, so `0002` and `0003` have not been applied to a live database. The suppression and review rules are covered in `node:test`.
+- No Postgres instance was used here, so `0002`, `0003`, and `0004` have not been applied to a live database. The suppression, review, and rate rules are covered in `node:test`.
 - Every current evidence URL is still `example.com`. Replacing them is editorial work, not an ingest rewrite.
-- Commercials need their own lane. Nothing in Phase 1 or Phase 3 classifies an IMDb row as an ad.
-- The primary screen rate, control-name rates, and `/studies/where-have-all-the-steves-gone` wait until a frozen snapshot can rebuild every numerator and denominator.
+- Commercials need their own lane. Nothing in this sequence classifies an IMDb row as an ad, and the analysis does not invent an ad denominator.
+- The rate commands have been tested on the synthetic catalog and SSA fixture. Those numbers are a parser check. They are not a national finding. A full IMDb bulk run is still blocked on a disk-backed loader and a private snapshot.
+- `/studies/where-have-all-the-steves-gone` is not built.
 
 ## What happens next
 
-Phase 4, when it is picked up: `npm run data:study` and `npm run data:qa`, with the primary outcome defined before any result is drawn. Film and TV stay separate panels. A disk-backed IMDb pass still has to replace the in-memory loader before a full bulk run. The story page stays last.
+Phase 5 is the story page. It should read only a QA-passed aggregate export: study metadata, birth-name shares, screen rates, the lag scan, and the QA report. No placeholder statistics and no pre-written extinction conclusion. A disk-backed IMDb pass still has to replace the in-memory loader before a full bulk run.
