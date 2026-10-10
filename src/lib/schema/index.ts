@@ -4,3 +4,6 @@ export * from "@/src/lib/schema/steve-entry";
 export * from "@/src/lib/schema/collection";
 export * from "@/src/lib/schema/submission";
 export * from "@/src/lib/schema/ingest";
+export * from "@/src/lib/schema/identity-appearance";
+export * from "@/src/lib/schema/source-evidence";
+export * from "@/src/lib/schema/research";

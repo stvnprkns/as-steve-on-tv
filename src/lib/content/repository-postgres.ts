@@ -1,5 +1,10 @@
 import {
+  overlayDatabaseReviewState,
+  reconcileCandidatesWithReviewed
+} from "@/src/lib/data/normalize-character";
+import {
   candidateEntrySchema,
+  reviewActionSchema,
   collectionSchema,
   ingestRunSchema,
   sourcePersonRecordSchema,
@@ -9,6 +14,7 @@ import {
   type Collection,
   type IngestRun,
   type SourcePersonRecord,
+  type ReviewAction,
   type SourceTitleRecord,
   type SteveEntry
 } from "@/src/lib/schema";
@@ -150,8 +156,30 @@ export async function syncSourcePeopleToPostgres(records: SourcePersonRecord[]) 
   }
 }
 
+async function listCandidateSnapshots(): Promise<CandidateEntry[]> {
+  const result = await pgQuery<{
+    id: string;
+    slug: string;
+    status: string;
+    linked_published_entry_id: string | null;
+    payload: unknown;
+  }>("select id, slug, status, linked_published_entry_id, payload from candidate_entry");
+
+  return result.rows.map((row) =>
+    overlayDatabaseReviewState(candidateEntrySchema.parse(row.payload), {
+      id: row.id,
+      slug: row.slug,
+      status: row.status,
+      linkedPublishedEntryId: row.linked_published_entry_id
+    })
+  );
+}
+
 export async function syncCandidatesToPostgres(records: CandidateEntry[]) {
-  for (const record of records) {
+  const existing = records.length > 0 ? await listCandidateSnapshots() : [];
+  const reconciled = reconcileCandidatesWithReviewed(records, existing);
+
+  for (const record of reconciled) {
     const payload = candidateEntrySchema.parse(record);
     await pgQuery(
       `
@@ -184,7 +212,7 @@ export async function syncCandidatesToPostgres(records: CandidateEntry[]) {
           $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21::jsonb, $22, $23
         )
         on conflict (id) do update set
-          slug = excluded.slug,
+          slug = candidate_entry.slug,
           display_name = excluded.display_name,
           canonical_name = excluded.canonical_name,
           matched_name = excluded.matched_name,
@@ -196,14 +224,44 @@ export async function syncCandidatesToPostgres(records: CandidateEntry[]) {
           year_end = excluded.year_end,
           match_confidence = excluded.match_confidence,
           match_reason = excluded.match_reason,
-          status = excluded.status,
+          status = case
+            when candidate_entry.status in ('under_review', 'accepted', 'rejected', 'merged', 'needs_more_evidence')
+              then candidate_entry.status
+            when coalesce(candidate_entry.payload->>'status', '') in ('under_review', 'accepted', 'rejected', 'merged', 'needs_more_evidence')
+              then candidate_entry.payload->>'status'
+            else excluded.status
+          end,
           imdb_title_id = excluded.imdb_title_id,
           imdb_name_id = excluded.imdb_name_id,
           secondary_id = excluded.secondary_id,
           source_title_id = excluded.source_title_id,
           source_person_id = excluded.source_person_id,
-          linked_published_entry_id = excluded.linked_published_entry_id,
-          payload = excluded.payload,
+          linked_published_entry_id = coalesce(
+            candidate_entry.linked_published_entry_id,
+            nullif(candidate_entry.payload->>'linkedPublishedEntryId', ''),
+            excluded.linked_published_entry_id
+          ),
+          payload = excluded.payload || jsonb_build_object(
+            'id', to_jsonb(candidate_entry.id),
+            'slug', to_jsonb(candidate_entry.slug),
+            'createdAt', coalesce(candidate_entry.payload->'createdAt', excluded.payload->'createdAt'),
+            'status', case
+              when candidate_entry.status in ('under_review', 'accepted', 'rejected', 'merged', 'needs_more_evidence')
+                then to_jsonb(candidate_entry.status)
+              when coalesce(candidate_entry.payload->>'status', '') in ('under_review', 'accepted', 'rejected', 'merged', 'needs_more_evidence')
+                then to_jsonb(candidate_entry.payload->>'status')
+              else excluded.payload->'status'
+            end,
+            'linkedPublishedEntryId', case
+              when candidate_entry.linked_published_entry_id is not null
+                then to_jsonb(candidate_entry.linked_published_entry_id)
+              when nullif(candidate_entry.payload->>'linkedPublishedEntryId', '') is not null
+                then candidate_entry.payload->'linkedPublishedEntryId'
+              else excluded.payload->'linkedPublishedEntryId'
+            end,
+            'reviewDisposition', coalesce(candidate_entry.payload->'reviewDisposition', excluded.payload->'reviewDisposition'),
+            'identityId', coalesce(candidate_entry.payload->'identityId', excluded.payload->'identityId')
+          ),
           updated_at = excluded.updated_at
       `,
       [
@@ -387,9 +445,51 @@ export async function acceptCandidate(id: string, publishedEntry: SteveEntry) {
         status = 'accepted',
         linked_published_entry_id = $2,
         updated_at = $3,
-        payload = jsonb_set(payload, '{linkedPublishedEntryId}', to_jsonb($2::text), true)
+        payload = jsonb_set(
+          jsonb_set(payload, '{linkedPublishedEntryId}', to_jsonb($2::text), true),
+          '{status}',
+          to_jsonb('accepted'::text),
+          true
+        )
       where id = $1
     `,
     [id, payload.id, new Date().toISOString()]
+  );
+}
+
+export async function insertReviewAction(action: ReviewAction) {
+  const payload = reviewActionSchema.parse(action);
+  const existing = await pgQuery<{ id: string }>("select id from review_action where id = $1", [payload.id]);
+
+  if ((existing.rowCount ?? 0) > 0) {
+    throw new Error(`Review action ${payload.id} already exists and cannot be rewritten.`);
+  }
+
+  await pgQuery(
+    `
+      insert into review_action (
+        id,
+        action,
+        moderator,
+        reason,
+        target_type,
+        target_id,
+        before_payload,
+        after_payload,
+        created_at
+      )
+      values ($1, $2, $3, $4, $5, $6, $7::jsonb, $8::jsonb, $9)
+    `,
+    [
+      payload.id,
+      payload.action,
+      payload.moderator,
+      payload.reason,
+      payload.targetType,
+      payload.targetId,
+      payload.beforePayload ? JSON.stringify(payload.beforePayload) : null,
+      payload.afterPayload ? JSON.stringify(payload.afterPayload) : null,
+      payload.createdAt
+    ]
   );
 }

@@ -3,6 +3,7 @@ import type {
   Collection,
   IngestRun,
   SourcePersonRecord,
+  ReviewAction,
   SourceTitleRecord,
   SteveEntry,
   Submission,
@@ -11,6 +12,7 @@ import type {
 import { hasDatabaseUrl } from "@/src/lib/db/pg";
 import {
   acceptCandidate as acceptCandidateInPostgres,
+  insertReviewAction as insertReviewActionInPostgres,
   listCandidatesFromPostgres,
   listCollectionsFromPostgres,
   listEntriesFromPostgres,
@@ -45,6 +47,7 @@ export type ContentRepository = {
   upsertPublishedEntries(entries: SteveEntry[]): Promise<void>;
   upsertCollections(collections: Collection[]): Promise<void>;
   acceptCandidate(id: string, publishedEntry: SteveEntry): Promise<void>;
+  insertReviewAction(action: ReviewAction): Promise<void>;
 };
 
 function unsupported(operation: string) {
@@ -64,7 +67,8 @@ const filesystemRepository: ContentRepository = {
   upsertIngestRun: async () => unsupported("upsertIngestRun"),
   upsertPublishedEntries: async () => unsupported("upsertPublishedEntries"),
   upsertCollections: async () => unsupported("upsertCollections"),
-  acceptCandidate: async () => unsupported("acceptCandidate")
+  acceptCandidate: async () => unsupported("acceptCandidate"),
+  insertReviewAction: async () => unsupported("insertReviewAction")
 };
 
 const postgresRepository: ContentRepository = {
@@ -80,7 +84,8 @@ const postgresRepository: ContentRepository = {
   upsertIngestRun: syncIngestRunToPostgres,
   upsertPublishedEntries: syncEntriesToPostgres,
   upsertCollections: syncCollectionsToPostgres,
-  acceptCandidate: acceptCandidateInPostgres
+  acceptCandidate: acceptCandidateInPostgres,
+  insertReviewAction: insertReviewActionInPostgres
 };
 
 export function getContentRepository(): ContentRepository {

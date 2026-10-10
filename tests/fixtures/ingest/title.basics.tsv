@@ -1,0 +1,15 @@
+tconst	titleType	primaryTitle	originalTitle	isAdult	startYear	endYear	runtimeMinutes	genres
+tt9000001	movie	Bobs Adventure	Bobs Adventure	0	1999	\N	\N	Comedy
+tt9000002	movie	Strange Picture	Strange Picture	0	2016	\N	\N	Fantasy
+tt9000003	short	Short Steve	Short Steve	0	2001	\N	\N	Short
+tt9000004	video	Video Steve	Video Steve	0	2002	\N	\N	Video
+tt9000005	movie	Stevenson Story	Stevenson Story	0	1980	\N	\N	Drama
+tt9000006	movie	Rogers Picture	Rogers Picture	0	2005	\N	\N	Drama
+tt9000010	tvSeries	Neighborhood Show	Neighborhood Show	0	2010	2016	\N	Comedy
+tt9000011	tvEpisode	Pilot Hour	Pilot Hour	0	2010	\N	\N	Comedy
+tt9000012	tvEpisode	Second Hour	Second Hour	0	2010	\N	\N	Comedy
+tt9000013	tvEpisode	Third Hour	Third Hour	0	2011	\N	\N	Comedy
+tt9000020	videoGame	Steve Game	Steve Game	0	2018	\N	\N	Game
+tt9000030	tvMovie	Afternoon Feature	Afternoon Feature	0	1995	\N	\N	Drama
+tt9000040	movie	Guest Picture	Guest Picture	0	2008	\N	\N	Comedy
+tt9000050	tvShort	Tiny Episode	Tiny Episode	0	2012	\N	\N	Comedy

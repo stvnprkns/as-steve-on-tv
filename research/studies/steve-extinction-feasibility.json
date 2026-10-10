@@ -1,0 +1,20 @@
+{
+  "id": "study-steve-extinction-feasibility-v1",
+  "version": "1",
+  "approvedStatus": "draft",
+  "window": {
+    "startYear": 1960,
+    "endYear": 2025
+  },
+  "filmsPerDecade": 100,
+  "seriesPerDecade": 50,
+  "seed": "steve-studies-feasibility-v1",
+  "samplingMethod": "feasibility_stratified_decade_genre",
+  "panels": ["film", "tv"],
+  "eligibilityPolicy": "Fictional named actor and actress credits in selected films and TV series. Self credits, unnamed roles, and non-performers stay out of the eligible set. Production country is not inferred.",
+  "freeze": "The study window is the 1960 through 2025 cutoff. A later year present in a source file is kept as source data and left out of the window. No 2026 value is estimated.",
+  "trackedBirthNames": ["Steve", "Steven", "Stephen", "Stevie"],
+  "controlNames": ["John", "David", "Michael", "Robert"],
+  "suppression": "An SSA count under 5, or a missing name, sex, and birth year, is suppressed_or_absent with a null count.",
+  "primaryOutcomeCalculated": false
+}

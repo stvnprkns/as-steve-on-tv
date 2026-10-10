@@ -1,0 +1,15 @@
+nconst	primaryName	birthYear	deathYear	primaryProfession	knownForTitles
+nm9000001	Steven Actor	1970	\N	actor	tt9000001
+nm9000002	Steve Director	1950	\N	director	tt9000001
+nm9000003	Pat Strange	1976	\N	actor	tt9000002
+nm9000004	Pat Multi	1980	\N	actress	tt9000002
+nm9000005	Ada Crew	1990	\N	actress	tt9000005
+nm9000006	Sam Rogers	1981	\N	actor	tt9000006
+nm9000007	Cam Neighbor	1982	\N	actor	tt9000010
+nm9000008	Joe Episode	1992	\N	actor	tt9000010
+nm9000009	Steve Host	1973	\N	actor	tt9000010
+nm9000010	Bob Guest	1960	\N	actor	tt9000006
+nm9000011	Casey Format	1985	\N	actor	tt9000003
+nm9000012	Pat Feature	1977	\N	actor	tt9000030
+nm9000013	Stephen Player	1984	\N	actor	tt9000040
+nm9000014	Stevie Shortform	1988	\N	actor	tt9000050

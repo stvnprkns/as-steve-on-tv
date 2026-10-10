@@ -1,6 +1,7 @@
 import { CandidateTable } from "@/src/components/admin/candidate-table";
 import { SubmissionTable } from "@/src/components/admin/submission-table";
-import { getAllSubmissions, getIngestRuns, getReviewQueue } from "@/src/lib/content";
+import { suggestCandidateReviews } from "@/src/lib/data/identity-resolution";
+import { getAllEntries, getAllSubmissions, getIngestRuns, getReviewQueue } from "@/src/lib/content";
 import { buildMetadata } from "@/src/lib/seo/metadata";
 
 export const metadata = buildMetadata({
@@ -9,12 +10,14 @@ export const metadata = buildMetadata({
 });
 
 export default async function AdminPage() {
-  const [submissions, candidates, ingestRuns] = await Promise.all([
+  const [submissions, candidates, ingestRuns, entries] = await Promise.all([
     getAllSubmissions(),
     getReviewQueue(),
-    getIngestRuns()
+    getIngestRuns(),
+    getAllEntries()
   ]);
   const latestRun = ingestRuns[0] ?? null;
+  const reviewRows = suggestCandidateReviews(candidates, entries);
 
   return (
     <div className="stack">
@@ -39,7 +42,11 @@ export default async function AdminPage() {
       <section className="document-card">
         <p className="section-label">Review queue</p>
         <h2>Candidate entries</h2>
-        <CandidateTable candidates={candidates} />
+        <p>
+          Suggestions distinguish a new identity, a new appearance, a duplicate, an out-of-scope credit, or a credit that still
+          needs evidence. They are not saved decisions, and they do not change published slugs.
+        </p>
+        <CandidateTable rows={reviewRows} />
       </section>
       <section className="document-card">
         <p className="section-label">Submissions</p>

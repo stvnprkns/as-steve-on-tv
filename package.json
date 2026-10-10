@@ -8,6 +8,10 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "generate:artifacts": "tsx scripts/generate-public-artifacts.ts",
     "ingest:imdb": "tsx scripts/ingest-imdb-bulk.ts",
+    "data:audit": "tsx scripts/audit-existing-evidence.ts",
+    "data:ssa": "tsx scripts/ingest-ssa.ts",
+    "data:feasibility": "tsx scripts/build-feasibility-pilot.ts",
+    "test:ingest": "tsx --test tests/ingest/*.test.ts",
     "db:sync:fixtures": "tsx scripts/sync-fixtures-to-postgres.ts"
   },
   "dependencies": {

@@ -14,6 +14,7 @@ import {
   nameVariantSchema
 } from "@/src/lib/schema/taxonomy";
 import { collectionSchema } from "@/src/lib/schema/collection";
+import { reviewDispositionSchema } from "@/src/lib/schema/identity-appearance";
 import { steveEntrySchema } from "@/src/lib/schema/steve-entry";
 import { searchDocumentSchema } from "@/src/lib/search/search-types";
 
@@ -70,6 +71,8 @@ export const candidateEntrySchema = z
     matchConfidence: detectionConfidenceSchema,
     matchReason: z.string().min(20).max(320),
     status: moderationStatusSchema,
+    reviewDisposition: reviewDispositionSchema.optional(),
+    identityId: idSchema.optional(),
     imdbTitleId: z.string().min(2).max(32).optional(),
     imdbNameId: z.string().min(2).max(32).optional(),
     secondaryId: z.string().min(2).max(64).optional(),

@@ -80,7 +80,31 @@ export const steveEntrySchema = z
       .optional(),
     derivedFromCandidateId: idSchema.optional(),
     lastVerifiedAt: isoDateTimeSchema.optional(),
-    image: optionalImageSchema.optional()
+    image: optionalImageSchema.optional(),
+    identityId: idSchema.optional(),
+    sourceIds: z.array(idSchema).optional(),
+    firstConfirmedAppearance: z
+      .object({
+        year: z.number().int().gte(1888).lte(2100),
+        date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+        precision: z.enum(["day", "year", "range"]),
+        verified: z.boolean()
+      })
+      .strict()
+      .optional(),
+    representationType: z.enum(["fictional_character", "self", "commercial_persona"]).optional(),
+    productionIds: z.array(z.string().min(2).max(64)).optional(),
+    imageRights: z
+      .object({
+        displayAllowed: z.boolean(),
+        licenseBasis: z.string().min(2).max(160),
+        attribution: z.string().min(2).max(240).optional(),
+        sourceUrl: z.string().url().optional(),
+        reviewedAt: isoDateTimeSchema.optional()
+      })
+      .strict()
+      .optional(),
+    researchLinkIds: z.array(idSchema).optional()
   })
   .merge(timestampFieldsSchema)
   .strict()
@@ -90,6 +114,14 @@ export const steveEntrySchema = z
         code: z.ZodIssueCode.custom,
         path: ["yearEnd"],
         message: "yearEnd must be greater than or equal to yearStart."
+      });
+    }
+
+    if (value.firstConfirmedAppearance?.precision === "day" && !value.firstConfirmedAppearance.date) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["firstConfirmedAppearance", "date"],
+        message: "A day-precision appearance needs a date."
       });
     }
   });

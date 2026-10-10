@@ -1,0 +1,15 @@
+decade,medium,works_requested,works_available,works_selected,quota_shortfall,works_with_parsable_named_credits,share_of_selected_works_with_parsable_named_credits,named_credits,steve_family_credits,control_name_credits,other_named_credits,introductions_with_debut,excluded_missing_debut,excluded_self,excluded_unnamed,excluded_non_performer,grouped_episode_credits
+1960,film,100,4,4,96,3,0.7500,4,1,1,2,4,0,1,1,1,0
+1960,tv,50,0,0,50,0,,0,0,0,0,0,0,0,0,0,0
+1970,film,100,0,0,100,0,,0,0,0,0,0,0,0,0,0,0
+1970,tv,50,1,1,49,1,1.0000,3,2,1,0,1,2,0,0,0,1
+1980,film,100,0,0,100,0,,0,0,0,0,0,0,0,0,0,0
+1980,tv,50,0,0,50,0,,0,0,0,0,0,0,0,0,0,0
+1990,film,100,0,0,100,0,,0,0,0,0,0,0,0,0,0,0
+1990,tv,50,0,0,50,0,,0,0,0,0,0,0,0,0,0,0
+2000,film,100,0,0,100,0,,0,0,0,0,0,0,0,0,0,0
+2000,tv,50,0,0,50,0,,0,0,0,0,0,0,0,0,0,0
+2010,film,100,0,0,100,0,,0,0,0,0,0,0,0,0,0,0
+2010,tv,50,0,0,50,0,,0,0,0,0,0,0,0,0,0,0
+2020,film,100,0,0,100,0,,0,0,0,0,0,0,0,0,0,0
+2020,tv,50,0,0,50,0,,0,0,0,0,0,0,0,0,0,0
