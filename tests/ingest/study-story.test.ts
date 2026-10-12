@@ -78,7 +78,7 @@ test("the public study page stays unpublished until a QA-passed export exists", 
   assert.equal(inProgressStory().conclusion, null);
   assert.match(html, /Where have all the Steves gone/);
   assert.match(html, /stops at the question and the rules/);
-  assert.match(html, /href="\/"/);
+  assert.match(html, /href="\/archive"/);
   assert.match(html, /href="\/method"/);
   assert.doesNotMatch(html, /250/);
   assert.doesNotMatch(html, /666\.666667/);

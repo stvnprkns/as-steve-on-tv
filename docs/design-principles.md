@@ -2,7 +2,7 @@
 
 ## How The Site Should Feel
 
-As Steve on TV should feel like a collectible cabinet opened on the internet.
+As Steve on TV should feel like a collectible cabinet opened on the internet, then dumped into one enormous scrapbook.
 
 It should feel:
 
@@ -33,6 +33,7 @@ The right reference frame is not "content platform." It is "museum gift shop cat
 
 ## Inspiration References In Descriptive Terms
 
+- a maximalist pop-culture scrapbook of photographic cutouts, not illustrated consistency
 - old broadcast listings with hierarchy and density
 - print ephemera from media archives
 - museum labels that know when to stop talking

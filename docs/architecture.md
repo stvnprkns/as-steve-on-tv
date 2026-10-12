@@ -30,6 +30,7 @@ This gives the product:
 Core public domain objects:
 
 - `SteveEntry`
+- `SteveCutout`
 - `Collection`
 - `TaxonomyData`
 
@@ -38,6 +39,7 @@ Operational objects:
 - `Submission`
 - `ModerationDecision`
 - `AnalyticsEvent`
+- cutout studio writes (local filesystem)
 
 Keep the public domain model small and explicit. Add operational models only when the workflow requires them.
 

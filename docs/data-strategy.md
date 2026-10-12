@@ -114,7 +114,7 @@ Primary references:
 
 **Licensing checkpoint:** Before using IMDb or TMDB as the input of an automated public-catalog publishing system, document the permitted use or obtain rights. Attribution does not substitute for licensing. If unavailable, use those sources for permitted private exploratory work only and build publishable curated records from independently verified, lawfully usable facts and authorized imagery; obtain legal review when necessary. Public output should never be an unfiltered export of licensed discovery data.
 
-**Assets:** Add media-rights metadata (`assetProvider`, `assetSourceUrl`, `licenseBasis`, `attribution`, `usageScope`, `reviewedAt`, `expiresAt`). Set `displayAllowed=false` until authorized. Do not auto-download/rehost film stills, key art, portraits, or ad frames. Existing site imagery must be audited before promotion.
+**Assets:** Add media-rights metadata (`assetProvider`, `assetSourceUrl`, `licenseBasis`, `attribution`, `usageScope`, `reviewedAt`, `expiresAt`). Set `displayAllowed=false` until authorized. Do not auto-download/rehost film stills, key art, portraits, or ad frames. Existing site imagery must be audited before promotion. Collage cutouts keep the original frame, a transparent cutout, and a silhouette mask; they stay off the public canvas until `displayAllowed` is true. See [cutout-pipeline.md](/docs/cutout-pipeline.md).
 
 ## 5. Schema evolution: augment, don't replace
 

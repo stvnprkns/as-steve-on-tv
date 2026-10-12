@@ -11,6 +11,7 @@ The goal is simple: build As Steve on TV without sanding off the point of the pr
 Before making changes, read in this order:
 
 1. [vision.md](/Users/stephenperkins/Documents/steve-index/docs/vision.md)
+1b. [collage.md](/Users/stephenperkins/Documents/steve-index/docs/collage.md) and [cutout-pipeline.md](/Users/stephenperkins/Documents/steve-index/docs/cutout-pipeline.md)
 2. [mvp-scope.md](/Users/stephenperkins/Documents/steve-index/docs/mvp-scope.md)
 3. [prd.md](/Users/stephenperkins/Documents/steve-index/docs/prd.md)
 4. [implementation-plan.md](/Users/stephenperkins/Documents/steve-index/docs/implementation-plan.md)

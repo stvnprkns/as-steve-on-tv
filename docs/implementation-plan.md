@@ -16,11 +16,13 @@ This is enough to build real UI against actual records instead of placeholder ar
 
 ## What Is Ready To Build Next
 
-### 1. Homepage polish
+### 1. Homepage collage
 
-- replace the plain scaffold hero with a more intentional editorial landing surface
-- add a stronger featured-collection module
-- define the first permanent homepage shelves
+- the index view is the Find Steve collage; the list is `/archive`
+- add real photographic cutouts through the studio, not illustrated placeholders
+- keep find, hover identity, and info cards coexisting without game-menu chrome
+
+See [collage.md](/docs/collage.md) and [cutout-pipeline.md](/docs/cutout-pipeline.md).
 
 ### 2. Entry page depth
 

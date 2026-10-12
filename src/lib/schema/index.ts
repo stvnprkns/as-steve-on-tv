@@ -7,3 +7,4 @@ export * from "@/src/lib/schema/ingest";
 export * from "@/src/lib/schema/identity-appearance";
 export * from "@/src/lib/schema/source-evidence";
 export * from "@/src/lib/schema/research";
+export * from "@/src/lib/schema/cutout";

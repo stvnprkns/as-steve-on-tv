@@ -2,9 +2,9 @@
 
 ## Product Thesis
 
-As Steve on TV is a canonical editorial index for Steve, Stephen, Steven, and Stevie characters and on-screen people across TV, movies, and commercials.
+As Steve on TV is a giant, ever-growing collage of Steve cutouts from TV, movies, and commercials — a game, a cultural archive, and a ridiculous piece of internet art. The collage is the product. Finding a particular Steve is one way to interact with it.
 
-The thesis is simple: a narrow, high-taste index can be more culturally resonant than a broad, generic database. The constraint is the product. A site that takes one funny premise seriously enough becomes useful, memorable, and shareable.
+The thesis is simple: a narrow, high-taste index can be more culturally resonant than a broad, generic database. The constraint is the product. A site that takes one funny premise seriously enough becomes useful, memorable, and shareable. The public face of that index is the pile of Steves, not a chart.
 
 ## The Wedge
 
@@ -61,7 +61,8 @@ The product should be sincere enough that the joke never needs explaining.
 
 ## What This Is
 
-- a curated media index
+- a living collage of Steve cutouts
+- a curated media index underneath that collage
 - an editorial discovery engine
 - a strange-but-useful source of truth
 - a framework for collections, rankings, and archetypes

@@ -17,9 +17,12 @@ JSON is the right v1 trade because it keeps loading, validation, diffs, and AI-a
 ## Core Entities
 
 - `SteveEntry`: a canonical indexed Steve item
+- `SteveCutout`: a collage asset with original frame, transparent cutout, silhouette mask, and rights
 - `Collection`: an editorial grouping of Steve entries
 - `Submission`: a proposed new entry, correction, or dispute
 - `TaxonomyData`: the controlled vocabularies that drive browse, validation, and moderation
+
+Cutout records live in `content/cutouts/`. They may link to a `SteveEntry` but are not published by default. Public collage display requires `status: collage-ready` and `imageRights.displayAllowed: true`. See [cutout-pipeline.md](/docs/cutout-pipeline.md).
 
 ## Steve Entry Definition
 

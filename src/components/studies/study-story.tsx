@@ -40,7 +40,7 @@ export function StudyStory({ view }: { view: StoryView }) {
         <p>{view.indexNote}</p>
         <ul className="document-list">
           <li>
-            <a href="/">Browse the archive</a>
+            <a href="/archive">Browse the archive</a>
           </li>
           <li>
             <a href="/method">How the archive decides what counts</a>

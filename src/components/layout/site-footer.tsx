@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="shell site-footer__inner">
         <p>an editorial archive of Steve on screen</p>
         <nav className="site-footer__nav" aria-label="Footer">
-          <Link href="/">archive</Link>
+          <Link href="/archive">archive</Link>
           <Link href="/studies/where-have-all-the-steves-gone">study</Link>
           <Link href="/method">method</Link>
           <Link href="/submit">report</Link>

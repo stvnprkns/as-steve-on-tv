@@ -81,7 +81,7 @@ Do not invert this order.
 ### Deliverables
 
 - static-first Next.js app
-- homepage
+- homepage collage (Find Steve) with archive list as a side room
 - search
 - browse
 - entry pages

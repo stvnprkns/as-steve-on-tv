@@ -3,10 +3,13 @@ import type {
   Collection,
   IngestRun,
   PublicArchiveManifest,
+  SteveCutout,
   SteveEntry,
   Submission,
   TaxonomyData
 } from "@/src/lib/schema";
+import { isPublicCollageCutout } from "@/src/lib/schema/cutout";
+import { loadCutouts } from "@/src/lib/content/load-cutouts";
 import { buildPublicArchiveManifest, loadPublicArchiveManifest, loadPublicCollectionArtifact, loadPublicEntryArtifact } from "@/src/lib/content/public-artifacts";
 import { getContentRepository } from "@/src/lib/content/repository";
 
@@ -141,4 +144,13 @@ export async function getReviewQueue(): Promise<CandidateEntry[]> {
 
 export async function getIngestRuns(): Promise<IngestRun[]> {
   return (await getOperationalBundle()).ingestRuns;
+}
+
+export async function getAllCutouts(): Promise<SteveCutout[]> {
+  return loadCutouts();
+}
+
+export async function getPublicCollageCutouts(): Promise<SteveCutout[]> {
+  const cutouts = await loadCutouts();
+  return cutouts.filter(isPublicCollageCutout);
 }

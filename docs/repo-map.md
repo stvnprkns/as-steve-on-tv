@@ -18,6 +18,7 @@ The goal is not perfect permanence. The goal is to keep the codebase understanda
     collections/
     submissions/
     taxonomies/
+    cutouts/
   src/
     components/
     lib/
