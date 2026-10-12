@@ -15,6 +15,9 @@
     "data:qa": "tsx scripts/audit-study.ts",
     "data:publish": "tsx scripts/publish-study.ts",
     "test:ingest": "tsx --test tests/ingest/*.test.ts",
+    "test:cutout": "tsx --test tests/cutout/*.test.ts",
+    "cutout:process": "tsx scripts/process-cutout.ts",
+    "cutout:fixtures": "tsx scripts/generate-cutout-fixtures.ts",
     "db:sync:fixtures": "tsx scripts/sync-fixtures-to-postgres.ts"
   },
   "dependencies": {
@@ -23,12 +26,14 @@
     "pg": "^8.20.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sharp": "^0.35.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@types/sharp": "^0.31.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

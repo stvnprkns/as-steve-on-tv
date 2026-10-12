@@ -145,6 +145,26 @@ li {
   padding: 0 0 3.5rem;
 }
 
+.shell:has(.collage-breakout) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.site-main:has(.collage-breakout) {
+  padding: 0;
+}
+
+body:has(.collage-breakout) .site-footer {
+  display: none;
+}
+
+body:has(.collage-breakout),
+body:has(.collage-breakout) .site-main {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .archive-page,
 .document-page,
 .entry-page {
@@ -723,5 +743,279 @@ li {
 
   .record-row__placeholder {
     min-height: 34px;
+  }
+}
+
+.collage-breakout {
+  position: relative;
+  height: calc(100vh - 2.6rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(90, 62, 42, 0.08), transparent 28%),
+    radial-gradient(circle at 80% 70%, rgba(40, 52, 70, 0.08), transparent 32%),
+    repeating-linear-gradient(0deg, rgba(16, 19, 23, 0.03) 0 1px, transparent 1px 7px),
+    #efe6d6;
+}
+
+.collage-hud {
+  position: absolute;
+  z-index: 20;
+  top: 0.7rem;
+  left: 0.7rem;
+  right: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  pointer-events: none;
+}
+
+.collage-kicker {
+  position: absolute;
+  top: -0.15rem;
+  left: 0.2rem;
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.find-card,
+.density-counter,
+.steve-info-card {
+  pointer-events: auto;
+  background: rgba(246, 247, 244, 0.92);
+  border: 1px solid var(--line-strong);
+  box-shadow: 0 12px 40px rgba(16, 19, 23, 0.12);
+}
+
+.find-card {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 32rem;
+  margin-top: 1.1rem;
+  padding: 0.75rem 0.85rem;
+}
+
+.find-card__portrait {
+  width: 72px;
+  height: 92px;
+  background:
+    linear-gradient(45deg, #ddd 25%, transparent 25%),
+    linear-gradient(-45deg, #ddd 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ddd 75%),
+    linear-gradient(-45deg, transparent 75%, #ddd 75%);
+  background-size: 12px 12px;
+  background-position: 0 0, 0 6px, 6px -6px, -6px 0;
+  overflow: hidden;
+}
+
+.find-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.find-card__copy h1,
+.steve-info-card h2 {
+  margin: 0.1rem 0 0.15rem;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.find-card__copy p,
+.density-counter p,
+.steve-info-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+}
+
+.find-card__label,
+.steve-info-card__kicker,
+.density-counter__count {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.find-card__button,
+.cutout-studio button,
+.density-counter__share,
+.steve-info-card__links a,
+.steve-info-card__links button {
+  display: inline-block;
+  margin-top: 0.55rem;
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--line-strong);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.density-counter {
+  margin-top: 1.1rem;
+  padding: 0.7rem 0.8rem;
+  max-width: 16rem;
+  text-align: right;
+}
+
+.density-counter__count {
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.density-counter__quiet {
+  margin-top: 0.35rem;
+}
+
+.collage-board {
+  height: calc(100vh - 2.6rem);
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+
+.collage-board:active {
+  cursor: grabbing;
+}
+
+.collage-world {
+  position: relative;
+  transform-origin: 0 0;
+}
+
+.collage-sprite {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 12px rgba(20, 16, 12, 0.22));
+}
+
+.collage-sprite img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.collage-sprite--hot {
+  filter: drop-shadow(0 0 0 #fff) drop-shadow(0 12px 16px rgba(20, 16, 12, 0.3));
+}
+
+.collage-sprite__label {
+  position: absolute;
+  left: 50%;
+  bottom: -1.1rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 0.1rem 0.35rem;
+  background: rgba(246, 247, 244, 0.92);
+  font-size: 0.68rem;
+}
+
+.steve-info-card {
+  position: absolute;
+  z-index: 22;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  width: min(22rem, calc(100% - 1.6rem));
+  padding: 0.85rem;
+}
+
+.steve-info-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.cutout-studio {
+  display: grid;
+  gap: 1rem;
+}
+
+.cutout-studio__stage {
+  position: relative;
+  margin: 0.8rem 0;
+  max-width: 720px;
+  user-select: none;
+}
+
+.cutout-studio__stage img {
+  width: 100%;
+  height: auto;
+}
+
+.cutout-studio__selection {
+  position: absolute;
+  border: 2px solid #d24;
+  background: rgba(221, 34, 68, 0.12);
+  pointer-events: none;
+}
+
+.cutout-studio__result {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.cutout-studio__checker {
+  min-height: 160px;
+  background:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+.cutout-studio__checker img {
+  margin: 0 auto;
+  max-height: 240px;
+}
+
+.cutout-studio__error {
+  color: #9a1f1f;
+}
+
+.cutout-studio__list {
+  padding: 0;
+  list-style: none;
+}
+
+.cutout-studio__list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cutout-studio__file,
+.cutout-studio .intake-form__row,
+.cutout-studio label {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.55rem 0;
+}
+
+@media (max-width: 800px) {
+  .collage-hud {
+    flex-direction: column;
+  }
+
+  .density-counter,
+  .find-card {
+    max-width: none;
+    text-align: left;
+  }
+
+  .cutout-studio__result {
+    grid-template-columns: 1fr;
   }
 }

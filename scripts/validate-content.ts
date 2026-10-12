@@ -1,5 +1,6 @@
 import {
   getAllCollections,
+  getAllCutouts,
   getAllEntries,
   getAllSubmissions,
   getIngestRuns,
@@ -9,14 +10,15 @@ import {
 } from "../src/lib/content";
 
 async function main() {
-  const [taxonomy, entries, collections, submissions, candidates, ingestRuns, searchDocuments] = await Promise.all([
+  const [taxonomy, entries, collections, submissions, candidates, ingestRuns, searchDocuments, cutouts] = await Promise.all([
     getTaxonomy(),
     getAllEntries(),
     getAllCollections(),
     getAllSubmissions(),
     getReviewQueue(),
     getIngestRuns(),
-    getSearchDocuments()
+    getSearchDocuments(),
+    getAllCutouts()
   ]);
 
   console.log("Content validation passed.");
@@ -27,6 +29,14 @@ async function main() {
   console.log(`- candidates: ${candidates.length}`);
   console.log(`- ingest runs: ${ingestRuns.length}`);
   console.log(`- search documents: ${searchDocuments.length}`);
+  console.log(`- cutouts: ${cutouts.length}`);
+
+  const entryIds = new Set(entries.map((entry) => entry.id));
+  for (const cutout of cutouts) {
+    if (cutout.entryId && !entryIds.has(cutout.entryId)) {
+      throw new Error(`Cutout ${cutout.id} references unknown entry ${cutout.entryId}`);
+    }
+  }
 }
 
 main().catch((error) => {

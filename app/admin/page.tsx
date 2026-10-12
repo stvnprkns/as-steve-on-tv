@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { CandidateTable } from "@/src/components/admin/candidate-table";
 import { SubmissionTable } from "@/src/components/admin/submission-table";
 import { suggestCandidateReviews } from "@/src/lib/data/identity-resolution";
@@ -28,6 +30,19 @@ export default async function AdminPage() {
           future moderation UI.
         </p>
       </div>
+      <section className="document-card">
+        <p className="section-label">Collage</p>
+        <h2>Cutout studio</h2>
+        <p>
+          Turn a source frame into a transparent Steve, keep the mask for click hits, and leave display off until rights are
+          reviewed.
+        </p>
+        <p>
+          <Link className="text-link" href="/admin/cutouts">
+            Open the cutout studio
+          </Link>
+        </p>
+      </section>
       <section className="document-card">
         <p className="section-label">Ingest</p>
         <h2>Latest run</h2>

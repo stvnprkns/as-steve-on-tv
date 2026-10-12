@@ -305,5 +305,5 @@ export function buildArchiveHref(query: ArchiveQuery, patch: Partial<ArchiveQuer
   }
 
   const queryString = params.toString();
-  return queryString ? `/?${queryString}` : "/";
+  return queryString ? `/archive?${queryString}` : "/archive";
 }

@@ -2,9 +2,9 @@
 
 ## Product Shape
 
-As Steve on TV is an editorial media index. Users should be able to look up a known Steve, browse by category or mood, and fall into deeper trails through related entries and collections.
+As Steve on TV is an editorial media index whose public face is a giant collage of Steve cutouts. Users should be able to find a particular Steve in the pile, look up a known Steve in the archive, browse by category or mood, and fall into deeper trails through related entries and collections.
 
-The product is closer to a curated cabinet than a database dashboard.
+The product is closer to a pop-culture scrapbook than a database dashboard. See [collage.md](/docs/collage.md).
 
 ## Core User Journeys
 
@@ -57,8 +57,8 @@ Submissions are suggestions, not direct publishing rights.
 
 ## Top-Level Information Architecture
 
-- Home
-- Browse
+- Home (Find Steve collage)
+- Archive / browse
 - Search results
 - Steve entry page
 - Collection page
@@ -72,9 +72,11 @@ Submissions are suggestions, not direct publishing rights.
 
 Purpose:
 
-- explain the premise quickly
-- showcase standout entries and collections
-- make the site feel like a real institution
+- put the visitor inside the collage immediately
+- present one Steve to find without turning the page into a game menu
+- make the density of Steves the identity of the site
+
+The filing-cabinet list lives at `/archive`. Entry pages remain the written record.
 
 ### Browse
 

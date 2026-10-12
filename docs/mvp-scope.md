@@ -11,6 +11,7 @@ It should launch as a small but convincing institution: searchable, collectible,
 - `250+` published Steve entries
 - coverage across TV, movies, and commercials
 - support for Steve / Stephen / Steven / Stevie
+- a Find Steve collage as the public index
 - canonical Steve entry pages
 - search with exact-match and variant support
 - browse by core facets

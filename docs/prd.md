@@ -135,10 +135,11 @@ Success condition:
 
 ### Homepage
 
-- explain the premise in under ten seconds
-- feature a small set of real Steve entries
-- feature collections as first-class objects
-- feel like the archive has shape, not just inventory
+- open on the collage: there are a lot of Steves on TV, find this one
+- pan, zoom, hover identity, and a find-this-Steve card
+- keep the density counter illustrative
+- do not require accounts, scores, or game menus
+- the filing-cabinet index remains at `/archive`
 
 ### Search
 

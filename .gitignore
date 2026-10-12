@@ -7,4 +7,6 @@ coverage
 *.log
 private/
 research/private/
+content/cutouts/assets/
+content/cutouts/*-fixture-cutout.json
 

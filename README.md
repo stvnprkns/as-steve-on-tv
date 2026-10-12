@@ -1,8 +1,8 @@
 # As Steve on TV
 
-As Steve on TV is a tightly scoped media index for Steve, Stephen, Steven, and Stevie characters and on-screen people across TV, movies, and commercials.
+As Steve on TV is a tightly scoped media index for Steve, Stephen, Steven, and Stevie characters and on-screen people across TV, movies, and commercials. The public index is a giant collage of Steve cutouts. Finding a particular Steve is one way to use it.
 
-This is not a generic entertainment database. The narrowness is the point. The product should feel like a collectible cabinet, an internet museum, and a dead-serious pop culture almanac for one beautifully specific subject.
+This is not a generic entertainment database. The narrowness is the point. The product should feel like a pop-culture scrapbook, a collectible cabinet, and a dead-serious almanac for one beautifully specific subject.
 
 ## Product Thesis
 
