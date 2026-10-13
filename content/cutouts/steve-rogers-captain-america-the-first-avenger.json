@@ -1,0 +1,32 @@
+{
+  "id": "steve-rogers-captain-america-the-first-avenger",
+  "slug": "steve-rogers-captain-america-the-first-avenger",
+  "displayName": "Steve Rogers",
+  "entryId": "steve-rogers-captain-america-the-first-avenger",
+  "cropType": "upper-body",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "Captain America: The First Avenger",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 39,
+    "y": 47,
+    "width": 1141,
+    "height": 1413
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-rogers-captain-america-the-first-avenger/original.png",
+    "cutout": "content/cutouts/assets/steve-rogers-captain-america-the-first-avenger/cutout.webp",
+    "mask": "content/cutouts/assets/steve-rogers-captain-america-the-first-avenger/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:49.639Z",
+  "updatedAt": "2026-10-13T18:07:49.639Z"
+}

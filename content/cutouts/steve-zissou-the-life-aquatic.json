@@ -1,0 +1,32 @@
+{
+  "id": "steve-zissou-the-life-aquatic",
+  "slug": "steve-zissou-the-life-aquatic",
+  "displayName": "Steve Zissou",
+  "entryId": "steve-zissou-the-life-aquatic",
+  "cropType": "face",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "The Life Aquatic with Steve Zissou",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 0,
+    "y": 63,
+    "width": 538,
+    "height": 737
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-zissou-the-life-aquatic/original.png",
+    "cutout": "content/cutouts/assets/steve-zissou-the-life-aquatic/cutout.webp",
+    "mask": "content/cutouts/assets/steve-zissou-the-life-aquatic/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:54.102Z",
+  "updatedAt": "2026-10-13T18:07:54.102Z"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "steve-stifler-american-pie",
+  "slug": "steve-stifler-american-pie",
+  "displayName": "Steve Stifler",
+  "entryId": "steve-stifler-american-pie",
+  "cropType": "upper-body",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "American Pie",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 16,
+    "y": 43,
+    "width": 1593,
+    "height": 1307
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-stifler-american-pie/original.png",
+    "cutout": "content/cutouts/assets/steve-stifler-american-pie/cutout.webp",
+    "mask": "content/cutouts/assets/steve-stifler-american-pie/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:50.388Z",
+  "updatedAt": "2026-10-13T18:07:50.388Z"
+}

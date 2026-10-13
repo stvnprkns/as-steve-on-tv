@@ -1,0 +1,32 @@
+{
+  "id": "steve-burns-blues-clues",
+  "slug": "steve-burns-blues-clues",
+  "displayName": "Steve Burns",
+  "entryId": "steve-burns-blues-clues",
+  "cropType": "upper-body",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "Blue's Clues",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 93,
+    "y": 27,
+    "width": 1451,
+    "height": 2439
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-burns-blues-clues/original.png",
+    "cutout": "content/cutouts/assets/steve-burns-blues-clues/cutout.webp",
+    "mask": "content/cutouts/assets/steve-burns-blues-clues/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:47.882Z",
+  "updatedAt": "2026-10-13T18:07:47.882Z"
+}

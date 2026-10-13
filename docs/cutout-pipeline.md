@@ -51,7 +51,7 @@ REMOVEBG_API_KEY=... npm run cutout:process -- \
   --license-basis "screenshot-held-for-review"
 ```
 
-`--roi=x,y,w,h` optional. Without an API key, the file must already have an alpha channel.
+`--roi=x,y,w,h` and `--id` optional. `--id` pins the sidecar to an archive slug. Apostrophes are stripped so `Blue's Clues` becomes `blues-clues`, not `blue-s-clues`. Without an API key, the file must already have an alpha channel.
 
 ## Rights
 

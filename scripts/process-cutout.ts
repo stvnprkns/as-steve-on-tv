@@ -36,6 +36,7 @@ async function main() {
 
   const originalBytes = await readFile(path.resolve(file));
   const record = await processCutout({
+    id: readArg("--id"),
     displayName,
     sourceTitle,
     entryId: readArg("--entry"),

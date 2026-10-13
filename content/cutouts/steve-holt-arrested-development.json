@@ -1,0 +1,32 @@
+{
+  "id": "steve-holt-arrested-development",
+  "slug": "steve-holt-arrested-development",
+  "displayName": "Steve Holt",
+  "entryId": "steve-holt-arrested-development",
+  "cropType": "face",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "Arrested Development",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg. Face crop. Confirm in studio if this still is Holt rather than another catalog Steve."
+  },
+  "trimmedBox": {
+    "x": 43,
+    "y": 0,
+    "width": 1913,
+    "height": 1802
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-holt-arrested-development/original.png",
+    "cutout": "content/cutouts/assets/steve-holt-arrested-development/cutout.webp",
+    "mask": "content/cutouts/assets/steve-holt-arrested-development/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:51.914Z",
+  "updatedAt": "2026-10-13T18:07:51.914Z"
+}

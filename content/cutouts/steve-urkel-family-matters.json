@@ -1,0 +1,32 @@
+{
+  "id": "steve-urkel-family-matters",
+  "slug": "steve-urkel-family-matters",
+  "displayName": "Steve Urkel",
+  "entryId": "steve-urkel-family-matters",
+  "cropType": "upper-body",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "Family Matters",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 3,
+    "y": 275,
+    "width": 1175,
+    "height": 1525
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-urkel-family-matters/original.png",
+    "cutout": "content/cutouts/assets/steve-urkel-family-matters/cutout.webp",
+    "mask": "content/cutouts/assets/steve-urkel-family-matters/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:53.325Z",
+  "updatedAt": "2026-10-13T18:07:53.325Z"
+}

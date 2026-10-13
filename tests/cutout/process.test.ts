@@ -6,7 +6,7 @@ import test from "node:test";
 
 import sharp from "sharp";
 
-import { extractMaskAndTrim, measureOpaqueRegion, processCutout } from "../../src/lib/cutout/process";
+import { cutoutIdFromName, extractMaskAndTrim, measureOpaqueRegion, processCutout } from "../../src/lib/cutout/process";
 import { PassthroughProvider } from "../../src/lib/cutout/remove-bg";
 import { isPublicCollageCutout } from "../../src/lib/schema/cutout";
 
@@ -35,6 +35,11 @@ async function crowdedScenePng() {
 
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
+
+test("strips apostrophes so Blue's Clues does not become blue-s-clues", () => {
+  assert.equal(cutoutIdFromName("Steve Burns", "Blue's Clues"), "steve-burns-blues-clues");
+  assert.equal(cutoutIdFromName("Stevie Budd", "Schitt's Creek"), "stevie-budd-schitts-creek");
+});
 
 test("trims transparent padding and writes a mask", async () => {
   const padded = await sharp(await opaquePersonPng())
