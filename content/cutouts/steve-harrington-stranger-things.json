@@ -1,0 +1,32 @@
+{
+  "id": "steve-harrington-stranger-things",
+  "slug": "steve-harrington-stranger-things",
+  "displayName": "Steve Harrington",
+  "entryId": "steve-harrington-stranger-things",
+  "cropType": "upper-body",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "Stranger Things",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 51,
+    "y": 31,
+    "width": 786,
+    "height": 1245
+  },
+  "assets": {
+    "original": "content/cutouts/assets/steve-harrington-stranger-things/original.png",
+    "cutout": "content/cutouts/assets/steve-harrington-stranger-things/cutout.webp",
+    "mask": "content/cutouts/assets/steve-harrington-stranger-things/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:48.948Z",
+  "updatedAt": "2026-10-13T18:07:48.948Z"
+}

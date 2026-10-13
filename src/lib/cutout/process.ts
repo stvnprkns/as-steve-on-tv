@@ -35,6 +35,7 @@ export type ProcessCutoutInput = {
 function slugify(value: string) {
   const slug = value
     .toLowerCase()
+    .replace(/['’]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);

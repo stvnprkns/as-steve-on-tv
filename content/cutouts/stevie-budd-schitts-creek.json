@@ -1,0 +1,32 @@
+{
+  "id": "stevie-budd-schitts-creek",
+  "slug": "stevie-budd-schitts-creek",
+  "displayName": "Stevie Budd",
+  "entryId": "stevie-budd-schitts-creek",
+  "cropType": "upper-body",
+  "status": "draft",
+  "provider": "passthrough",
+  "source": {
+    "title": "Schitt's Creek",
+    "attribution": "Editor-supplied cutout",
+    "notes": "Editor-supplied transparent PNG. Passthrough; not sent to remove.bg."
+  },
+  "trimmedBox": {
+    "x": 23,
+    "y": 3,
+    "width": 820,
+    "height": 897
+  },
+  "assets": {
+    "original": "content/cutouts/assets/stevie-budd-schitts-creek/original.png",
+    "cutout": "content/cutouts/assets/stevie-budd-schitts-creek/cutout.webp",
+    "mask": "content/cutouts/assets/stevie-budd-schitts-creek/mask.png"
+  },
+  "imageRights": {
+    "displayAllowed": false,
+    "licenseBasis": "screenshot-held-for-review",
+    "attribution": "Editor-supplied cutout"
+  },
+  "createdAt": "2026-10-13T18:07:51.311Z",
+  "updatedAt": "2026-10-13T18:07:51.311Z"
+}
